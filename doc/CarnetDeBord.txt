@@ -1,13 +1,9 @@
 Carnet de bord :
 
--Jeudi 05 Mars 2020 23:23:05 :
-Hola que tal
-C'était cool !!!
-
--Jeudi 05 Mars 2020 23:23:31 :
-Maintenant ca va mieux
-yes
-
--Jeudi 05 Mars 2020 23:23:46 :
-Yo toi ca va un max ?
+-Jeudi 05 Mars 2020 23:52:38 :
+On a commencé par créer les structures Personne, Objet et Prêt.
+On a ensuite créé les Makefile correspondant et les main.
+On a donc créé le script : scriptShellBournePourEcrireDansLeFichierCarnetDeBordNotreRapportDuJourCelaEstTresUtilePourNePasAAvoirATaperNousMemeDansCarnetDeBordCeTitreEstPeutEtreBeaucoupTropLong.sh Cela pour savoir ce qu'on a fait et ce qu'il reste à faire.
+Il reste à créer les fonctions de base et de manipulation des fonctions/structures.
+Aussi commencer à créer le répertoire Time et ce qu'il va avec pour gérer le temps pour les prêts des objets.
 

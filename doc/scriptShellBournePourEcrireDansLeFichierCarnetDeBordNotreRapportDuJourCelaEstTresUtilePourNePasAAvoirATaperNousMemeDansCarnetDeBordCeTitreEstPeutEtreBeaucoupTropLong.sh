@@ -1,4 +1,5 @@
 #! /bin/sh
+
 C=`date -R | cut -f2 -d' '`
 D=`date -R | cut -f4 -d' '`
 E=`date -R | cut -f5 -d' '`
