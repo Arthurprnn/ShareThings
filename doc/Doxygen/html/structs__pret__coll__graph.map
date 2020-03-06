@@ -1,0 +1,5 @@
+<map id="s_pret" name="s_pret">
+<area shape="rect" id="node2" href="$structs__objet.html" title="s_objet" alt="" coords="5,95,69,121"/>
+<area shape="rect" id="node3" href="$structs__personne.html" title="s_personne" alt="" coords="94,95,183,121"/>
+<area shape="rect" id="node4" href="$struct_objet.html" title="Objet" alt="" coords="112,5,165,32"/>
+</map>

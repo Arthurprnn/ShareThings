@@ -6,7 +6,10 @@
 #include <stdbool.h>
 #include <time.h>
 
-/* Declaration de la structure s_pret */
+/**
+ * Déclaration de la structure :
+ * \struct Pret
+ */
 typedef struct s_pret * Pret;
 
 #endif

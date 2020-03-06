@@ -5,7 +5,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-/* Declaration de la structure s_personne */
+/**
+ * Déclaration de la structure :
+ * \struct Objet
+ */
 typedef struct s_objet * Objet;
 
 #endif
