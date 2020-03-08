@@ -7,7 +7,10 @@
 #include <time.h>
 
 /**
- * Déclaration de la structure :
+ * Structure Pret 
+ * (Pointeur vers une structure cachée)
+ * 
+ * Permet la manipulation d'un prêt à l'aide des fonctions prédéfinies.
  * \struct Pret
  */
 typedef struct s_pret * Pret;

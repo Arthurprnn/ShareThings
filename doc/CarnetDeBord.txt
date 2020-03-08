@@ -7,3 +7,14 @@ On a donc créé le script : scriptShellBournePourEcrireDansLeFichierCarnetDeBor
 Il reste à créer les fonctions de base et de manipulation des fonctions/structures.
 Aussi commencer à créer le répertoire Time et ce qu'il va avec pour gérer le temps pour les prêts des objets.
 
+-Dimanche 08 Mars 2020 02:00:36 :
+Aujourd'hui on a donc recherché comment bien faire notre documentation, on a commencé par le fichier objet.h.
+C'était assez compliqué à comprendre: surtout pour la configuration du doxywizard...
+On a commencé quelques fonctions: init_objet, les getters et les setters pour le répertoire Objet.
+Reste à finir la doc d'objet.h, de faire les fonctions que l'ont aura besoin et de faire de même pour Personne et Prêt.
+
+-Dimanche 08 Mars 2020 21:58:51 :
+On a fini de faire les getters et setters et l'initialisation du répertoire Objet.
+On a commencé à faire ceux des Comptes, et aussi à mieux générer la doc de doxygen.
+Il reste donc dans un premier temps à finir les getters setters et initialisation des répertoires restants.
+

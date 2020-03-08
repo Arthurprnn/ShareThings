@@ -1,3 +1,5 @@
-Lien pour le doc de doxygen :
+Téléchargement de doxygen : sudo aptitude install graphviz doxygen doxygen-gui
 
-https://franckh.developpez.com/tutoriels/outils/doxygen/
+Lien pour le doc de doxygen : https://franckh.developpez.com/tutoriels/outils/doxygen/
+
+Pour mettre à jour notre Doxyfile, lancer dans le terminal : doxywizard

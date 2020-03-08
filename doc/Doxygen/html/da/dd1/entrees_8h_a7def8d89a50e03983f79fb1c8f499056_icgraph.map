@@ -1,0 +1,10 @@
+<map id="lire_fin_ligne" name="lire_fin_ligne">
+<area shape="rect" id="node2" href="$da/dd1/entrees_8h.html#a22c3c815e4538f311c725781961d6fbd" title="lit_format" alt="" coords="148,81,224,108"/>
+<area shape="rect" id="node3" href="$da/dd1/entrees_8h.html#aa7140c48f75b206b283e8afcc65150f6" title="lire_chaine" alt="" coords="291,5,375,32"/>
+<area shape="rect" id="node5" href="$da/dd1/entrees_8h.html#ad754e967f9450b55f6c8f59fc46cf6ec" title="lire_entier" alt="" coords="294,56,373,83"/>
+<area shape="rect" id="node7" href="$da/dd1/entrees_8h.html#a5f39f9475fe0ab739df0a7595e016b58" title="lire_decimal" alt="" coords="288,107,379,133"/>
+<area shape="rect" id="node8" href="$da/dd1/entrees_8h.html#ac32073304ceb0ab132961672e814a516" title="lire_long_decimal" alt="" coords="272,157,395,184"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="499,5,550,32"/>
+<area shape="rect" id="node6" href="$da/dd1/entrees_8h.html#a474127b351c317fac86aef5e5bef6bbe" title="lire_entier_positif" alt="" coords="465,56,585,83"/>
+<area shape="rect" id="node9" href="$da/dd1/entrees_8h.html#a1048e512b4d45537dd31c9d689a670c5" title="lire_long_decimal_positif" alt="" coords="443,157,607,184"/>
+</map>

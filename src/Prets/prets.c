@@ -3,8 +3,8 @@
 #include "../../include/objet.h"
 
 /**
- * Structure :
- * \struct s_pret "va servir à prendre les données utiles pour manipuler les objets prétées entre utilisateurs."
+ * Structure nécessaire pour créer un prêt.
+ * Elle va servir à prendre les données utiles pour manipuler les objets prétées entre utilisateurs.
  */
 
 struct s_pret {
