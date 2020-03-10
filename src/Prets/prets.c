@@ -13,3 +13,44 @@ struct s_pret {
     Objet objet;
     Personne demandeur;
 };
+
+Pret init_pret() {
+    Pret p = (Pret)malloc(sizeof(struct s_pret));
+    p->debut = malloc(sizeof(struct tm));
+    p->fin = malloc(sizeof(struct tm));
+    p->objet = init_objet();
+    p->demandeur = init_personne();
+    return p;
+}
+
+struct tm get_temps_debutPret(Pret pret) {
+
+}
+
+struct tm get_temps_finPret(Pret pret) {
+
+}
+
+Objet get_objetPret(Pret pret) {
+
+}
+
+Personne get_demandeurPret(Pret pret) {
+
+}
+
+void set_temps_debutPret(Pret pret, struct tm time) {
+
+}
+
+void set_temps_finPret(Pret pret, struct tm time) {
+
+}
+
+void set_objetPret(Pret pret, Objet objet) {
+
+}
+
+void set_demandeurPret(Pret pret, Personne personne) {
+
+}

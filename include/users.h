@@ -111,8 +111,8 @@ void set_prenomPersonne(Personne, char*);
 void set_agePersonne(Personne, int);
 
 /**
- * \fn void set_agePersonne(Personne, int)
- * \brief \b Setter permettant de fixer l'age de la personne.
+ * \fn void set_IDPersonne(Personne, int)
+ * \brief \b Setter permettant de fixer l'identification de la personne.
  * \param Personne Pour fixer une information sur la personne.
  * \param int Information à écrire dans la description de la personne.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description de la personne.
