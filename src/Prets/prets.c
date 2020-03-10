@@ -24,33 +24,33 @@ Pret init_pret() {
 }
 
 struct tm get_temps_debutPret(Pret pret) {
-
+    return pret->debut;
 }
 
 struct tm get_temps_finPret(Pret pret) {
-
+    return pret->fin;
 }
 
 Objet get_objetPret(Pret pret) {
-
+    return pret->objet;
 }
 
 Personne get_demandeurPret(Pret pret) {
-
+    return pret->demandeur;
 }
 
 void set_temps_debutPret(Pret pret, struct tm time) {
-
+    return pret->debut = time;
 }
 
 void set_temps_finPret(Pret pret, struct tm time) {
-
+    return pret->fin = time;
 }
 
 void set_objetPret(Pret pret, Objet objet) {
-
+    return pret->objet = objet;
 }
 
 void set_demandeurPret(Pret pret, Personne personne) {
-
+    return pret->demandeur = personne;
 }
