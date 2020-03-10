@@ -4,10 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>
-
-#include "../../include/users.h"
-#include "../../include/objet.h"
+#include "temps.h"
+#include "users.h"
+#include "objet.h"
 
 /**
  * Structure \b Pret
@@ -31,22 +30,22 @@ Pret init_pret();
 
 
 /**
- * \fn struct tm get_temps_debutPret(Pret)
+ * \fn Temps get_temps_debutPret(Pret)
  * \brief \b Getter permettant d'obtenir le temps de début du prêt.
  * \param Pret Pour extraire une information sur le prêt.
  * \return \b struct \b tm La fonction retourne un \b temps de type \b struct \b tm.
  */
 
-struct tm get_temps_debutPret(Pret);
+Temps get_temps_debutPret(Pret);
 
 /**
- * \fn struct tm get_temps_finPret(Pret)
+ * \fn Temps get_temps_finPret(Pret)
  * \brief \b Getter permettant d'obtenir le temps de fin du prêt.
  * \param Pret Pour extraire une information sur le prêt.
  * \return \b struct \b tm La fonction retourne un \b temps de type \b struct \b tm.
  */
 
-struct tm get_temps_finPret(Pret);
+Temps get_temps_finPret(Pret);
 
 /**
  * \fn Objet get_objetPret(Pret)
@@ -68,24 +67,24 @@ Personne get_demandeurPret(Pret);
 
 
 /**
- * \fn void set_temps_debutPret(Pret, struct tm)
+ * \fn void set_temps_debutPret(Pret, Temps)
  * \brief \b Setter permettant de fixer le temps de début du prêt.
  * \param Pret Pour fixer une information sur le prêt.
- * \param struct tm Donnée sur le temps à écrire dans le prêt.
+ * \param Temps Donnée sur le temps à écrire dans le prêt.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description du prêt.
  */
 
-void set_temps_debutPret(Pret, struct tm);
+void set_temps_debutPret(Pret, Temps);
 
 /**
- * \fn void set_temps_finPret(Pret, struct tm)
+ * \fn void set_temps_finPret(Pret, Temps)
  * \brief \b Setter permettant de fixer le temps de fin du prêt.
  * \param Pret Pour fixer une information sur le prêt.
- * \param struct tm Donnée sur le temps à écrire dans le prêt.
+ * \param Temps Donnée sur le temps à écrire dans le prêt.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description du prêt.
  */
 
-void set_temps_finPret(Pret, struct tm);
+void set_temps_finPret(Pret, Temps);
 
 /**
  * \fn void set_objetPret(Pret, Objet)
