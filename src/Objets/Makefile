@@ -1,19 +1,13 @@
-CC= gcc
-CFLAGS=  -Wall -g #-std=c11
-LIB= ../../lib
-LDFLAGS= -lm
-INC= ../../include
-EXEC= objet.exe
-SRC= main_objet.c objet.c
-OBJ= $(SRC:.c=.o)
+objet: main_objet.o objet.o	
+	gcc -Wall *.c -o objet.exe
 
-all : $(EXEC)
+main_objet.o: main_objet.c
+	gcc main_objet.c -c
+	mv main_objet.o ../../lib
 
-$(EXEC): $(OBJ)
-	@$(CC) -o $@ $^ $(LDFLAGS) $(CFLAGS) -I $(INC) -L $(LIB)
-
-%.o: %.c 
-	@$(CC) -o $@ -c $< $(CFLAGS) -I $(INC) -L $(LIB)
+objet.o: objet.c
+	gcc objet.c -c 
+	mv objet.o ../../lib
 
 clean:
-	rm *.exe *.o
+	rm ../../lib/*.o *.exe 
