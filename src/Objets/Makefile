@@ -1,13 +1,17 @@
-objet: main_objet.o objet.o	
-	gcc -Wall *.c -o objet.exe
+#Objet
+CC= gcc
+CFLAGS=  -Wall -g 
+LIB= ../../lib
+LDFLAGS= -lm -lobjet
+INC= ../../include
+EXEC= objet.exe
+SRC= main_objet.c
+OBJ= $(SRC:.c=.o)
 
-main_objet.o: main_objet.c
-	gcc main_objet.c -c
-	mv main_objet.o ../../lib
+all : $(EXEC)
 
-objet.o: objet.c
-	gcc objet.c -c 
-	mv objet.o ../../lib
+$(EXEC): $(SRC)
+	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm ../../lib/*.o *.exe 
+	rm *.exe

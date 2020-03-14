@@ -1,13 +1,17 @@
-temps: main_temps.o temps.o	
-	gcc -Wall *.c -o temps.exe
+#Temps
+CC= gcc
+CFLAGS=  -Wall -g 
+LIB= ../../lib
+LDFLAGS= -lm -ltemps
+INC= ../../include
+EXEC= temps.exe
+SRC= main_temps.c
+OBJ= $(SRC:.c=.o)
 
-main_temps.o: main_temps.c
-	gcc main_temps.c -c
-	mv main_temps.o ../../lib
+all : $(EXEC)
 
-temps.o: temps.c
-	gcc temps.c -c 
-	mv temps.o ../../lib
+$(EXEC): $(SRC)
+	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm ../../lib/main_temps.o ../../lib/temps.o *.exe 
+	rm *.exe

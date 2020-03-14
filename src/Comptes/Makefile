@@ -1,13 +1,17 @@
-users: main_users.o users.o	
-	gcc -Wall *.c -o users.exe
+#users
+CC= gcc
+CFLAGS=  -Wall -g 
+LIB= ../../lib
+LDFLAGS= -lm -lusers
+INC= ../../include
+EXEC= users.exe
+SRC= main_users.c
+OBJ= $(SRC:.c=.o)
 
-main_users.o: main_users.c
-	gcc main_users.c -c
-	mv main_users.o ../../lib
+all : $(EXEC)
 
-users.o: users.c
-	gcc users.c -c 
-	mv users.o ../../lib
+$(EXEC): $(SRC)
+	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm ../../lib/main_users.o ../../lib/users.o *.exe 
+	rm *.exe

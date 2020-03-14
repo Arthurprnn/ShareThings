@@ -18,3 +18,8 @@ On a fini de faire les getters et setters et l'initialisation du répertoire Obj
 On a commencé à faire ceux des Comptes, et aussi à mieux générer la doc de doxygen.
 Il reste donc dans un premier temps à finir les getters setters et initialisation des répertoires restants.
 
+-Samedi 14 Mars 2020 15:11:22 :
+On a fini de creer les getters et setters pour toutes les structures. On a aussi implementé les setteur et getteur de la structure Temps qui est une structure de <time.h>.
+On a aussi réglé notre probleme de compilation séparé, en créant des librairies.
+Il reste encore du travail sur le fichier entree, qui permet de gerer les entrées sous forme de chaines de caracteres nécessaire à certaines structure.
+

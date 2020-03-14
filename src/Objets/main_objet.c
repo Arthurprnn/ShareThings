@@ -1,7 +1,7 @@
 #include "../../include/objet.h"
 
 int main(int argc, char *argv[]) {
-
+/*
     Objet o = init_objet();
     char *nom = (char *)malloc(sizeof(char));
 
@@ -15,6 +15,6 @@ int main(int argc, char *argv[]) {
     scanf("%d", &ID);
     set_ID_objetObjet(o, ID);
     printf("ID de l'objet = %d\n", get_ID_objetObjet(o));
-
+*/
     return 0;
 }
