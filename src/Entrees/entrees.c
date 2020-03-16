@@ -22,7 +22,7 @@ int getch(){
 
 char * creer_chaine_de_caracteres() {
     char temp[256];
-    printf("Entree une chaine de caractere : ");
+    printf("Entrer une chaine de caractere : ");
     scanf("%s", temp);
     char *c = (char *)malloc(strlen(temp)*sizeof(char));
     for (int i=0; i<strlen(temp); i++) {
@@ -42,11 +42,11 @@ char * creer_mot_de_passe(){
         ch = '*' ;
         printf("%c", ch);
         i++;
-    }
-    while ((i<32) && (mdp[i-1] != '\n'));
+    } while ((i<32) && (mdp[i-1] != '\n'));
+
     char *c = (char *)malloc(strlen(mdp)*sizeof(char));
-    for (int i=0; i<strlen(mdp); i++) {
-        c[i]=mdp[i];
+    for (int j=0; j<strlen(mdp); j++) {
+        c[j]=mdp[j];
     }
     return c;
 }

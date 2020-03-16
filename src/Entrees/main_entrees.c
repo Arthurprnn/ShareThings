@@ -2,10 +2,10 @@
 
 int main(int argc, char **argv) {
 
-    char *c = creer_chaine_de_caracteres();
-    printf("Chaine de caractere : %s\n", c);
+    // char *c = creer_chaine_de_caracteres();
+    //printf("Chaine de caractere : %s\n", c);
 
-    viderBuffer();
+    //viderBuffer();
 
     char * ch;
     ch = creer_mot_de_passe();
