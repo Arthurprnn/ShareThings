@@ -130,6 +130,14 @@ void set_IDPersonne(Personne, int);
 
 void set_mailPersonne(Personne, char*);
 
+/**
+ * \fn void set_liste_objetPersonne(Personne, Objet *)
+ * \brief \b Setter permettant de fixer la liste d'objets de la personne.
+ * \param Personne Pour fixer une information sur la personne.
+ * \param char* Information à écrire dans la description de la personne.
+ * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description de la personne.
+ */
 
+void set_liste_objetPersonne(Personne, Objet*);
 
 #endif

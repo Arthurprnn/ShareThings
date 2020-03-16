@@ -30,3 +30,8 @@ getch à été relativement dur à écrire, car c'est une fonction qui se trouve
 creer_mot_de_passe aussi a été complexe a élaborer, car nous n'arrivions pas identifier quand l'utilisateur finissait son mot de passe. 
 Tous ces probleme ont été réglé (non sans mal), et nous avons écrit le fichier entrees.h avec la documentation de doxygen
 
+-Lundi 16 Mars 2020 15:20:29 :
+On a commencé à faire les fonctions manipulant des fichiers.
+Tout d'abord, la fonction qui permet de prendre des données au format JSON d'un certain fichier.json, et de les stocker dans notre code en C pour pouvoir les exploiter.
+On a fait cela seulement pour le cas d'un Objet, il restera donc à faire celui de Personne et de Pret.
+

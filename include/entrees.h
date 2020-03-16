@@ -21,9 +21,9 @@ void viderBuffer();
 
 /**
  * \fn int getch()
- * \brief La fonction \b getch() est l'abréviation de \b getchar qui permet de lire un caractère ou une touche au clavier. Cette fonction est \b bloquante jusqu'à ce que l'utilisateur appuie sur une touche. le caractère n'est \b pas \b affiché \b à \b l'écran.
+ * \brief La fonction \b getch() est l'abréviation de \b getchar qui permet de lire un caractère ou une touche au clavier. Cette fonction est \b bloquante jusqu'à ce que l'utilisateur appuie sur une touche. Le caractère n'est \b pas \b affiché \b à \b l'écran.
  * \param void Ne prend rien en paramètre.
- * \return \b int La fonction retourne l'encodage du caractere récupéré.
+ * \return \b int La fonction retourne l'encodage du caractère récupéré.
  */
 
 int getch();
