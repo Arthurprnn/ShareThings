@@ -25,7 +25,7 @@ Il reste encore du travail sur le fichier entree, qui permet de gerer les entré
 
 -Lundi 16 Mars 2020 14:10:57 :
 Nous avons travaillé sur le fichier entree
-Nous avons écrit les fonctions relatives au mot de passe, viderbuffer, getch, creer_mot_de_passe
+Nous avons écrit les fonctions relatives au mot de passe : viderbuffer, getch, creer_mot_de_passe
 getch à été relativement dur à écrire, car c'est une fonction qui se trouve dans conio.h qui n'est pas disponible sur linux
 creer_mot_de_passe aussi a été complexe a élaborer, car nous n'arrivions pas identifier quand l'utilisateur finissait son mot de passe. 
 Tous ces probleme ont été réglé (non sans mal), et nous avons écrit le fichier entrees.h avec la documentation de doxygen
