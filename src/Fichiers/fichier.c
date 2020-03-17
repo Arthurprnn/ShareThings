@@ -32,3 +32,27 @@ Objet lire_fichier_objet(char *lien) {
 
     return o;
 }
+
+
+
+void creer_fichier_objet(Objet o) {
+	FILE *fichier = NULL;
+	char nom[32]={0};
+	sprintf(nom, "../../data/Objets/%d.json", get_ID_objetObjet(o));
+	fichier = fopen(nom, "w+");
+
+	if (fichier != NULL) {
+		
+		fprintf(fichier, "{\n");
+		fprintf(fichier, "\t\"nom\": \"%s\",\n", get_nomObjet(o));
+		fprintf(fichier, "\t\"description\": \"%s\",\n", get_descriptionObjet(o));
+		fprintf(fichier, "\t\"ID_obj\": %d,\n", get_ID_objetObjet(o));
+		fprintf(fichier, "\t\"ID_prop\": %d,\n", get_ID_proprietaireObjet(o));
+		fprintf(fichier, "\t\"delai_de_pret\": %d\n", get_delai_pretObjet(o));
+		fprintf(fichier, "}");
+
+		fclose(fichier);
+	} else {
+		printf("Impossible d'ouvrir le fichier %s !\n", nom);
+	}
+}

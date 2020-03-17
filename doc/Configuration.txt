@@ -5,3 +5,8 @@ Lien pour le doc de doxygen : https://franckh.developpez.com/tutoriels/outils/do
 Pour mettre à jour notre Doxyfile, lancer dans le terminal : doxywizard
 
 Tuto pour la configuration de doxywizard : https://axiomcafe.fr/tutoriel-documenter-un-code-avec-doxygen
+
+-----------------------------------------------------------------------------------------------------------------
+
+Téléchargement de la librairie <json-c/json.h>: sudo apt install libjson-c-dev
+
