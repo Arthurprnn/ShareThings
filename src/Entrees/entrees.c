@@ -1,6 +1,5 @@
 #include "../../include/entrees.h"
 
-
 void viderBuffer(){
     int c = 0;
     while (c != '\n' && c != EOF){
@@ -22,8 +21,12 @@ int getch(){
 
 char * creer_chaine_de_caracteres() {
     char temp[256];
-    printf("Entrer une chaine de caractere : ");
-    scanf("%s", temp);
+    fgets(temp, sizeof(temp), stdin);
+    for (int i=0; i<strlen(temp); i++) {
+        if (temp[i] == '\n') {
+            temp[i] = '\0';
+        }
+    } /*!< Permet d'enlever le '\n' à la fin de la chaine et le remplace par '\0'. */
     char *c = (char *)malloc(strlen(temp)*sizeof(char));
     for (int i=0; i<strlen(temp); i++) {
         c[i]=temp[i];
@@ -50,3 +53,23 @@ char * creer_mot_de_passe(){
     }
     return c;
 }
+
+int creer_ID_objet() {
+    srand(time(NULL));
+    int ID = 1;
+    for (int i=0; i<7; i++) {
+        ID *= 10;
+        ID += rand()%(9-0)+0;
+    }
+    return ID;
+} /*!< Tous les ID des objets commenceront par un 1. */
+
+int creer_ID_personne() {
+    srand(time(NULL));
+    int ID = 2;
+    for (int i=0; i<7; i++) {
+        ID *= 10;
+        ID += rand()%(9-0)+0;
+    }
+    return ID;
+} /*!< Tous les ID des personnes commenceront par un 2. */

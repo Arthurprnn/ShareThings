@@ -46,5 +46,22 @@ char * creer_chaine_de_caracteres();
 
 char * creer_mot_de_passe();
 
+/**
+ * \fn int creer_ID_objet()
+ * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 1.
+ * \param void Ne prend rien en paramètre.
+ * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un objet donc qui commence par 1.
+ */
+
+int creer_ID_objet();
+
+/**
+ * \fn int creer_ID_personne()
+ * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 2.
+ * \param void Ne prend rien en paramètre.
+ * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour une personne donc qui commence par 2.
+ */
+
+int creer_ID_personne();
 
 #endif

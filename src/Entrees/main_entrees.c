@@ -2,11 +2,12 @@
 
 int main(int argc, char **argv) {
 
-    // char *c = creer_chaine_de_caracteres();
+    //char *c = creer_chaine_de_caracteres();
     //printf("Chaine de caractere : %s\n", c);
 
     //viderBuffer();
 
+    /*
     char * ch;
     ch = creer_mot_de_passe();
 
@@ -17,7 +18,13 @@ int main(int argc, char **argv) {
         printf("%c", j);
     }
     printf("\n");
+    */
 
+    //int ID = creer_ID_objet();
+    //printf("%d\n", ID);
+
+    char * c = creer_chaine_de_caracteres();
+    printf("Entree : %s\n", c);
 
     return 0;
 }

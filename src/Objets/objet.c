@@ -26,6 +26,21 @@ Objet init_objet() {
     return o;
 }
 
+Objet creer_objet(int ID_prop) {
+    Objet o = init_objet();
+    printf("Entrer le nom que vous voulez donner à votre objet : ");
+    set_nomObjet(o, creer_chaine_de_caracteres());
+    printf("\nEntrer une description pour votre objet :\n");
+    set_descriptionObjet(o, creer_chaine_de_caracteres());
+    set_ID_objetObjet(o, creer_ID_objet());
+    set_ID_proprietaireObjet(o, ID_prop);
+    printf("\nEntrer le délai (en jours) que vous voulez donner aux futurs demandeurs pour vous rendre cet objet : ");
+    int delai;
+    scanf("%d", &delai);
+    set_delai_pretObjet(o, delai);
+    return o;
+}
+
 char * get_nomObjet(Objet o) {
     return o->nom;
 }
