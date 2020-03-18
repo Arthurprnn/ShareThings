@@ -1,13 +1,16 @@
 #ifndef __ENTREES_H__
 #define __ENTREES_H__
+#define _XOPEN_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
+#include <crypt.h>
 
 
 /**
@@ -45,6 +48,15 @@ char * creer_chaine_de_caracteres();
  */
 
 char * creer_mot_de_passe();
+
+/**
+ * \fn char * chiffrer_mot_de_passe(char * mdp )
+ * \brief Permet de \b chiffrer un \b mot \b de \b passe en utilisant la bibliothèque \a <crypt.h>. 
+ * \param char Prend comme paramètre le char* retourné par creer_mot_de_passe. 
+ * \return \b char* La fonction rend un \b char* qui est une chaine de caractère \b chiffré.
+ */
+
+char * chiffrer_mot_de_passe(char * mdp );
 
 /**
  * \fn int creer_ID_objet()

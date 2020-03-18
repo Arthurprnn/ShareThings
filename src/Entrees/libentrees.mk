@@ -10,11 +10,11 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 entrees.o : entrees.c 
-	$(CC) $(CFLAGS)  -c entrees.c -I $(INC)
+	@ $(CC) $(CFLAGS)  -c entrees.c -I $(INC)
 
 $(EXEC) : $(OBJ) $(INC)/entrees.h
-	ar rcs $(LIB)/libentrees.a $(OBJ)
-	ranlib $(LIB)/libentrees.a
+	@ ar rcs $(LIB)/libentrees.a $(OBJ)
+	@ ranlib $(LIB)/libentrees.a
 
 clean:
-	rm $(LIB)/libentrees.a entrees.o
+	@ rm $(LIB)/libentrees.a entrees.o

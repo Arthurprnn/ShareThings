@@ -23,8 +23,18 @@ int main(int argc, char **argv) {
     //int ID = creer_ID_objet();
     //printf("%d\n", ID);
 
-    char * c = creer_chaine_de_caracteres();
+    char * ch;
+    char * mdpcrypt;
+    ch = creer_mot_de_passe();
+    printf("\n");
+    mdpcrypt = chiffrer_mot_de_passe(ch);
+    printf("%s\n", mdpcrypt);
+
+
+
+    /*char * c = creer_chaine_de_caracteres();
     printf("Entree : %s\n", c);
+    */
 
     return 0;
 }

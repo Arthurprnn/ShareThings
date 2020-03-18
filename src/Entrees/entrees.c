@@ -1,13 +1,13 @@
 #include "../../include/entrees.h"
 
-void viderBuffer(){
+void viderBuffer(){                                                      /*!< Permet de vider le buffer */
     int c = 0;
     while (c != '\n' && c != EOF){
         c = getchar();
     }
 }
 
-int getch(){
+int getch(){                                                             /*!< Permet de recuperer un caractère rentré au clavier sans avoir à appuyer sur entrée. */
     struct termios oldattr, newattr;
     int ch;
     tcgetattr( STDIN_FILENO, &oldattr );
@@ -26,7 +26,7 @@ char * creer_chaine_de_caracteres() {
         if (temp[i] == '\n') {
             temp[i] = '\0';
         }
-    } /*!< Permet d'enlever le '\n' à la fin de la chaine et le remplace par '\0'. */
+    }                                                                   /*!< Permet d'enlever le '\n' à la fin de la chaine et le remplace par '\0'. */
     char *c = (char *)malloc(strlen(temp)*sizeof(char));
     for (int i=0; i<strlen(temp); i++) {
         c[i]=temp[i];
@@ -40,19 +40,44 @@ char * creer_mot_de_passe(){
     int i=0;
 
     do {
-        ch = getch();
-        mdp[i] = ch;
-        ch = '*' ;
-        printf("%c", ch);
+        ch = getch();                                                   /*!< On récupere un caractère saisie, sans que l'itilisateur ait appuyé sur entrée. */
+        mdp[i] = ch;                                                    
+        ch = '*' ;                                                      /*!< On remplace le caractère saisie par une étoile.*/
+        printf("%c", ch);                                               /*!< Et on afiche l'étoile.*/
         i++;
-    } while ((i<32) && (mdp[i-1] != '\n'));
+    } while ((i<32) && (mdp[i-1] != '\n'));                             /*!< Tant que le mot de passe est inferieur à 32 et que l'on ne détecte pas que l'utilisateur appuie sur entrée. */
 
-    char *c = (char *)malloc(strlen(mdp)*sizeof(char));
-    for (int j=0; j<strlen(mdp); j++) {
+    char *c = (char *)malloc(strlen(mdp)*sizeof(char));                 /*!< On réserve en mémoire une taille adapté à la longeur du mot de passe. */
+    for (int j=0; j<strlen(mdp); j++) {                                 
         c[j]=mdp[j];
     }
     return c;
 }
+
+char * chiffrer_mot_de_passe(char * mdp ){
+    int nbsegment= strlen(mdp)/8+1;                                     /*!< Nombre de séquences nécessaire. */
+    char salt[]="lagrossemoula";                                        /*!< Permet d'orienter le chiffrement. */
+    char tempon[9] = "" ;
+    char * cryptmdp = (char *)malloc((nbsegment*13)*sizeof(char));      /*!< On réserve l'éspace nécessaire en mémoire pour le mot de passe chiffré. */ 
+    int i=0, j=0;
+
+    for (int i=0; i<strlen(mdp); i++) {                                 /*!< On enlève le "\n" et on le remplace par "\0". */ 
+        if (mdp[i] == '\n') {
+            mdp[i] = '\0';
+        }
+    }
+
+for (i; i<strlen(mdp); i++){                                            /*!< On parcours le mot de passe en claire, on le chiffre par 8 caractères que l'on concatène dans cryptmdp. */
+        if ((i%8 == 0) && (i!=0)){                                      /*!< On parcours et récolte 8 caractères avant de les chiffrer, puis de recommencer.*/
+            j=0;
+            cryptmdp = strcat(cryptmdp, crypt(tempon, salt));            
+        }
+        tempon[j] = mdp[i];
+        j++;
+    } 
+    cryptmdp = strcat(cryptmdp, crypt(tempon, salt));                   /*!< Pour chiffrer les derniers caractères présent. */
+    return cryptmdp;                                                    /*!< On return le tableau contenant le mot de passe chiffré. */
+}   
 
 int creer_ID_objet() {
     srand(time(NULL));
@@ -62,7 +87,7 @@ int creer_ID_objet() {
         ID += rand()%(9-0)+0;
     }
     return ID;
-} /*!< Tous les ID des objets commenceront par un 1. */
+}                                                                       /*!< Tous les ID des objets commenceront par un 1. */
 
 int creer_ID_personne() {
     srand(time(NULL));
@@ -72,4 +97,4 @@ int creer_ID_personne() {
         ID += rand()%(9-0)+0;
     }
     return ID;
-} /*!< Tous les ID des personnes commenceront par un 2. */
+}                                                                      /*!< Tous les ID des personnes commenceront par un 2. */
