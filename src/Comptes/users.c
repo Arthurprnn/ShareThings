@@ -15,7 +15,8 @@ struct s_personne {
     int age;
     int ID; /*!< Numéro d'identification de la personne. */
     char * mail;
-    Objet * liste_objet;
+    int * liste_objet;
+    int longueur_liste_objet;
 };
 
 Personne init_personne() {
@@ -25,7 +26,27 @@ Personne init_personne() {
     p->age = 0;
     p->ID = 0;
     p->mail = (char *)malloc(sizeof(char));
-    p->liste_objet = (Objet *)malloc(sizeof(Objet));
+    p->liste_objet = (int *)malloc(sizeof(int));
+    p->longueur_liste_objet = 0;
+    return p;
+}
+
+Personne creer_personne() {
+    Personne p = init_personne();
+    printf("Entrez votre nom : ");
+    set_nomPersonne(p, creer_chaine_de_caracteres());
+    printf("\nEntrez votre prénom : ");
+    set_prenomPersonne(p, creer_chaine_de_caracteres());
+    printf("\nEntrez votre mail : ");
+    set_mailPersonne(p, creer_chaine_de_caracteres());
+    
+    int age=0;
+    printf("\nEntrez votre age : ");
+    scanf("%d", &age);
+    set_agePersonne(p, age);
+    
+    set_IDPersonne(p, creer_ID_personne());
+
     return p;
 }
 
@@ -49,8 +70,16 @@ char * get_mailPersonne(Personne p) {
     return p->mail;
 }
 
-Objet * get_liste_objetPersonne(Personne p) {
+int * get_liste_objetPersonne(Personne p) {
     return p->liste_objet;
+}
+
+int get_longueur_liste_objetPersonne(Personne p) {
+    return p->longueur_liste_objet;
+}
+
+int get_element_liste_objet(int *liste, int indice) {
+    return liste[indice];
 }
 
 void set_nomPersonne(Personne p, char *c) {
@@ -73,6 +102,14 @@ void set_mailPersonne(Personne p, char *c) {
     p->mail = c;
 }
 
-void set_liste_objetPersonne(Personne p, Objet *o) {
-    p->liste_objet = o;
+void set_liste_objetPersonne(Personne p, int *liste) {
+    p->liste_objet = liste;
+}
+
+void set_longueur_liste_objetPersonne(Personne p, int longueur) {
+    p->longueur_liste_objet = longueur;
+}
+
+void set_element_liste_objet(int *liste, int indice, int element) {
+    liste[indice] = element;
 }

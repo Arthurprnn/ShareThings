@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['viderbuffer',['viderBuffer',['../entrees_8h.html#a294587294111bfede1e11bdf876b6d10',1,'viderBuffer():&#160;entrees.c'],['../entrees_8c.html#a294587294111bfede1e11bdf876b6d10',1,'viderBuffer():&#160;entrees.c']]]
+  ['users_2ec',['users.c',['../users_8c.html',1,'']]],
+  ['users_2eh',['users.h',['../users_8h.html',1,'']]]
 ];

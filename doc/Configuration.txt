@@ -1,4 +1,4 @@
-Téléchargement de doxygen : sudo aptitude install graphviz doxygen doxygen-gui
+Téléchargement de doxygen : sudo apt install graphviz doxygen doxygen-gui
 
 Lien pour le doc de doxygen : https://franckh.developpez.com/tutoriels/outils/doxygen/
 

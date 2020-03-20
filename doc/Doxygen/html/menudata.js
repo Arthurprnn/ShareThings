@@ -11,6 +11,7 @@ var menudata={children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
 {text:"Tout",url:"globals.html",children:[
+{text:"_",url:"globals.html#index__"},
 {text:"c",url:"globals.html#index_c"},
 {text:"g",url:"globals.html#index_g"},
 {text:"i",url:"globals.html#index_i"},
@@ -29,4 +30,5 @@ var menudata={children:[
 {text:"m",url:"globals_func.html#index_m"},
 {text:"s",url:"globals_func.html#index_s"},
 {text:"v",url:"globals_func.html#index_v"}]},
-{text:"Définitions de type",url:"globals_type.html"}]}]}]}
+{text:"Définitions de type",url:"globals_type.html"},
+{text:"Macros",url:"globals_defs.html"}]}]}]}

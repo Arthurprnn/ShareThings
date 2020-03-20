@@ -33,18 +33,18 @@ int getch();
 
 /**
  * \fn char * creer_chaine_de_caracteres()
- * \brief La fonction \b réserve \b en \b mémoire un espace pour \b la \b chaine \b de \b caractère \b saisie.
+ * \brief La fonction \b réserve \b en \b mémoire un espace pour \b la \b chaine \b de \b caractères \b saisie.
  * \param void Ne prend rien en paramètre.
- * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractère.  
+ * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractères.  
  */
 
 char * creer_chaine_de_caracteres();
 
 /**
  * \fn char * creer_mot_de_passe()
- * \brief Permet de \b creer un \b mot \b de \b passe \b dynamiquement en \b remplaçant les \b caractères \b saisis par le caractère \b étoile.
+ * \brief Permet de \b créer un \b mot \b de \b passe \b dynamiquement en \b remplaçant les \b caractères \b saisis par le caractère \b étoile.
  * \param void Ne prend rien en paramètre.
- * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractère.
+ * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractères.
  */
 
 char * creer_mot_de_passe();
@@ -52,8 +52,8 @@ char * creer_mot_de_passe();
 /**
  * \fn char * chiffrer_mot_de_passe(char * mdp )
  * \brief Permet de \b chiffrer un \b mot \b de \b passe en utilisant la bibliothèque \a <crypt.h>. 
- * \param char Prend comme paramètre le char* retourné par creer_mot_de_passe. 
- * \return \b char* La fonction rend un \b char* qui est une chaine de caractère \b chiffré.
+ * \param char* Prend comme paramètre le char* retourné par: \b char* creer_mot_de_passe(). 
+ * \return \b char* La fonction rend un \b char* qui est une chaine de caractère \b chiffrée.
  */
 
 char * chiffrer_mot_de_passe(char * mdp );

@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "acdefgilmnoprstuv",
+  0: "_acdefgilmnoprstuv",
   1: "opst",
   2: "efmoprtu",
   3: "cgilmsv",
   4: "adfilmnop",
   5: "opt",
-  6: "s"
+  6: "_",
+  7: "s"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "pages"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Fonctions",
   4: "Variables",
   5: "Définitions de type",
-  6: "Pages"
+  6: "Macros",
+  7: "Pages"
 };
 

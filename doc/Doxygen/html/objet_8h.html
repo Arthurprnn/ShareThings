@@ -75,6 +75,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="entrees_8h_source.html">entrees.h</a>&quot;</code><br />
 </div>
 <p><a href="objet_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
@@ -86,8 +87,11 @@ Définitions de type</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a730a9acaf0f7158a5dec99a8f606ef45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a730a9acaf0f7158a5dec99a8f606ef45">init_objet</a> ()</td></tr>
-<tr class="memdesc:a730a9acaf0f7158a5dec99a8f606ef45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> de l'objet.  <a href="#a730a9acaf0f7158a5dec99a8f606ef45">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a730a9acaf0f7158a5dec99a8f606ef45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Initialisateur</b> de l'objet.  <a href="#a730a9acaf0f7158a5dec99a8f606ef45">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a730a9acaf0f7158a5dec99a8f606ef45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a2ae30a01ccbd2a9bab673820fe20ea98">creer_objet</a> (int)</td></tr>
+<tr class="memdesc:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> de l'objet.  <a href="#a2ae30a01ccbd2a9bab673820fe20ea98">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11ce39d43c28a0aeabbc62b2a2d54ef5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a11ce39d43c28a0aeabbc62b2a2d54ef5">get_nomObjet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
 <tr class="memdesc:a11ce39d43c28a0aeabbc62b2a2d54ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir le nom de l'objet.  <a href="#a11ce39d43c28a0aeabbc62b2a2d54ef5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a11ce39d43c28a0aeabbc62b2a2d54ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,11 +136,40 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8h_source.html#l00016">16</a> du fichier <a class="el" href="objet_8h_source.html">objet.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8h_source.html#l00017">17</a> du fichier <a class="el" href="objet_8h_source.html">objet.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a2ae30a01ccbd2a9bab673820fe20ea98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae30a01ccbd2a9bab673820fe20ea98">&#9670;&nbsp;</a></span>creer_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_objet.html">Objet</a> creer_objet </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Constructeur</b> de l'objet. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>La fonction prend en paramètre un <b>int</b> qui est l' <b>ID</b> de celui qui a créé l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction a créé un <b>objet</b> , l'a <b>initialisé</b> puis <b>complété</b> avant de le retourner. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00029">29</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
 <a id="a63a244744c884320c06bf823d40e0d62"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63a244744c884320c06bf823d40e0d62">&#9670;&nbsp;</a></span>get_delai_pretObjet()</h2>
 
@@ -162,7 +195,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>délai</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00045">45</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00060">60</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -191,7 +224,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne une <b>description</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00033">33</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00048">48</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -220,7 +253,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00037">37</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00052">52</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -249,7 +282,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00041">41</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00056">56</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -278,7 +311,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne un <b>nom</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00029">29</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00044">44</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -297,14 +330,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><b>Constructeur</b> de l'objet. </p>
+<p><b>Initialisateur</b> de l'objet. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td>Ne prend rien en paramètre. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction a créé un <b><a class="el" href="struct_objet.html">Objet</a></b> et l'a <b>initialisé</b> avant de le retourner. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction a initialisé un <b>objet</b> avant de le retourner. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00019">19</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
@@ -346,7 +379,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00065">65</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00080">80</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -386,7 +419,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00053">53</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00068">68</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -426,7 +459,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00057">57</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00072">72</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -466,7 +499,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00061">61</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00076">76</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -506,7 +539,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00049">49</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00064">64</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>

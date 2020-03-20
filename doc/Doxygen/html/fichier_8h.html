@@ -75,17 +75,86 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;json-c/json.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="objet_8h_source.html">objet.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="users_8h_source.html">users.h</a>&quot;</code><br />
 </div>
 <p><a href="fichier_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a28f8648fc35a18df25611410cbaf7528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fichier_8h.html#a28f8648fc35a18df25611410cbaf7528">lire_fichier_objet</a> (char *)</td></tr>
-<tr class="memdesc:a28f8648fc35a18df25611410cbaf7528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les stock dans dans un <a class="el" href="struct_objet.html">Objet</a>.  <a href="#a28f8648fc35a18df25611410cbaf7528">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a28f8648fc35a18df25611410cbaf7528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_objet.html">Objet</a>.  <a href="#a28f8648fc35a18df25611410cbaf7528">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a28f8648fc35a18df25611410cbaf7528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df83ecd3299231c6e4627f2672c2798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fichier_8h.html#a5df83ecd3299231c6e4627f2672c2798">creer_fichier_objet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
+<tr class="memdesc:a5df83ecd3299231c6e4627f2672c2798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>objet</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de l'objet.  <a href="#a5df83ecd3299231c6e4627f2672c2798">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5df83ecd3299231c6e4627f2672c2798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87acdfcb1a4041a925a0d5a026160e80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_personne.html">Personne</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fichier_8h.html#a87acdfcb1a4041a925a0d5a026160e80">lire_fichier_personne</a> (char *)</td></tr>
+<tr class="memdesc:a87acdfcb1a4041a925a0d5a026160e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'une <em>personne</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans une <a class="el" href="struct_personne.html">Personne</a>.  <a href="#a87acdfcb1a4041a925a0d5a026160e80">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a87acdfcb1a4041a925a0d5a026160e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a451e03aded5e7346b53498d8ea301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fichier_8h.html#a32a451e03aded5e7346b53498d8ea301">creer_fichier_personne</a> (<a class="el" href="struct_personne.html">Personne</a>)</td></tr>
+<tr class="memdesc:a32a451e03aded5e7346b53498d8ea301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'une <em>personne</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de la personne.  <a href="#a32a451e03aded5e7346b53498d8ea301">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a32a451e03aded5e7346b53498d8ea301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a5df83ecd3299231c6e4627f2672c2798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df83ecd3299231c6e4627f2672c2798">&#9670;&nbsp;</a></span>creer_fichier_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_fichier_objet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'un <em>objet</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de l'objet. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Prend en paramètre un <em>objet</em> qui sera sauvegardé dans un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="fichier_8c_source.html#l00038">38</a> du fichier <a class="el" href="fichier_8c_source.html">fichier.c</a>.</p>
+
+</div>
+</div>
+<a id="a32a451e03aded5e7346b53498d8ea301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a451e03aded5e7346b53498d8ea301">&#9670;&nbsp;</a></span>creer_fichier_personne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_fichier_personne </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'une <em>personne</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de la personne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Prend en paramètre une <em>personne</em> qui sera sauvegardée dans un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="fichier_8c_source.html#l00118">118</a> du fichier <a class="el" href="fichier_8c_source.html">fichier.c</a>.</p>
+
+</div>
+</div>
 <a id="a28f8648fc35a18df25611410cbaf7528"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28f8648fc35a18df25611410cbaf7528">&#9670;&nbsp;</a></span>lire_fichier_objet()</h2>
 
@@ -102,16 +171,45 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les stock dans dans un <a class="el" href="struct_objet.html">Objet</a>. </p>
+<p>Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_objet.html">Objet</a>. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">char*</td><td>Prend en paramètre une chaine de caractère qui est le <b>lien</b> d'un fichier <b>JSON</b> . </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction renvoie un <b><a class="el" href="struct_objet.html">Objet</a></b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction renvoie un <b>objet</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="fichier_8c_source.html#l00003">3</a> du fichier <a class="el" href="fichier_8c_source.html">fichier.c</a>.</p>
+
+</div>
+</div>
+<a id="a87acdfcb1a4041a925a0d5a026160e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87acdfcb1a4041a925a0d5a026160e80">&#9670;&nbsp;</a></span>lire_fichier_personne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_personne.html">Personne</a> lire_fichier_personne </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'une <em>personne</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans une <a class="el" href="struct_personne.html">Personne</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>Prend en paramètre une chaine de caractère qui est le <b>lien</b> d'un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction renvoie une <b>personne</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="fichier_8c_source.html#l00062">62</a> du fichier <a class="el" href="fichier_8c_source.html">fichier.c</a>.</p>
 
 </div>
 </div>

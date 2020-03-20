@@ -21,16 +21,16 @@ typedef struct s_objet * Objet;
  * \fn Objet init_objet()
  * \brief \b Initialisateur de l'objet.
  * \param void Ne prend rien en paramètre.
- * \return \b Objet La fonction a initialisé un \b Objet avant de le retourner.
+ * \return \b Objet La fonction a initialisé un \b objet avant de le retourner.
  */
 
 Objet init_objet();
 
 /**
- * \fn Objet creer_objet()
+ * \fn Objet creer_objet(int)
  * \brief \b Constructeur de l'objet.
  * \param int La fonction prend en paramètre un \b int qui est l' \b ID de celui qui a créé l'objet.
- * \return \b Objet La fonction a créé un \b Objet , l'a \b initialisé puis \b complété avant de le retourner.
+ * \return \b Objet La fonction a créé un \b objet , l'a \b initialisé puis \b complété avant de le retourner.
  */
 
 Objet creer_objet(int);

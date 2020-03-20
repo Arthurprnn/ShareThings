@@ -19,19 +19,26 @@ On a commencé à faire ceux des Comptes, et aussi à mieux générer la doc de 
 Il reste donc dans un premier temps à finir les getters setters et initialisation des répertoires restants.
 
 -Samedi 14 Mars 2020 15:11:22 :
-On a fini de creer les getters et setters pour toutes les structures. On a aussi implementé les setteur et getteur de la structure Temps qui est une structure de <time.h>.
-On a aussi réglé notre probleme de compilation séparé, en créant des librairies.
-Il reste encore du travail sur le fichier entree, qui permet de gerer les entrées sous forme de chaines de caracteres nécessaire à certaines structure.
+On a fini de créer les getters et setters pour toutes les structures. On a aussi implémenté les setteur et getteur de la structure Temps qui est une structure de <time.h>.
+On a aussi réglé notre problème de compilation séparé, en créant des librairies.
+Il reste encore du travail sur le fichier Entrées, qui permet de gérer les entrées sous forme de chaines de caractères nécessaires à certaines structure.
 
 -Lundi 16 Mars 2020 14:10:57 :
-Nous avons travaillé sur le fichier entree
-Nous avons écrit les fonctions relatives au mot de passe : viderbuffer, getch, creer_mot_de_passe
-getch à été relativement dur à écrire, car c'est une fonction qui se trouve dans conio.h qui n'est pas disponible sur linux
-creer_mot_de_passe aussi a été complexe a élaborer, car nous n'arrivions pas identifier quand l'utilisateur finissait son mot de passe. 
-Tous ces probleme ont été réglé (non sans mal), et nous avons écrit le fichier entrees.h avec la documentation de doxygen
+Nous avons travaillé sur le fichier Entrées.
+Nous avons écrit les fonctions relatives au mot de passe : viderbuffer, getch, creer_mot_de_passe.
+getch à été relativement dur à écrire, car c'est une fonction qui se trouve dans conio.h qui n'est pas disponible sur linux.
+creer_mot_de_passe aussi a été complexe a élaborer, car nous n'arrivions pas à identifier quand l'utilisateur finissait son mot de passe. 
+Tous ces problèmes ont été réglé (non sans mal), et nous avons écrit le fichier entrees.h avec la documentation de doxygen.
 
 -Lundi 16 Mars 2020 15:20:29 :
 On a commencé à faire les fonctions manipulant des fichiers.
 Tout d'abord, la fonction qui permet de prendre des données au format JSON d'un certain fichier.json, et de les stocker dans notre code en C pour pouvoir les exploiter.
 On a fait cela seulement pour le cas d'un Objet, il restera donc à faire celui de Personne et de Pret.
+
+-Vendredi 20 Mars 2020 21:14:41 :
+On a beaucoup avancé à ce stade malgré de nombreux périples.
+Tout d'abord on a avancé sur tous ce qui touche à la sauvegarde au format JSON, pour l'instant, on peut lire et écrire dans un format JSON au niveau des objets et des personnes.
+Il reste encore à faire la même chose pour Prêt, il reste à modifier les générateurs d'ID pour qu'ils vérifient si l'ID existe déjà.
+On commence aussi à voir pour ce qui est du main de notre projet (dans quel ordre vont s'exécuter les tâches) et en même temps ce qui touche à l'interface graphique qui serait un gros point positif pour notre projet.
+Puis il reste quelques modifications et rectifications à faire au niveau de la documentation.
 

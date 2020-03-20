@@ -59,7 +59,7 @@ char * chiffrer_mot_de_passe(char * mdp ){
     char salt[]="lagrossemoula";                                        /*!< Permet d'orienter le chiffrement. */
     char tempon[9] = "" ;
     char * cryptmdp = (char *)malloc((nbsegment*13)*sizeof(char));      /*!< On réserve l'éspace nécessaire en mémoire pour le mot de passe chiffré. */ 
-    int i=0, j=0;
+    int j = 0;
 
     for (int i=0; i<strlen(mdp); i++) {                                 /*!< On enlève le "\n" et on le remplace par "\0". */ 
         if (mdp[i] == '\n') {
@@ -67,7 +67,7 @@ char * chiffrer_mot_de_passe(char * mdp ){
         }
     }
 
-for (i; i<strlen(mdp); i++){                                            /*!< On parcours le mot de passe en claire, on le chiffre par 8 caractères que l'on concatène dans cryptmdp. */
+    for (int i=0; i<strlen(mdp); i++){                                            /*!< On parcours le mot de passe en claire, on le chiffre par 8 caractères que l'on concatène dans cryptmdp. */
         if ((i%8 == 0) && (i!=0)){                                      /*!< On parcours et récolte 8 caractères avant de les chiffrer, puis de recommencer.*/
             j=0;
             cryptmdp = strcat(cryptmdp, crypt(tempon, salt));            
