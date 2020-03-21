@@ -42,3 +42,8 @@ Il reste encore à faire la même chose pour Prêt, il reste à modifier les gé
 On commence aussi à voir pour ce qui est du main de notre projet (dans quel ordre vont s'exécuter les tâches) et en même temps ce qui touche à l'interface graphique qui serait un gros point positif pour notre projet.
 Puis il reste quelques modifications et rectifications à faire au niveau de la documentation.
 
+-Samedi 21 Mars 2020 16:26:57 :
+On a rectifié quelques trucs.
+Tout d'abord on peut maintenant ajouter des objets dans la liste d'objets d'une personne.
+Puis les générateurs d'ID vérifient maintenant si l'ID n'existe pas déjà avant d'en créer un.
+

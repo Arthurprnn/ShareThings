@@ -113,3 +113,20 @@ void set_longueur_liste_objetPersonne(Personne p, int longueur) {
 void set_element_liste_objet(int *liste, int indice, int element) {
     liste[indice] = element;
 }
+
+
+
+void add_objet_dans_liste_objet(Personne p, Objet o) {
+    
+    int *new_liste = (int*)malloc((get_longueur_liste_objetPersonne(p)+1)*sizeof(int));
+    int *liste = get_liste_objetPersonne(p);
+
+    for (int i=0; i<get_longueur_liste_objetPersonne(p); i++) {
+        new_liste[i] = liste[i];
+    }
+
+    new_liste[get_longueur_liste_objetPersonne(p)] = get_ID_objetObjet(o);
+
+    set_liste_objetPersonne(p, new_liste);
+    set_longueur_liste_objetPersonne(p, get_longueur_liste_objetPersonne(p)+1);
+}

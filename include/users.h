@@ -189,4 +189,14 @@ void set_longueur_liste_objetPersonne(Personne, int);
 
 void set_element_liste_objet(int *, int, int);
 
+/**
+ * \fn void add_objet_dans_liste_objet(Personne, Objet)
+ * \brief \b Ajouteur permettant d'ajouter l'ID d'un objet dans la liste d'objets de la personne.
+ * \param Personne Pour fixer une information sur la personne.
+ * \param Objet Information à écrire dans la liste d'objets de la personne (juste l'ID).
+ * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la liste d'objets de la personne.
+ */
+
+void add_objet_dans_liste_objet(Personne, Objet);
+
 #endif

@@ -127,14 +127,17 @@ void creer_fichier_personne(Personne p) {
 		fprintf(fichier, "\t\"nom\": \"%s\",\n", get_nomPersonne(p));
 		fprintf(fichier, "\t\"prenom\": \"%s\",\n", get_prenomPersonne(p));
 		fprintf(fichier, "\t\"age\": %d,\n", get_agePersonne(p));
+		fprintf(fichier, "\t\"ID\": %d,\n", get_IDPersonne(p));
 		fprintf(fichier, "\t\"mail\": \"%s\",\n", get_mailPersonne(p));
 		fprintf(fichier, "\t\"liste_objet\": [");
 
 		if (get_longueur_liste_objetPersonne(p) > 0) {
+			
 			for (int i=0; i<get_longueur_liste_objetPersonne(p)-1; i++) {
 				fprintf(fichier, "%d, ", get_element_liste_objet(get_liste_objetPersonne(p), i));
 			}
-			fprintf(fichier, "%d],\n", get_element_liste_objet(get_liste_objetPersonne(p), get_longueur_liste_objetPersonne(p)));
+			fprintf(fichier, "%d],\n", get_element_liste_objet(get_liste_objetPersonne(p), get_longueur_liste_objetPersonne(p)-1));
+
 		} else {
 			fprintf(fichier, "],\n");
 		}

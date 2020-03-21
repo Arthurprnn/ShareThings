@@ -81,20 +81,42 @@ char * chiffrer_mot_de_passe(char * mdp ){
 
 int creer_ID_objet() {
     srand(time(NULL));
-    int ID = 1;
-    for (int i=0; i<7; i++) {
-        ID *= 10;
-        ID += rand()%(9-0)+0;
-    }
-    return ID;
+    FILE *fichier = NULL;
+    int bon_ID = 0;
+
+    do {
+        int ID_temp = 1;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+
+        char nom[32]={0};
+	    sprintf(nom, "../../data/Objets/%d.json", ID_temp);
+        fichier = fopen(nom, "r");
+
+        bon_ID = ID_temp;
+    } while (fichier != NULL);
+    return bon_ID;
 }                                                                       /*!< Tous les ID des objets commenceront par un 1. */
 
 int creer_ID_personne() {
     srand(time(NULL));
-    int ID = 2;
-    for (int i=0; i<7; i++) {
-        ID *= 10;
-        ID += rand()%(9-0)+0;
-    }
-    return ID;
+    FILE *fichier = NULL;
+    int bon_ID = 0;
+
+    do {
+        int ID_temp = 2;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+
+        char nom[32]={0};
+	    sprintf(nom, "../../data/Objets/%d.json", ID_temp);
+        fichier = fopen(nom, "r");
+        
+        bon_ID = ID_temp;
+    } while (fichier != NULL);
+    return bon_ID;
 }                                                                      /*!< Tous les ID des personnes commenceront par un 2. */
