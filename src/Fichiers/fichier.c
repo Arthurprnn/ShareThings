@@ -149,3 +149,70 @@ void creer_fichier_personne(Personne p) {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
 }
+
+
+
+Pret lire_fichier_pret(char *lien) {
+	FILE *fp;
+	char buffer[1024];
+	struct json_object *parsed_json;
+	struct json_object *debut_du_pret;
+	struct json_object *fin_du_pret;
+	struct json_object *ID_objet;
+	struct json_object *ID_demandeur;
+    struct json_object *ID_pret;
+
+    Pret p = init_pret();
+
+	fp = fopen(lien,"r");
+	fread(buffer, 1024, 1, fp);
+	fclose(fp);
+
+	parsed_json = json_tokener_parse(buffer);
+
+	json_object_object_get_ex(parsed_json, "debut_du_pret", &debut_du_pret);
+	json_object_object_get_ex(parsed_json, "fin_du_pret", &fin_du_pret);
+	json_object_object_get_ex(parsed_json, "ID_objet", &ID_objet);
+    json_object_object_get_ex(parsed_json, "ID_demandeur", &ID_demandeur);
+    json_object_object_get_ex(parsed_json, "ID_pret", &ID_pret);
+
+	long int debut = (long int)json_object_get_int(debut_du_pret);
+	long int fin = (long int)json_object_get_int(fin_du_pret);
+	Temps d = creer_temps(debut);
+	Temps f = creer_temps(fin);
+
+	set_temps_debutPret(p, d);
+	set_temps_finPret(p, f);
+
+	set_objetPret(p, (int)json_object_get_int(ID_objet));
+	set_demandeurPret(p, (int)json_object_get_int(ID_demandeur));
+	set_IDPret(p, (int)json_object_get_int(ID_pret));
+
+    return p;
+}
+
+
+
+void creer_fichier_pret(Pret p) {
+	long int debut = creer_secondes_depuis_1970(get_temps_debutPret(p));
+	long int fin = creer_secondes_depuis_1970(get_temps_finPret(p));
+	FILE *fichier = NULL;
+	char nom[32]={0};
+	sprintf(nom, "../../data/Prets/%d.json", get_IDPret(p));
+	fichier = fopen(nom, "w+");
+
+	if (fichier != NULL) {
+		
+		fprintf(fichier, "{\n");
+		fprintf(fichier, "\t\"debut_du_pret\": %ld,\n", debut);
+		fprintf(fichier, "\t\"fin_du_pret\": %ld,\n", fin);
+		fprintf(fichier, "\t\"ID_objet\": %d,\n", get_objetPret(p));
+		fprintf(fichier, "\t\"ID_demandeur\": %d,\n", get_demandeurPret(p));
+		fprintf(fichier, "\t\"ID_pret\": %d\n", get_IDPret(p));
+		fprintf(fichier, "}");
+
+		fclose(fichier);
+	} else {
+		printf("Impossible d'ouvrir le fichier %s !\n", nom);
+	}
+}

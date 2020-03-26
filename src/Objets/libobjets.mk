@@ -10,11 +10,11 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 objet.o : objet.c 
-	$(CC) $(CFLAGS)  -c objet.c -I $(INC)
+	@ $(CC) $(CFLAGS)  -c objet.c -I $(INC)
 
 $(EXEC) : $(OBJ) $(INC)/objet.h
-	ar rcs $(LIB)/libobjet.a $(OBJ)
-	ranlib $(LIB)/libobjet.a
+	@ ar rcs $(LIB)/libobjet.a $(OBJ)
+	@ ranlib $(LIB)/libobjet.a
 
 clean:
-	rm $(LIB)/libobjet.a objet.o
+	@ rm $(LIB)/libobjet.a objet.o

@@ -8,6 +8,9 @@ int main(int argc, char **argv) {
     ID = creer_ID_personne();
     printf("Personne : %d\n", ID);
 
+    ID = creer_ID_pret();
+    printf("Prêt : %d\n", ID);
+
     /*
     char * ch;
     char * mdpcrypt;

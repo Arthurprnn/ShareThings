@@ -11,7 +11,7 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 $(EXEC): $(SRC)
-	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
+	@ $(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm *.exe
+	@ rm *.exe

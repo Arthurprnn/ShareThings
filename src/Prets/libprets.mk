@@ -10,11 +10,11 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 prets.o : prets.c 
-	$(CC) $(CFLAGS)  -c prets.c -I $(INC)
+	@ $(CC) $(CFLAGS)  -c prets.c -I $(INC)
 
 $(EXEC) : $(OBJ) $(INC)/prets.h
-	ar rcs $(LIB)/libprets.a $(OBJ)
-	ranlib $(LIB)/libprets.a
+	@ ar rcs $(LIB)/libprets.a $(OBJ)
+	@ ranlib $(LIB)/libprets.a
 
 clean:
-	rm $(LIB)/libprets.a prets.o
+	@ rm $(LIB)/libprets.a prets.o

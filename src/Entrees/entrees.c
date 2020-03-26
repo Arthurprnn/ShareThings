@@ -113,10 +113,31 @@ int creer_ID_personne() {
         }
 
         char nom[32]={0};
-	    sprintf(nom, "../../data/Objets/%d.json", ID_temp);
+	    sprintf(nom, "../../data/Users/%d.json", ID_temp);
         fichier = fopen(nom, "r");
         
         bon_ID = ID_temp;
     } while (fichier != NULL);
     return bon_ID;
 }                                                                      /*!< Tous les ID des personnes commenceront par un 2. */
+
+int creer_ID_pret() {
+    srand(time(NULL));
+    FILE *fichier = NULL;
+    int bon_ID = 0;
+
+    do {
+        int ID_temp = 3;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+
+        char nom[32]={0};
+	    sprintf(nom, "../../data/Prets/%d.json", ID_temp);
+        fichier = fopen(nom, "r");
+        
+        bon_ID = ID_temp;
+    } while (fichier != NULL);
+    return bon_ID;
+}

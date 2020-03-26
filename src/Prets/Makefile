@@ -2,16 +2,16 @@
 CC= gcc
 CFLAGS=  -Wall -g 
 LIB= ../../lib
-LDFLAGS= -lm -lusers -lobjet -ltemps
+LDFLAGS= -lm -lprets -lusers -lobjet -ltemps -lentrees -lcrypt -ljson-c
 INC= ../../include
-EXEC= users.exe
+EXEC= prets.exe
 SRC= main_prets.c
 OBJ= $(SRC:.c=.o)
 
 all : $(EXEC)
 
 $(EXEC): $(SRC)
-	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
+	@ $(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm *.exe
+	@ rm *.exe

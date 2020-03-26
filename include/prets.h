@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <json-c/json.h>
 #include "temps.h"
 #include "users.h"
 #include "objet.h"
@@ -21,12 +22,21 @@ typedef struct s_pret * Pret;
 
 /**
  * \fn Pret init_pret()
- * \brief \b Constructeur d'un prêt.
+ * \brief \b Initialisateur d'un prêt.
  * \param void Ne prend rien en paramètre.
  * \return \b Pret La fonction a créé un \b Prêt et l'a \b initialisé avant de le retourner.
  */
 
 Pret init_pret();
+
+/**
+ * \fn Pret creer_pret(int)
+ * \brief \b Constructeur d'un prêt.
+ * \param int Prend l'ID du demandeur pour l'enregistrer dans le prêt.
+ * \return \b Pret La fonction a créé un \b Prêt et l'a \b initialisé avant de le retourner.
+ */
+
+Pret creer_pret(int);
 
 
 /**
@@ -48,22 +58,31 @@ Temps get_temps_debutPret(Pret);
 Temps get_temps_finPret(Pret);
 
 /**
- * \fn Objet get_objetPret(Pret)
+ * \fn int get_objetPret(Pret)
  * \brief \b Getter permettant d'obtenir l'objet prêté.
  * \param Pret Pour extraire une donnée sur le prêt.
- * \return \b Objet La fonction retourne un \b objet de type \b Objet.
+ * \return \b int La fonction retourne un \b ID_objet de type \b int.
  */
 
-Objet get_objetPret(Pret);
+int get_objetPret(Pret);
 
 /**
- * \fn Personne get_demandeurPret(Pret)
+ * \fn int get_demandeurPret(Pret)
  * \brief \b Getter permettant d'obtenir la personne demandant le prêt.
  * \param Pret Pour extraire une donnée sur le prêt.
- * \return \b Personne La fonction retourne une \b personne de type \b Personne.
+ * \return \b int La fonction retourne un \b ID_personne de type \b int.
  */
 
-Personne get_demandeurPret(Pret);
+int get_demandeurPret(Pret);
+
+/**
+ * \fn int get_IDPret(Pret)
+ * \brief \b Getter permettant d'obtenir le prêt demandé.
+ * \param Pret Pour extraire une donnée sur le prêt.
+ * \return \b int La fonction retourne un \b ID_pret de type \b int.
+ */
+
+int get_IDPret(Pret);
 
 
 /**
@@ -87,25 +106,33 @@ void set_temps_debutPret(Pret, Temps);
 void set_temps_finPret(Pret, Temps);
 
 /**
- * \fn void set_objetPret(Pret, Objet)
+ * \fn void set_objetPret(Pret, int)
  * \brief \b Setter permettant de fixer l'objet du prêt.
  * \param Pret Pour fixer une information sur le prêt.
- * \param Objet Donnée à écrire dans le prêt.
+ * \param int Donnée à écrire dans le prêt.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description du prêt.
  */
 
-void set_objetPret(Pret, Objet);
+void set_objetPret(Pret, int);
 
 /**
- * \fn void set_demandeurPret(Pret, Personne)
+ * \fn void set_demandeurPret(Pret, int)
  * \brief \b Setter permettant de fixer la personne demandant le prêt.
  * \param Pret Pour fixer une information sur le prêt.
- * \param Personne Donnée à écrire dans le prêt.
+ * \param int Donnée à écrire dans le prêt.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description du prêt.
  */
 
-void set_demandeurPret(Pret, Personne);
+void set_demandeurPret(Pret, int);
 
+/**
+ * \fn void set_IDPret(Pret, int)
+ * \brief \b Setter permettant de fixer le prêt demandé.
+ * \param Pret Pour fixer une information sur le prêt.
+ * \param int Donnée à écrire dans le prêt.
+ * \return \b void La fonction ne retourne rien. Elle écrit simplement dans la description du prêt.
+ */
 
+void set_IDPret(Pret, int);
 
 #endif

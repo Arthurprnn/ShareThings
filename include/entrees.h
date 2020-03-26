@@ -76,4 +76,13 @@ int creer_ID_objet();
 
 int creer_ID_personne();
 
+/**
+ * \fn int creer_ID_pret()
+ * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 3.
+ * \param void Ne prend rien en paramètre.
+ * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un prêt donc qui commence par 3.
+ */
+
+int creer_ID_pret();
+
 #endif

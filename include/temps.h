@@ -14,7 +14,7 @@
  * \struct Temps
  */
 
-typedef struct tm Temps;
+typedef struct tm * Temps;
 
 /**
  * \fn Temps init_temps()
@@ -24,6 +24,10 @@ typedef struct tm Temps;
  */
 
 Temps init_temps();
+
+Temps creer_temps(time_t);
+
+time_t creer_secondes_depuis_1970(Temps);
 
 
 /**

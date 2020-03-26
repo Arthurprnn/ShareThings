@@ -130,6 +130,6 @@ void set_ID_proprietaireObjet(Objet, int);
 
 void set_delai_pretObjet(Objet, int);
 
-
+bool existe_objet(int);
 
 #endif

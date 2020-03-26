@@ -80,3 +80,16 @@ void set_ID_proprietaireObjet(Objet o, int i) {
 void set_delai_pretObjet(Objet o, int i) {
     o->delai_de_pret = i;
 }
+
+
+bool existe_objet(int ID_objet) {
+    FILE * fichier = NULL;
+    char nom[32]={0};
+	sprintf(nom, "../../data/Objets/%d.json", ID_objet);
+    fichier = fopen(nom, "r");
+
+    if (fichier == NULL) {
+        return false;
+    }
+    return true;
+}

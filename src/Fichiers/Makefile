@@ -2,7 +2,7 @@
 CC= gcc
 CFLAGS=  -Wall -g 
 LIB= ../../lib
-LDFLAGS= -lm -lfichier -lobjet -lentrees -lusers -ljson-c -lcrypt
+LDFLAGS= -lm -lfichier -lobjet -lentrees -lusers -ljson-c -lcrypt -lprets -ltemps
 INC= ../../include
 EXEC= fichier.exe
 SRC= main_fichier.c
@@ -11,7 +11,7 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 $(EXEC): $(SRC)
-	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
+	@ $(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
-	rm *.exe
+	@ rm *.exe

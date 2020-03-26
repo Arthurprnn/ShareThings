@@ -10,11 +10,11 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 users.o : users.c 
-	$(CC) $(CFLAGS)  -c users.c -I $(INC)
+	@ $(CC) $(CFLAGS)  -c users.c -I $(INC)
 
 $(EXEC) : $(OBJ) $(INC)/users.h
-	ar rcs $(LIB)/libusers.a $(OBJ)
-	ranlib $(LIB)/libusers.a
+	@ ar rcs $(LIB)/libusers.a $(OBJ)
+	@ ranlib $(LIB)/libusers.a
 
 clean:
-	rm $(LIB)/libusers.a users.o
+	@ rm $(LIB)/libusers.a users.o
