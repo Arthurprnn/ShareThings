@@ -18,14 +18,28 @@ typedef struct tm * Temps;
 
 /**
  * \fn Temps init_temps()
- * \brief Permettant d'initialiser un Temps.
+ * \brief \b Initialisateur d'un Temps.
  * \param Void Ne prend rien en paramètre. 
  * \return \b Temps La fonction retourne un \b Temps de type \b Temps.
  */
 
 Temps init_temps();
 
+/**
+ * \fn Temps creer_temps(time_t)
+ * \brief \b Constructeur d'un Temps. Cette fonction est l'inverse de \b creer_secondes_depuis_1970.
+ * \param time_t Temps qui est un nombre de secondes depuis le 1er Janvier 1970.
+ * \return \b Temps La fonction retourne un \b temps de type Temps.
+ */
+
 Temps creer_temps(time_t);
+
+/**
+ * \fn time_t creer_secondes_depuis_1970(Temps)
+ * \brief \b Constructeur d'un temps en secondes. Cette fonction est l'inverse de \b creer_temps.
+ * \param Temps Temps qui est une date.
+ * \return \b time_t La fonction retourne un \b temps en secondes depuis le 1er Janvier 1970.
+ */
 
 time_t creer_secondes_depuis_1970(Temps);
 

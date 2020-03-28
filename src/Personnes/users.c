@@ -130,3 +130,24 @@ void add_objet_dans_liste_objet(Personne p, Objet o) {
     set_liste_objetPersonne(p, new_liste);
     set_longueur_liste_objetPersonne(p, get_longueur_liste_objetPersonne(p)+1);
 }
+
+int creer_ID_personne() {
+    srand(time(NULL));
+    FILE *fichier = NULL;
+    int bon_ID = 0;
+
+    do {
+        int ID_temp = 2;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+
+        char nom[32]={0};
+	    sprintf(nom, "../../data/Users/%d.json", ID_temp);
+        fichier = fopen(nom, "r");
+        
+        bon_ID = ID_temp;
+    } while (fichier != NULL);
+    return bon_ID;
+}                                                   /*!< Tous les ID des objets commenceront par un 2. */

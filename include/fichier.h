@@ -9,6 +9,7 @@
 #include "objet.h"
 #include "users.h"
 #include "prets.h"
+#include "entrees.h"
 
 /**
  * \fn Objet lire_fichier_objet(char *)

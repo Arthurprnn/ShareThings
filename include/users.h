@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 #include "objet.h"
 
@@ -198,5 +199,14 @@ void set_element_liste_objet(int *, int, int);
  */
 
 void add_objet_dans_liste_objet(Personne, Objet);
+
+/**
+ * \fn int creer_ID_personne()
+ * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 2.
+ * \param void Ne prend rien en paramètre.
+ * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour une personne donc qui commence par 2.
+ */
+
+int creer_ID_personne();
 
 #endif

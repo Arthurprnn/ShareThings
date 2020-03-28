@@ -93,3 +93,18 @@ bool existe_objet(int ID_objet) {
     }
     return true;
 }
+
+int creer_ID_objet() {
+    srand(time(NULL));
+    int bon_ID = 0;
+    int ID_temp = 0;
+    while (existe_objet(ID_temp) || bon_ID == 0) {
+        ID_temp = 1;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+        bon_ID = ID_temp;
+    }
+    return bon_ID;
+}                                                                       /*!< Tous les ID des objets commenceront par un 1. */      

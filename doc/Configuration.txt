@@ -10,3 +10,13 @@ Tuto pour la configuration de doxywizard : https://axiomcafe.fr/tutoriel-documen
 
 Téléchargement de la librairie <json-c/json.h>: sudo apt install libjson-c-dev
 
+Téléchargement de la librairie <SDL.h>: sudo apt-get install libsdl2-dev
+
+Téléchargement de la librairie <SDL.h> version ttf: sudo apt-get install libsdl-ttf2.0-dev
+
+--------------------------------------------------------------------
+
+Infos utiles : 
+
+	- lancer un fichier.html avec terminal: x-www-browser <fichier.html>
+

@@ -1,24 +1,5 @@
 #include "../../include/entrees.h"
 
-void viderBuffer(){                                                      /*!< Permet de vider le buffer */
-    int c = 0;
-    while (c != '\n' && c != EOF){
-        c = getchar();
-    }
-}
-
-int getch(){                                                             /*!< Permet de recuperer un caractère rentré au clavier sans avoir à appuyer sur entrée. */
-    struct termios oldattr, newattr;
-    int ch;
-    tcgetattr( STDIN_FILENO, &oldattr );
-    newattr = oldattr;
-    newattr.c_lflag &= ~( ICANON | ECHO );
-    tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
-    ch = getchar();
-    tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
-    return ch;
-}
-
 char * creer_chaine_de_caracteres() {
     char temp[256];
     fgets(temp, sizeof(temp), stdin);
@@ -34,110 +15,117 @@ char * creer_chaine_de_caracteres() {
     return c;
 }
 
-char * creer_mot_de_passe(){
-    char mdp[32], ch;
-    printf("Veuillez saisir votre mot de passe : ");
-    int i=0;
-
-    do {
-        ch = getch();                                                   /*!< On récupere un caractère saisie, sans que l'itilisateur ait appuyé sur entrée. */
-        mdp[i] = ch;                                                    
-        ch = '*' ;                                                      /*!< On remplace le caractère saisie par une étoile.*/
-        printf("%c", ch);                                               /*!< Et on afiche l'étoile.*/
-        i++;
-    } while ((i<32) && (mdp[i-1] != '\n'));                             /*!< Tant que le mot de passe est inferieur à 32 et que l'on ne détecte pas que l'utilisateur appuie sur entrée. */
-
-    char *c = (char *)malloc(strlen(mdp)*sizeof(char));                 /*!< On réserve en mémoire une taille adapté à la longeur du mot de passe. */
-    for (int j=0; j<strlen(mdp); j++) {                                 
-        c[j]=mdp[j];
-    }
-    return c;
+void afficheMessageErreurSaisieString(char * caractSpec) {
+    int longueur = strlen(caractSpec)-1;
+        printf("\nWarning: String contains these characters which are not allowed [");
+        for (int i=0; i<longueur; i++) {
+            printf("%c ", caractSpec[i]);
+        }
+        printf("%c]\n", caractSpec[longueur]);
 }
 
-char * chiffrer_mot_de_passe(char * mdp ){
-    int nbsegment= strlen(mdp)/8+1;                                     /*!< Nombre de séquences nécessaire. */
-    char salt[]="lagrossemoula";                                        /*!< Permet d'orienter le chiffrement. */
-    char tempon[9] = "" ;
-    char * cryptmdp = (char *)malloc((nbsegment*13)*sizeof(char));      /*!< On réserve l'éspace nécessaire en mémoire pour le mot de passe chiffré. */ 
-    int j = 0;
 
-    for (int i=0; i<strlen(mdp); i++) {                                 /*!< On enlève le "\n" et on le remplace par "\0". */ 
-        if (mdp[i] == '\n') {
-            mdp[i] = '\0';
+bool isSpecialCaractere(char * c, char * caractSpec) {
+    bool c_isBon = true;
+    int j = 0;
+    int longueur_chaine = strlen(c);
+    for (int i=0; i<longueur_chaine; i++) {
+
+        /*!< On regarde s'il y a des caractères autres que : {[a-z],[A-Z],[0-9],[_]} */
+        if ((isalnum(c[i]) == false) && (isspace(c[i]) == false) && (c[i] != '_')) {
+            c_isBon = false;
+            caractSpec[j] = c[i];
+            j++;
         }
     }
+    return c_isBon;
+}
 
-    for (int i=0; i<strlen(mdp); i++){                                            /*!< On parcours le mot de passe en claire, on le chiffre par 8 caractères que l'on concatène dans cryptmdp. */
-        if ((i%8 == 0) && (i!=0)){                                      /*!< On parcours et récolte 8 caractères avant de les chiffrer, puis de recommencer.*/
-            j=0;
-            cryptmdp = strcat(cryptmdp, crypt(tempon, salt));            
+
+char * forcerNomUtilisateurCorrect() {
+    printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
+    char * chaine = creer_chaine_de_caracteres();
+    char * caractSpec = (char *)malloc(sizeof(char));
+
+    while (!isSpecialCaractere(chaine, caractSpec)) {
+        afficheMessageErreurSaisieString(caractSpec);
+        printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
+        chaine = "";
+        caractSpec = "";
+        chaine = creer_chaine_de_caracteres();
+    }
+
+    return chaine;
+}
+
+
+int lire_fin_ligne() {  
+    int cpt=0;
+    char c;
+    c=getchar();
+    while ((c!=EOF) && (c!='\n')) {
+        if (!isspace(c)) {
+            cpt+=1;
         }
-        tempon[j] = mdp[i];
-        j++;
-    } 
-    cryptmdp = strcat(cryptmdp, crypt(tempon, salt));                   /*!< Pour chiffrer les derniers caractères présent. */
-    return cryptmdp;                                                    /*!< On return le tableau contenant le mot de passe chiffré. */
-}   
+        c=getchar();
+    }
+    return cpt;
+}
 
-int creer_ID_objet() {
-    srand(time(NULL));
-    FILE *fichier = NULL;
-    int bon_ID = 0;
+void lit_format(char * format , void * a) {
+    int nbLus = 0;
+    int nbJetes = 0;
 
-    do {
-        int ID_temp = 1;
-        for (int i=0; i<7; i++) {
-            ID_temp *= 10;
-            ID_temp += rand()%(9-0)+0;
-        }
+    nbLus=scanf(format, a);
+    nbJetes=lire_fin_ligne();
+    while ((nbLus!=1) || (nbJetes!=0)) {
+        printf("Warning: Object entered isn't the one requested !\n");
+        nbLus=scanf(format, a);
+        nbJetes=lire_fin_ligne();
+    }
+}
 
-        char nom[32]={0};
-	    sprintf(nom, "../../data/Objets/%d.json", ID_temp);
-        fichier = fopen(nom, "r");
+int lire_entier(int *entier) {
+    lit_format("%d", entier);
+    return 0;
+}
 
-        bon_ID = ID_temp;
-    } while (fichier != NULL);
-    return bon_ID;
-}                                                                       /*!< Tous les ID des objets commenceront par un 1. */
+int lire_decimal(float *decimal) {
+    lit_format("%f", decimal);
+    return 0;
+}
 
-int creer_ID_personne() {
-    srand(time(NULL));
-    FILE *fichier = NULL;
-    int bon_ID = 0;
-
-    do {
-        int ID_temp = 2;
-        for (int i=0; i<7; i++) {
-            ID_temp *= 10;
-            ID_temp += rand()%(9-0)+0;
-        }
-
-        char nom[32]={0};
-	    sprintf(nom, "../../data/Users/%d.json", ID_temp);
-        fichier = fopen(nom, "r");
-        
-        bon_ID = ID_temp;
-    } while (fichier != NULL);
-    return bon_ID;
-}                                                                      /*!< Tous les ID des personnes commenceront par un 2. */
-
-int creer_ID_pret() {
-    srand(time(NULL));
-    FILE *fichier = NULL;
-    int bon_ID = 0;
-
-    do {
-        int ID_temp = 3;
-        for (int i=0; i<7; i++) {
-            ID_temp *= 10;
-            ID_temp += rand()%(9-0)+0;
-        }
-
-        char nom[32]={0};
-	    sprintf(nom, "../../data/Prets/%d.json", ID_temp);
-        fichier = fopen(nom, "r");
-        
-        bon_ID = ID_temp;
-    } while (fichier != NULL);
-    return bon_ID;
+int forcerIDCorrect() {
+    int type = 0;
+    printf("Type de l'ID à entrer (1 chiffre): Caractères autorisés {[1=objet,2=personne,3=pret]}\nEntier: ");
+    lire_entier(&type);
+    while ((type < 1) || (type > 3)) {
+        printf("Un entier à un seul chiffre est demandé: Caractères autorisés {[1=objet,2=personne,3=pret]}\nEntier: ");
+        lire_entier(&type);
+    }
+    
+    int ID = 0;
+    printf("ID à entrer (8 chiffres commençant par %d): Caractères autorisés {[0-9]}\nID : ", type);
+    lire_entier(&ID);
+    switch(type) {
+        case 1:
+            while ((ID < 10000000) || (ID > 19999999)) {
+                printf("Un entier commençant par 1 et à 8 chiffres est attendu: Caractères autorisés {[0-9]}\nID : ");
+                lire_entier(&ID);
+            }
+            break;
+        case 2:
+            while ((ID < 20000000) || (ID > 29999999)) {
+                printf("Un entier commençant par 2 et à 8 chiffres est attendu: Caractères autorisés {[0-9]}\nID : ");
+                lire_entier(&ID);
+            }
+            break;
+        case 3:
+            while ((ID < 30000000) || (ID > 39999999)) {
+                printf("Un entier commençant par 3 et à 8 chiffres est attendu: Caractères autorisés {[0-9]}\nID : ");
+                lire_entier(&ID);
+            }
+            break;
+    }
+    return ID;
 }

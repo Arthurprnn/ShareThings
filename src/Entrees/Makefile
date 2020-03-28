@@ -2,7 +2,7 @@
 CC= gcc
 CFLAGS=  -Wall -g 
 LIB= ../../lib
-LDFLAGS= -lm -lentrees -lcrypt
+LDFLAGS= -lm -lentrees
 INC= ../../include
 EXEC= entrees.exe
 SRC= main_entrees.c

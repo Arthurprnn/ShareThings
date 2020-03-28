@@ -47,3 +47,13 @@ On a rectifié quelques trucs.
 Tout d'abord on peut maintenant ajouter des objets dans la liste d'objets d'une personne.
 Puis les générateurs d'ID vérifient maintenant si l'ID n'existe pas déjà avant d'en créer un.
 
+-Samedi 28 Mars 2020 14:38:06 :
+Beaucoup de choses ont changé depuis la dernière fois.
+Tout d'abord, nous avons créer un répertoire Administration, qui convenait plus au fonctions qui étaient dans Entrées.
+Donc plusieurs fonctions de Entrées ont migré vers le nouveau répertoire. Nous avons alors pu mieux structurer Entrées avec de nouvelles fonctions qui sont réellement des entrées en liaison avec l'utilisateur.
+Dans Administration, une nouvelle structure est apparue, la structure Compte qui permet de stocker un compte d'utilisateur.
+Cela va permettre d'avancer grandement dans ce projet car ça va permettre de commencer à voir apparaitre notre main.
+De plus, on se penche beaucoup sur ce qui va être de l'interface graphique qui est le plus gros objectif, beaucoup de problèmes apparaissent à propos de la librairie SDL.
+On doit encore revoir pas mal de choses vis à vis des fonctions restantes.
+Le main va permettre de nous éclaircir la dessus.
+

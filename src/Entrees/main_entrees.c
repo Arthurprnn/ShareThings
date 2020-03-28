@@ -1,24 +1,18 @@
 #include "../../include/entrees.h"
 
-int main(int argc, char **argv) {
-
-    int ID = creer_ID_objet();
-    printf("Objet : %d\n", ID);
-
-    ID = creer_ID_personne();
-    printf("Personne : %d\n", ID);
-
-    ID = creer_ID_pret();
-    printf("Prêt : %d\n", ID);
+int main(int argc, char *argv[]) {
 
     /*
-    char * ch;
-    char * mdpcrypt;
-    ch = creer_mot_de_passe();
-    printf("\n");
-    mdpcrypt = chiffrer_mot_de_passe(ch);
-    printf("%s\n", mdpcrypt);
+    char * chaine = forcerNomUtilisateurCorrect();
+    printf("Chaine = \"%s\"\n", chaine);
+
+    printf("Compte exist : %d\n", isCompteExist(chaine));
+    printf("True = %d\n", true);
+    printf("False = %d\n", false);
     */
+
+    int x = forcerIDCorrect();
+    printf("%d\n", x);
 
     return 0;
 }

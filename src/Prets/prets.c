@@ -106,3 +106,25 @@ void set_demandeurPret(Pret pret, int ID_demandeur) {
 void set_IDPret(Pret pret, int ID_pret) {
     pret->ID_pret = ID_pret;
 }
+
+
+int creer_ID_pret() {
+    srand(time(NULL));
+    FILE *fichier = NULL;
+    int bon_ID = 0;
+
+    do {
+        int ID_temp = 3;
+        for (int i=0; i<7; i++) {
+            ID_temp *= 10;
+            ID_temp += rand()%(9-0)+0;
+        }
+
+        char nom[32]={0};
+	    sprintf(nom, "../../data/Prets/%d.json", ID_temp);
+        fichier = fopen(nom, "r");
+        
+        bon_ID = ID_temp;
+    } while (fichier != NULL);
+    return bon_ID;
+}                                                                    /*!< Tous les ID des objets commenceront par un 3. */

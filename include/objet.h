@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 #include "entrees.h"
 
 /**
@@ -130,6 +131,22 @@ void set_ID_proprietaireObjet(Objet, int);
 
 void set_delai_pretObjet(Objet, int);
 
+/**
+ * \fn bool existe_objet(int)
+ * \brief Permet de \b vérifier si l'ID de l'objet existe déjà.
+ * \param int Prend l'ID à vérifier.
+ * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
+ */
+
 bool existe_objet(int);
+
+/**
+ * \fn int creer_ID_objet()
+ * \brief Permet de \b créer un \b ID de \b 8 chiffres \b commençant par un \b 1.
+ * \param void Ne prend rien en paramètre.
+ * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un objet donc qui commence par 1.
+ */
+
+int creer_ID_objet();
 
 #endif

@@ -1,35 +1,11 @@
 #ifndef __ENTREES_H__
 #define __ENTREES_H__
-#define _XOPEN_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <time.h>
-#include <termios.h>
-#include <unistd.h>
-#include <sys/ioctl.h>
-#include <crypt.h>
-
-
-/**
- * \fn void viderBuffer()
- * \brief Vide le \b buffer.
- * \param void Ne prend rien en paramètre.
- * \return \b Void La fonction a vidé le \b buffer.
- */
-
-void viderBuffer();
-
-/**
- * \fn int getch()
- * \brief La fonction \b getch() est l'abréviation de \b getchar qui permet de lire un caractère ou une touche au clavier. Cette fonction est \b bloquante jusqu'à ce que l'utilisateur appuie sur une touche. Le caractère n'est \b pas \b affiché \b à \b l'écran.
- * \param void Ne prend rien en paramètre.
- * \return \b int La fonction retourne l'encodage du caractère récupéré.
- */
-
-int getch();
+#include <ctype.h>
 
 /**
  * \fn char * creer_chaine_de_caracteres()
@@ -41,48 +17,77 @@ int getch();
 char * creer_chaine_de_caracteres();
 
 /**
- * \fn char * creer_mot_de_passe()
- * \brief Permet de \b créer un \b mot \b de \b passe \b dynamiquement en \b remplaçant les \b caractères \b saisis par le caractère \b étoile.
- * \param void Ne prend rien en paramètre.
- * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractères.
+ * \fn void afficheMessageErreurSaisieString(char *)
+ * \brief La fonction \b affiche un message d'erreur pour une chaine de caractères.
+ * \param char* Prend une chaine de caractères en paramètre qui contient tous les caractères qu'on ne voulait pas et les affiche à l'écran.
+ * \return \b void La fonction ne renvoie rien. Elle affiche seulement.
  */
 
-char * creer_mot_de_passe();
+void afficheMessageErreurSaisieString(char *);
 
 /**
- * \fn char * chiffrer_mot_de_passe(char * mdp )
- * \brief Permet de \b chiffrer un \b mot \b de \b passe en utilisant la bibliothèque \a <crypt.h>. 
- * \param char* Prend comme paramètre le char* retourné par: \b char* creer_mot_de_passe(). 
- * \return \b char* La fonction rend un \b char* qui est une chaine de caractère \b chiffrée.
+ * \fn bool isSpecialCaractere(char *, char *)
+ * \brief La fonction \b test s'il y a des caractères spéciaux (le seul accepté est \b _ ) dans une chaine de caractères pouvant contenir des espaces.
+ * \param char* Prend une chaine de caractères en paramètre qui est celle qu'on test.
+ * \param char* Prend une chaine de caractères en paramètre qui va contenir tous les caractères qu'on ne veut pas lors du test.
+ * \return \b bool La fonction renvoie un \b booléen, \b true si il n'y a pas de caractères spéciaux, \b false sinon.
  */
 
-char * chiffrer_mot_de_passe(char * mdp );
+bool isSpecialCaractere(char *, char *);
 
 /**
- * \fn int creer_ID_objet()
- * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 1.
- * \param void Ne prend rien en paramètre.
- * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un objet donc qui commence par 1.
+ * \fn char * forcerNomUtilisateurCorrect()
+ * \brief La fonction \b force l'utilisateur à entrer un nom d'utilisateur \b correct.
+ * \param void La fonctione ne prend rien en paramètre.
+ * \return \b char* La fonction renvoie une \b chaine \b de \b caractères qui est le nom d'utilisateur correct.
  */
 
-int creer_ID_objet();
+char * forcerNomUtilisateurCorrect();
 
 /**
- * \fn int creer_ID_personne()
- * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 2.
- * \param void Ne prend rien en paramètre.
- * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour une personne donc qui commence par 2.
+ * \fn int lire_fin_ligne()
+ * \brief La fonction permet de voir si un utilisateur a donné trop d'élément lors d'une saisie d'une chaine de caractères.
+ * \param void La fonctione ne prend rien en paramètre.
+ * \return \b int La fonction \b renvoie le nombre de caractères jetés lors d'une saisie par l'utilisateur.
  */
 
-int creer_ID_personne();
+int lire_fin_ligne();
 
 /**
- * \fn int creer_ID_pret()
- * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 3.
- * \param void Ne prend rien en paramètre.
- * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un prêt donc qui commence par 3.
+ * \fn void lit_format(char *, void *)
+ * \brief La fonction permet de lire le format que l'on passe en paramètres à l'aide d'un \b scanf, si il y a erreur lors de la saisie, l'utilisateur est obligé de recommencer.
+ * \param char* Ce paramètre est le format de la lecture, ex: %d, %f, %lf...
+ * \param void* Ce paramètre est l'adresse de la variable où on va stocker la saisie de l'utilisateur. ( \b void car on ne sait pas le type de l'objet qui va être saisie)
+ * \return \b void La fonction ne renvoie rien, elle stock juste la saisie dans le 2ème paramètre.
  */
 
-int creer_ID_pret();
+void lit_format(char *, void *);
+
+/**
+ * \fn int lire_entier(int *)
+ * \brief La fonction utilise la fonction \b lit_format, qui va donner automatiquement le format \b %d au scanf.
+ * \param int* Adresse où on doit stocker la valeur entrée par l'utilisateur.
+ * \return \b int La fonction renvoie \b 0 si la lecture s'est bien déroulée.
+ */
+
+int lire_entier(int *);
+
+/**
+ * \fn int lire_decimal(float *)
+ * \brief La fonction utilise la fonction \b lit_format, qui va donner automatiquement le format \b %f au scanf.
+ * \param float* Adresse où on doit stocker la valeur entrée par l'utilisateur.
+ * \return \b int La fonction renvoie \b 0 si la lecture s'est bien déroulée.
+ */
+
+int lire_decimal(float *);
+
+/**
+ * \fn int forcerIDCorrect()
+ * \brief La fonction \b force l'utilisateur à entrer un \b ID d'objet, de personne ou de prêt correct. (i.e. l'ID fait 8 chiffres et commence par 1, 2 ou 3)
+ * \param void La fonction ne prend rien en paramètre.
+ * \return \b int La fonction renvoie l'ID correct entré par l'utilisateur.
+ */
+
+int forcerIDCorrect();
 
 #endif
