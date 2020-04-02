@@ -31,7 +31,7 @@ Pret creer_pret(int ID_demandeur) {
     while (rester == true) {
         printf("Entrez l'ID de l'objet que vous voulez emprunter : ");
         lire_entier(&ID_objet);
-        if (isObjetExist(ID_objet) == true) {
+        if (isPretExist(ID_objet) == true) {
             rester = false;
         } else {
             printf("Attention: l'ID \"%d\" n'existe pas ! Veuillez saisir un ID d'objet existant.\n", ID_objet);
