@@ -10,6 +10,8 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <crypt.h>
+#include "entrees.h"
+#include "users.h"
 
 
 /**
@@ -30,6 +32,8 @@ typedef struct s_compte * Compte;
  */
 
 Compte init_compte();
+
+int creer_compte(Compte, Personne);
 
 /**
  * \fn char* get_nom_utilisateur(Compte)
@@ -117,12 +121,25 @@ int getch();
 char * creer_mot_de_passe();
 
 /**
- * \fn char * chiffrer_mot_de_passe(char * mdp )
+ * \fn char * chiffrer_mot_de_passe(char *)
  * \brief Permet de \b chiffrer un \b mot \b de \b passe en utilisant la bibliothèque \a <crypt.h>. 
  * \param char* Prend comme paramètre le char* retourné par: \b char* creer_mot_de_passe(). 
  * \return \b char* La fonction rend un \b char* qui est une chaine de caractère \b chiffrée.
  */
 
-char * chiffrer_mot_de_passe(char * mdp );
+char * chiffrer_mot_de_passe(char *);
+
+/**
+ * \fn bool isCompteExist(char *)
+ * \brief Permet de \b vérifier si le nom de l'utilisateur existe déjà.
+ * \param char* Prend le nom de l'utilisateur à vérifier.
+ * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
+ */
+
+bool isCompteExist(char *);
+
+Compte lire_fichier_compte(char *);
+
+void creer_fichier_compte(Compte);
 
 #endif

@@ -90,4 +90,8 @@ int lire_decimal(float *);
 
 int forcerIDCorrect();
 
+bool isSur();
+
+bool isMemeChaine(char *, char *);
+
 #endif

@@ -129,3 +129,27 @@ int forcerIDCorrect() {
     }
     return ID;
 }
+
+bool isSur() {
+    int sur = lire_entier(&sur);
+    switch(sur) {
+        case 0:
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool isMemeChaine(char * chaine_1, char * chaine_2) {
+    if (strlen(chaine_1) != strlen(chaine_2)) {
+        return false;
+    } else {
+        bool is_bon = true;
+        for (int i=0; i<strlen(chaine_1); i++) {
+            if (chaine_1[i] != chaine_2[i]) {
+                is_bon = false;
+            }
+        }
+        return is_bon;
+    }
+}

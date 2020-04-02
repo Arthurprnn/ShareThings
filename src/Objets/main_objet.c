@@ -2,8 +2,8 @@
 
 int main(int argc, char *argv[]) {
     
-    int ID = creer_ID_objet();
-    printf("ID : %d\n", ID);
+    Objet o = creer_objet(25570361);
+    creer_fichier_objet(o);
 
     return 0;
 }

@@ -5,7 +5,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <json-c/json.h>
+#include <string.h>
 
+#include "entrees.h"
 #include "objet.h"
 
 /**
@@ -208,5 +211,32 @@ void add_objet_dans_liste_objet(Personne, Objet);
  */
 
 int creer_ID_personne();
+
+/**
+ * \fn bool isPersonneExist(int)
+ * \brief Permet de \b vérifier si l'ID de la personne existe déjà.
+ * \param int Prend l'ID à vérifier.
+ * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
+ */
+
+bool isPersonneExist(int);
+
+/**
+ * \fn Personne lire_fichier_personne(char *)
+ * \brief Cette fonction prend les \b données d'une \a personne d'un fichier au format \b JSON et les sauvegarde dans une Personne.
+ * \param char* Prend en paramètre une chaine de caractère qui est le \b lien d'un fichier \b JSON .
+ * \return \b Personne La fonction renvoie une \b personne avec les données du fichier JSON qui y sont stockées.
+ */
+
+Personne lire_fichier_personne(char *);
+
+/**
+ * \fn void creer_fichier_personne(Personne)
+ * \brief Cette fonction prend les \b données d'une \a personne et les sauvegarde dans un fichier au format \b JSON au nom de l'ID de la personne.
+ * \param Personne Prend en paramètre une \a personne qui sera sauvegardée dans un fichier \b JSON .
+ * \return \b void La fonction ne renvoie rien, elle sauvegarde juste.
+ */
+
+void creer_fichier_personne(Personne);
 
 #endif

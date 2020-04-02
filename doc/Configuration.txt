@@ -12,7 +12,7 @@ Téléchargement de la librairie <json-c/json.h>: sudo apt install libjson-c-dev
 
 Téléchargement de la librairie <SDL.h>: sudo apt-get install libsdl2-dev
 
-Téléchargement de la librairie <SDL.h> version ttf: sudo apt-get install libsdl-ttf2.0-dev
+Téléchargement de la librairie <SDL.h> version ttf: sudo apt-get install libsdl2-ttf-dev
 
 --------------------------------------------------------------------
 

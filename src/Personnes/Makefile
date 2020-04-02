@@ -2,7 +2,7 @@
 CC= gcc
 CFLAGS=  -Wall -g 
 LIB= ../../lib
-LDFLAGS= -lm -lusers -lentrees -lcrypt -lobjet
+LDFLAGS= -lm -lusers -lentrees -lcrypt -lobjet -ljson-c
 INC= ../../include
 EXEC= users.exe
 SRC= main_users.c

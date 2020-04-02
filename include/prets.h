@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <json-c/json.h>
+#include <string.h>
 #include "temps.h"
 #include "users.h"
 #include "objet.h"
@@ -143,5 +144,32 @@ void set_IDPret(Pret, int);
  */
 
 int creer_ID_pret();
+
+/**
+ * \fn bool isPretExist(int)
+ * \brief Permet de \b vérifier si l'ID du prêt existe déjà.
+ * \param int Prend l'ID à vérifier.
+ * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
+ */
+
+bool isPretExist(int);
+
+/**
+ * \fn Pret lire_fichier_pret(char *)
+ * \brief Cette fonction prend les \b données d'un \a prêt d'un fichier au format \b JSON et les sauvegarde dans un Pret.
+ * \param char* Prend en paramètre une chaine de caractère qui est le \b lien d'un fichier \b JSON .
+ * \return \b Pret La fonction renvoie une \b prêt avec les données du fichier JSON qui y sont stockées.
+ */
+
+Pret lire_fichier_pret(char *);
+
+/**
+ * \fn void creer_fichier_pret(Pret)
+ * \brief Cette fonction prend les \b données d'un \a prêt et les sauvegarde dans un fichier au format \b JSON au nom de l'ID du prêt.
+ * \param Pret Prend en paramètre un \a prêt qui sera sauvegardé dans un fichier \b JSON .
+ * \return \b void La fonction ne renvoie rien, elle sauvegarde juste.
+ */
+
+void creer_fichier_pret(Pret);
 
 #endif

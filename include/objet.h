@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <json-c/json.h>
+#include <string.h>
+
 #include "entrees.h"
 
 /**
@@ -54,6 +57,8 @@ char * get_nomObjet(Objet);
 
 char * get_descriptionObjet(Objet);
 
+char * get_typeObjet(Objet);
+
 /**
  * \fn int get_ID_objetObjet(Objet)
  * \brief \b Getter permettant d'obtenir l'ID de l'objet.
@@ -101,6 +106,8 @@ void set_nomObjet(Objet, char *);
 
 void set_descriptionObjet(Objet, char *);
 
+void set_typeObjet(Objet, char *);
+
 /**
  * \fn void set_ID_objetObjet(Objet, int)
  * \brief \b Setter permettant de fixer le nom de l'objet.
@@ -131,22 +138,43 @@ void set_ID_proprietaireObjet(Objet, int);
 
 void set_delai_pretObjet(Objet, int);
 
+char * BonType(char *);
+
 /**
- * \fn bool existe_objet(int)
+ * \fn bool isObjetExist(int, char *)
  * \brief Permet de \b vérifier si l'ID de l'objet existe déjà.
  * \param int Prend l'ID à vérifier.
+ * \param char* Prend le type de l'objet, pour rechercher dans le bon répertoire de data.
  * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
  */
 
-bool existe_objet(int);
+bool isObjetExist(int, char *);
 
 /**
- * \fn int creer_ID_objet()
+ * \fn int creer_ID_objet(char *)
  * \brief Permet de \b créer un \b ID de \b 8 chiffres \b commençant par un \b 1.
- * \param void Ne prend rien en paramètre.
+ * \param char* La fonction prend en paramètre le type de l'objet.
  * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un objet donc qui commence par 1.
  */
 
-int creer_ID_objet();
+int creer_ID_objet(char *);
+
+/**
+ * \fn Objet lire_fichier_objet(char *)
+ * \brief Cette fonction prend les \b données d'un \a objet d'un fichier au format \b JSON et les sauvegarde dans un Objet.
+ * \param char* Prend en paramètre une chaine de caractère qui est le \b lien d'un fichier \b JSON .
+ * \return \b Objet La fonction renvoie un \b objet avec les données du fichier JSON qui y sont stockées.
+ */
+
+Objet lire_fichier_objet(char *);
+
+/**
+ * \fn void creer_fichier_objet(Objet)
+ * \brief Cette fonction prend les \b données d'un \a objet et les sauvegarde dans un fichier au format \b JSON au nom de l'ID de l'objet.
+ * \param Objet Prend en paramètre un \a objet qui sera sauvegardé dans un fichier \b JSON .
+ * \return \b void La fonction ne renvoie rien, elle sauvegarde juste.
+ */
+
+void creer_fichier_objet(Objet);
 
 #endif

@@ -1,0 +1,8 @@
+{
+	"nom": "Hamburger",
+	"description": "Hamburger au paté de crabe du Crabe Croustillant.",
+	"type": "Aliment",
+	"ID_obj": 10554217,
+	"ID_prop": 25570361,
+	"delai_de_pret": 9000
+}
