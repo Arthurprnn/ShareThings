@@ -33,6 +33,14 @@ typedef struct s_compte * Compte;
 
 Compte init_compte();
 
+/**
+ * \fn int creer_compte(Compte, Personne)
+ * \brief \b Constructeur d'un compte'.
+ * \param Compte La fonction prend en paramètre un \b compte qui sera le compte créé.
+ * \param Personne La fonction prend en paramètre une \b personne qui sera celle attachée au compte.
+ * \return \b int La fonction retourne un entier 0 si tous fonctionne.
+ */
+
 int creer_compte(Compte, Personne);
 
 /**

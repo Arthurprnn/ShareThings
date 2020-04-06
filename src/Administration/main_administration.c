@@ -28,10 +28,12 @@ int main(int argc, char **argv) {
     creer_fichier_compte(c);
     */
 
-    char * pseudo = forcerNomUtilisateurCorrect();
-    char lien[64];
-    sprintf(lien, "../../data/Comptes/%s.json", pseudo);
-    Compte c = lire_fichier_compte(lien);
+    Personne p = init_personne();
+    Compte c = init_compte();
+    creer_compte(c, p);
+
+    creer_fichier_compte(c);
+    creer_fichier_personne(p);
 
     printf("Pseudo : %s\nMdp : %s\nID : %d\n", get_nom_utilisateur(c), get_mdp(c), get_ID_personne(c));
 

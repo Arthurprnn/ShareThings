@@ -1,17 +1,16 @@
 #Main
 CC= gcc
-CFLAGS=  -Wall -g 
+CFLAGS= -Wall -g `sdl2-config --cflags --libs`
 LIB= ../../lib
-LDFLAGS= -lm -lSDL2 -ljson-c -lcrypt -ladministration -lentrees -lobjet -lusers -ltemps -lprets 
+LDFLAGS= -lm -lSDL2 -ladministration -lusers -lobjet -lprets -ltemps -lentrees -ljson-c -lcrypt
 INC= ../../include
 EXEC= ShareThings.exe
 SRC= main.c
-OBJ= $(SRC:.c=.o)
 
 all : $(EXEC)
 
 $(EXEC): $(SRC)
-	@ $(CC) `sdl2-config --cflags --libs` $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
+	@ $(CC) $< -o $@ $(CFLAGS) $(LDFLAGS) -I $(INC) -L $(LIB)
 
 clean:
 	@ rm *.exe

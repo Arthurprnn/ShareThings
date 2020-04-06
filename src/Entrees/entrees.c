@@ -4,14 +4,12 @@ char * creer_chaine_de_caracteres() {
     char temp[256];
     fgets(temp, sizeof(temp), stdin);
     for (int i=0; i<strlen(temp); i++) {
-        if (temp[i] == '\n') {
+        if ((temp[i] == '\n') || (temp[i] == '\r')) {
             temp[i] = '\0';
         }
     }                                                                   /*!< Permet d'enlever le '\n' à la fin de la chaine et le remplace par '\0'. */
     char *c = (char *)malloc(strlen(temp)*sizeof(char));
-    for (int i=0; i<strlen(temp); i++) {
-        c[i]=temp[i];
-    }
+    strcpy(c, temp);
     return c;
 }
 
@@ -44,7 +42,8 @@ bool isSpecialCaractere(char * c, char * caractSpec) {
 
 char * forcerNomUtilisateurCorrect() {
     printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
-    char * chaine = creer_chaine_de_caracteres();
+    char * chaine = (char*)malloc(sizeof(char));
+    chaine = creer_chaine_de_caracteres();
     char * caractSpec = (char *)malloc(sizeof(char));
 
     while (!isSpecialCaractere(chaine, caractSpec)) {

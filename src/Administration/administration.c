@@ -24,7 +24,8 @@ Compte init_compte() {
 
 int creer_compte(Compte c, Personne p) {
     printf("Bienvenue sur ShareThings !\n\n");
-    char * nom_utilisateur = forcerNomUtilisateurCorrect();
+    char * nom_utilisateur = (char*)malloc(sizeof(char));
+    nom_utilisateur = forcerNomUtilisateurCorrect();
     while (isCompteExist(nom_utilisateur)) {
         printf("Désolé, ce nom d'utilisateur est déjà pris, veuillez en choisir un autre :\n");
         nom_utilisateur = "";
@@ -32,10 +33,10 @@ int creer_compte(Compte c, Personne p) {
     }
 
     printf("\n");
-    char * mdp = (char*)malloc(sizeof(char));
+    char * mdp = (char*)malloc(32*sizeof(char));
     mdp = creer_mot_de_passe();
     printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
-    char * verif_mdp = (char*)malloc(sizeof(char));
+    char * verif_mdp = (char*)malloc(32*sizeof(char));
     verif_mdp = creer_mot_de_passe();
     while (isMemeChaine(mdp, verif_mdp) == false) {
         printf("\nErreur: vous n'avez pas entré les même mots de passe !\n\nEssayez à nouveau:\n\n");
@@ -125,9 +126,7 @@ char * creer_mot_de_passe(){
     } while ((i<32) && (mdp[i-1] != '\n'));                             /*!< Tant que le mot de passe est inférieur à 32 et que l'on ne détecte pas que l'utilisateur appuie sur entrée. */
 
     char *c = (char *)malloc(strlen(mdp)*sizeof(char));                 /*!< On réserve en mémoire une taille adaptée à la longueur du mot de passe. */
-    for (int j=0; j<strlen(mdp); j++) {                                 
-        c[j]=mdp[j];
-    }
+    strcpy(c, mdp);
     return c;
 }
 
@@ -139,7 +138,7 @@ char * chiffrer_mot_de_passe(char * mdp ){
     int j = 0;
 
     for (int i=0; i<strlen(mdp); i++) {                                 /*!< On enlève le "\n" et on le remplace par "\0". */ 
-        if (mdp[i] == '\n') {
+        if ((mdp[i] == '\n') || (mdp[i] == '\r')) {
             mdp[i] = '\0';
         }
     }
@@ -152,7 +151,7 @@ char * chiffrer_mot_de_passe(char * mdp ){
         tempon[j] = mdp[i];
         j++;
     } 
-    cryptmdp = strcat(cryptmdp, crypt(tempon, salt));                   /*!< Pour chiffrer les derniers caractères présent. */
+    strcpy(cryptmdp, strcat(cryptmdp, crypt(tempon, salt)));                   /*!< Pour chiffrer les derniers caractères présent. */
     return cryptmdp;                                                    /*!< On return le tableau contenant le mot de passe chiffré. */
 }
 

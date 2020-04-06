@@ -20,15 +20,7 @@
 
 typedef struct s_objet * Objet;
 
-
-/**
- * \fn Objet init_objet()
- * \brief \b Initialisateur de l'objet.
- * \param void Ne prend rien en paramètre.
- * \return \b Objet La fonction a initialisé un \b objet avant de le retourner.
- */
-
-Objet init_objet();
+void init_objet(Objet);
 
 /**
  * \fn Objet creer_objet(int)

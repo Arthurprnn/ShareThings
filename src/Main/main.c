@@ -1,4 +1,39 @@
-#include "../../include/main.h"
+#include <SDL.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <crypt.h>
+#include <json-c/json.h>
+#include <string.h>
+#include <ctype.h>
+#include "../../include/administration.h"
+#include "../../include/entrees.h"
+#include "../../include/objet.h"
+#include "../../include/prets.h"
+#include "../../include/temps.h"
+#include "../../include/users.h"
+
+#define LARGEUR_FENETRE 1260
+#define HAUTEUR_FENETRE 720
+
+
+
+//Permet d'afficher un message d'erreur, et de quitter SDL
+void SDL_ExitWithError(const char *message)
+{
+    SDL_Log("ERREUR : %s > %s\n", message, SDL_GetError());
+    SDL_Quit();
+    exit(EXIT_FAILURE);
+}
+
+void Blit(SDL_Surface *image, SDL_Surface *screen, SDL_Window *window)
+{
+    SDL_BlitSurface(image, NULL, screen, NULL);
+    SDL_FreeSurface(image);
+    SDL_UpdateWindowSurface(window); 
+}
+
+
 
 int main(int argc, char* argv[])
 {
@@ -150,16 +185,13 @@ int main(int argc, char* argv[])
                                         SDL_ExitWithError("Impossible de charger l'image ");
                                     }
                                     Blit(image, screen, window);
+                                    
+                                    Objet o = creer_objet(25570361);
+                                    creer_fichier_objet(o);
 
-
-                                    Personne p = init_personne();
-                                    Compte c = init_compte();
-                                    creer_compte(c,p);
-                                    creer_fichier_compte(c);
-                                    creer_fichier_personne(p);
                                     continuer = false;
                                     isLogin = true;
-                                    isAdmin = false;                                    
+                                    isAdmin = false;                                  
                                 }                   
                                 continue;
 
@@ -234,20 +266,4 @@ int main(int argc, char* argv[])
     SDL_DestroyWindow(window);
     SDL_Quit();
     return EXIT_SUCCESS;
-}
-
-
-//Permet d'afficher un message d'erreur, et de quitter SDL
-void SDL_ExitWithError(const char *message)
-{
-    SDL_Log("ERREUR : %s > %s\n", message, SDL_GetError());
-    SDL_Quit();
-    exit(EXIT_FAILURE);
-}
-
-void Blit(SDL_Surface *image, SDL_Surface *screen, SDL_Window *window)
-{
-    SDL_BlitSurface(image, NULL, screen, NULL);
-    SDL_FreeSurface(image);
-    SDL_UpdateWindowSurface(window); 
 }
