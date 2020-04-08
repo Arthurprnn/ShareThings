@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence de la structure s_pret</title>
+<title>ShareThings: Référence de la structure s_pret</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -74,10 +74,12 @@ Champs de données</h2></td></tr>
 <tr class="separator:a58ffb3e9d8dbf3cb358bb1a8ef165b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31f4b6b6ed5949ce560fdf1b5ab05b6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#a31f4b6b6ed5949ce560fdf1b5ab05b6a">fin</a></td></tr>
 <tr class="separator:a31f4b6b6ed5949ce560fdf1b5ab05b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae52164e7d5f2e8f17c1c52c6f2c5e421"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#ae52164e7d5f2e8f17c1c52c6f2c5e421">objet</a></td></tr>
-<tr class="separator:ae52164e7d5f2e8f17c1c52c6f2c5e421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2b87a7d06d52336520826169f190da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_personne.html">Personne</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#a3a2b87a7d06d52336520826169f190da">demandeur</a></td></tr>
-<tr class="separator:a3a2b87a7d06d52336520826169f190da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0bd138c62adb004cb5b12c9e6c7290"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#a8c0bd138c62adb004cb5b12c9e6c7290">ID_objet</a></td></tr>
+<tr class="separator:a8c0bd138c62adb004cb5b12c9e6c7290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ea2c24f04d0c4a5ff5012df34af8bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#a63ea2c24f04d0c4a5ff5012df34af8bc">ID_demandeur</a></td></tr>
+<tr class="separator:a63ea2c24f04d0c4a5ff5012df34af8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff173b6a043c80f6b562f8e7fde93bb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__pret.html#aff173b6a043c80f6b562f8e7fde93bb8">ID_pret</a></td></tr>
+<tr class="separator:aff173b6a043c80f6b562f8e7fde93bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Structure nécessaire pour créer un prêt. Elle va servir à prendre les données utiles pour manipuler les objets prétées entre utilisateurs. </p>
@@ -100,22 +102,6 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a2b87a7d06d52336520826169f190da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a2b87a7d06d52336520826169f190da">&#9670;&nbsp;</a></span>demandeur</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_personne.html">Personne</a> demandeur</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00012">12</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
-
-</div>
-</div>
 <a id="a31f4b6b6ed5949ce560fdf1b5ab05b6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31f4b6b6ed5949ce560fdf1b5ab05b6a">&#9670;&nbsp;</a></span>fin</h2>
 
@@ -132,19 +118,51 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="ae52164e7d5f2e8f17c1c52c6f2c5e421"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae52164e7d5f2e8f17c1c52c6f2c5e421">&#9670;&nbsp;</a></span>objet</h2>
+<a id="a63ea2c24f04d0c4a5ff5012df34af8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ea2c24f04d0c4a5ff5012df34af8bc">&#9670;&nbsp;</a></span>ID_demandeur</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_objet.html">Objet</a> objet</td>
+          <td class="memname">int ID_demandeur</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00012">12</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a8c0bd138c62adb004cb5b12c9e6c7290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0bd138c62adb004cb5b12c9e6c7290">&#9670;&nbsp;</a></span>ID_objet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ID_objet</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00011">11</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="aff173b6a043c80f6b562f8e7fde93bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff173b6a043c80f6b562f8e7fde93bb8">&#9670;&nbsp;</a></span>ID_pret</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ID_pret</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00013">13</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>

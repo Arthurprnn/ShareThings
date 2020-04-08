@@ -90,7 +90,22 @@ int lire_decimal(float *);
 
 int forcerIDCorrect();
 
+/**
+ * \fn bool isSur()
+ * \brief La fonction \b demande à l'utilisateur un oui = 0 sinon non.
+ * \param void La fonction ne prend rien en paramètre.
+ * \return \b bool La fonction renvoie true ou false.
+ */
+
 bool isSur();
+
+/**
+ * \fn bool isMemeChaine(char *, char *)
+ * \brief La fonction \b compare si deux chaines de caractères sont les mêmes.
+ * \param char* Prend la première chaine à comparer.
+ * \param char* Prend la deuxième chaine à comparer.
+ * \return \b bool La fonction renvoie true si ce sont les mêmes chaines sinon false.
+ */
 
 bool isMemeChaine(char *, char *);
 

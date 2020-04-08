@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['s_5fobjet',['s_objet',['../structs__objet.html',1,'']]],
-  ['s_5fpersonne',['s_personne',['../structs__personne.html',1,'']]],
-  ['s_5fpret',['s_pret',['../structs__pret.html',1,'']]]
+  ['personne',['Personne',['../struct_personne.html',1,'']]],
+  ['pret',['Pret',['../struct_pret.html',1,'']]]
 ];

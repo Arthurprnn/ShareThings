@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Temps/temps.c</title>
+<title>ShareThings: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Temps/temps.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -78,8 +78,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a4d2b0bc253f20f42eda677a84584851f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temps_8c.html#a4d2b0bc253f20f42eda677a84584851f">init_temps</a> ()</td></tr>
-<tr class="memdesc:a4d2b0bc253f20f42eda677a84584851f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permettant d'initialiser un <a class="el" href="struct_temps.html">Temps</a>.  <a href="#a4d2b0bc253f20f42eda677a84584851f">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a4d2b0bc253f20f42eda677a84584851f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Initialisateur</b> d'un <a class="el" href="struct_temps.html">Temps</a>.  <a href="#a4d2b0bc253f20f42eda677a84584851f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4d2b0bc253f20f42eda677a84584851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f22c05d213fc6ac253e12f76f85551"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temps_8c.html#ae9f22c05d213fc6ac253e12f76f85551">creer_temps</a> (time_t temps)</td></tr>
+<tr class="memdesc:ae9f22c05d213fc6ac253e12f76f85551"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> d'un <a class="el" href="struct_temps.html">Temps</a>. Cette fonction est l'inverse de <b>creer_secondes_depuis_1970</b>.  <a href="#ae9f22c05d213fc6ac253e12f76f85551">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae9f22c05d213fc6ac253e12f76f85551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cc668f739a09df6fc04c0a107a441f"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temps_8c.html#a14cc668f739a09df6fc04c0a107a441f">creer_secondes_depuis_1970</a> (<a class="el" href="struct_temps.html">Temps</a> temps)</td></tr>
+<tr class="memdesc:a14cc668f739a09df6fc04c0a107a441f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> d'un temps en secondes. Cette fonction est l'inverse de <b>creer_temps</b>.  <a href="#a14cc668f739a09df6fc04c0a107a441f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14cc668f739a09df6fc04c0a107a441f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9c2622cf43702928fcfa53ece35619"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temps_8c.html#a3e9c2622cf43702928fcfa53ece35619">get_secondesTemps</a> (<a class="el" href="struct_temps.html">Temps</a> t)</td></tr>
 <tr class="memdesc:a3e9c2622cf43702928fcfa53ece35619"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir le nombre de secondes de <a class="el" href="struct_temps.html">Temps</a>.  <a href="#a3e9c2622cf43702928fcfa53ece35619">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3e9c2622cf43702928fcfa53ece35619"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +142,64 @@ Fonctions</h2></td></tr>
 <tr class="separator:af2ae058bd4ba6eb4ef6a6c41f5120f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a14cc668f739a09df6fc04c0a107a441f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cc668f739a09df6fc04c0a107a441f">&#9670;&nbsp;</a></span>creer_secondes_depuis_1970()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t creer_secondes_depuis_1970 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_temps.html">Temps</a>&#160;</td>
+          <td class="paramname"><em>temps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Constructeur</b> d'un temps en secondes. Cette fonction est l'inverse de <b>creer_temps</b>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_temps.html">Temps</a></td><td><a class="el" href="struct_temps.html">Temps</a> qui est une date. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>time_t</b> La fonction retourne un <b>temps</b> en secondes depuis le 1er Janvier 1970. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00023">23</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+
+</div>
+</div>
+<a id="ae9f22c05d213fc6ac253e12f76f85551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f22c05d213fc6ac253e12f76f85551">&#9670;&nbsp;</a></span>creer_temps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_temps.html">Temps</a> creer_temps </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>temps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Constructeur</b> d'un <a class="el" href="struct_temps.html">Temps</a>. Cette fonction est l'inverse de <b>creer_secondes_depuis_1970</b>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time_t</td><td><a class="el" href="struct_temps.html">Temps</a> qui est un nombre de secondes depuis le 1er Janvier 1970. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_temps.html">Temps</a></b> La fonction retourne un <b>temps</b> de type <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00017">17</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+
+</div>
+</div>
 <a id="acf0cd02378b7422db58d0e109fc65da5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf0cd02378b7422db58d0e109fc65da5">&#9670;&nbsp;</a></span>get_anneesTemps()</h2>
 
@@ -161,7 +225,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00037">37</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00048">48</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -190,7 +254,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00025">25</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00036">36</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -219,7 +283,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00049">49</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00060">60</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -248,7 +312,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00045">45</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00056">56</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -277,7 +341,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00041">41</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00052">52</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -306,7 +370,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00029">29</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00040">40</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -335,7 +399,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00021">21</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00032">32</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -364,7 +428,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00033">33</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00044">44</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -393,7 +457,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00017">17</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00028">28</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -412,7 +476,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Permettant d'initialiser un <a class="el" href="struct_temps.html">Temps</a>. </p>
+<p><b>Initialisateur</b> d'un <a class="el" href="struct_temps.html">Temps</a>. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">Void</td><td>Ne prend rien en paramètre. </td></tr>
@@ -460,7 +524,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00073">73</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00084">84</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -499,7 +563,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00061">61</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00072">72</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -538,7 +602,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00085">85</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00096">96</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -577,7 +641,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00081">81</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00092">92</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -616,7 +680,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00077">77</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00088">88</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -655,7 +719,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00065">65</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00076">76</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -694,7 +758,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00057">57</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00068">68</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -733,7 +797,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00069">69</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00080">80</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>
@@ -772,7 +836,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le <a class="el" href="struct_temps.html">Temps</a>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00053">53</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="temps_8c_source.html#l00064">64</a> du fichier <a class="el" href="temps_8c_source.html">temps.c</a>.</p>
 
 </div>
 </div>

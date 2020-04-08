@@ -146,8 +146,31 @@ char * chiffrer_mot_de_passe(char *);
 
 bool isCompteExist(char *);
 
+/**
+ * \fn Compte lire_fichier_compte(char *)
+ * \brief Cette fonction prend les \b données d'un \a compte d'un fichier au format \b JSON et les sauvegarde dans un Compte.
+ * \param char* Prend en paramètre une chaine de caractère qui est le \b lien d'un fichier \b JSON .
+ * \return \b Compte La fonction renvoie un \b compte avec les données du fichier JSON qui y sont stockées.
+ */
+
 Compte lire_fichier_compte(char *);
 
+/**
+ * \fn void creer_fichier_compte(Compte)
+ * \brief Cette fonction prend les \b données d'un \a compte et les sauvegarde dans un fichier au format \b JSON au nom de l'utilisateur.
+ * \param Compte Prend en paramètre un \a compte qui sera sauvegardé dans un fichier \b JSON .
+ * \return \b void La fonction ne renvoie rien, elle sauvegarde juste.
+ */
+
 void creer_fichier_compte(Compte);
+
+/**
+ * \fn bool connexion()
+ * \brief Cette fonction \b vérifie si la connexion est possible.
+ * \param void La fonction ne prend rien en paramètre.
+ * \return \b bool La fonction retourne true ou false selon si la connexion est possible.
+ */
+
+bool connexion();
 
 #endif

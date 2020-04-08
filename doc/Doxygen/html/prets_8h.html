@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/include/prets.h</title>
+<title>ShareThings: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/include/prets.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -75,6 +75,8 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;json-c/json.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="temps_8h_source.html">temps.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="users_8h_source.html">users.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="objet_8h_source.html">objet.h</a>&quot;</code><br />
@@ -89,32 +91,53 @@ Définitions de type</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a074e1e31fbbe85a7b3921400bec96a07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pret.html">Pret</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a074e1e31fbbe85a7b3921400bec96a07">init_pret</a> ()</td></tr>
-<tr class="memdesc:a074e1e31fbbe85a7b3921400bec96a07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> d'un prêt.  <a href="#a074e1e31fbbe85a7b3921400bec96a07">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a074e1e31fbbe85a7b3921400bec96a07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Initialisateur</b> d'un prêt.  <a href="#a074e1e31fbbe85a7b3921400bec96a07">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a074e1e31fbbe85a7b3921400bec96a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d345ad4aacc59bd3ae34f07aa3ca3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pret.html">Pret</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a53d345ad4aacc59bd3ae34f07aa3ca3d">creer_pret</a> (int)</td></tr>
+<tr class="memdesc:a53d345ad4aacc59bd3ae34f07aa3ca3d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> d'un prêt.  <a href="#a53d345ad4aacc59bd3ae34f07aa3ca3d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a53d345ad4aacc59bd3ae34f07aa3ca3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a699fc49ee297eb96b85f191414356"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a47a699fc49ee297eb96b85f191414356">get_temps_debutPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
 <tr class="memdesc:a47a699fc49ee297eb96b85f191414356"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir le temps de début du prêt.  <a href="#a47a699fc49ee297eb96b85f191414356">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a47a699fc49ee297eb96b85f191414356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ba7185a37725d5fcf53da1be7cfe8cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a2ba7185a37725d5fcf53da1be7cfe8cc">get_temps_finPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
 <tr class="memdesc:a2ba7185a37725d5fcf53da1be7cfe8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir le temps de fin du prêt.  <a href="#a2ba7185a37725d5fcf53da1be7cfe8cc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2ba7185a37725d5fcf53da1be7cfe8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4922c8ea0321c58970100728402499cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a4922c8ea0321c58970100728402499cd">get_objetPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
-<tr class="memdesc:a4922c8ea0321c58970100728402499cd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir l'objet prêté.  <a href="#a4922c8ea0321c58970100728402499cd">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a4922c8ea0321c58970100728402499cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20bd32f807c1d06fcd86783f82525484"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_personne.html">Personne</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a20bd32f807c1d06fcd86783f82525484">get_demandeurPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
-<tr class="memdesc:a20bd32f807c1d06fcd86783f82525484"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir la personne demandant le prêt.  <a href="#a20bd32f807c1d06fcd86783f82525484">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a20bd32f807c1d06fcd86783f82525484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d60efdfab187832b84c80d1f62584dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a6d60efdfab187832b84c80d1f62584dd">get_objetPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
+<tr class="memdesc:a6d60efdfab187832b84c80d1f62584dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir l'objet prêté.  <a href="#a6d60efdfab187832b84c80d1f62584dd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6d60efdfab187832b84c80d1f62584dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337e2c34d3a0f1d5c00745e09d30264e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a337e2c34d3a0f1d5c00745e09d30264e">get_demandeurPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
+<tr class="memdesc:a337e2c34d3a0f1d5c00745e09d30264e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir la personne demandant le prêt.  <a href="#a337e2c34d3a0f1d5c00745e09d30264e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a337e2c34d3a0f1d5c00745e09d30264e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93187c4042369442178c58cdf720b31c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a93187c4042369442178c58cdf720b31c">get_IDPret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
+<tr class="memdesc:a93187c4042369442178c58cdf720b31c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir le prêt demandé.  <a href="#a93187c4042369442178c58cdf720b31c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a93187c4042369442178c58cdf720b31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a660594b28800756b9a991d5d0a539afe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a660594b28800756b9a991d5d0a539afe">set_temps_debutPret</a> (<a class="el" href="struct_pret.html">Pret</a>, <a class="el" href="struct_temps.html">Temps</a>)</td></tr>
 <tr class="memdesc:a660594b28800756b9a991d5d0a539afe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le temps de début du prêt.  <a href="#a660594b28800756b9a991d5d0a539afe">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a660594b28800756b9a991d5d0a539afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6706d19d6a90e3a25869e2f8e6d1bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#ad6706d19d6a90e3a25869e2f8e6d1bed">set_temps_finPret</a> (<a class="el" href="struct_pret.html">Pret</a>, <a class="el" href="struct_temps.html">Temps</a>)</td></tr>
 <tr class="memdesc:ad6706d19d6a90e3a25869e2f8e6d1bed"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le temps de fin du prêt.  <a href="#ad6706d19d6a90e3a25869e2f8e6d1bed">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad6706d19d6a90e3a25869e2f8e6d1bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a768d62e0ce89a238d4273da1b66463a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a768d62e0ce89a238d4273da1b66463a9">set_objetPret</a> (<a class="el" href="struct_pret.html">Pret</a>, <a class="el" href="struct_objet.html">Objet</a>)</td></tr>
-<tr class="memdesc:a768d62e0ce89a238d4273da1b66463a9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer l'objet du prêt.  <a href="#a768d62e0ce89a238d4273da1b66463a9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a768d62e0ce89a238d4273da1b66463a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6eed2505445e50f73a849d91a4f96bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#ab6eed2505445e50f73a849d91a4f96bf">set_demandeurPret</a> (<a class="el" href="struct_pret.html">Pret</a>, <a class="el" href="struct_personne.html">Personne</a>)</td></tr>
-<tr class="memdesc:ab6eed2505445e50f73a849d91a4f96bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer la personne demandant le prêt.  <a href="#ab6eed2505445e50f73a849d91a4f96bf">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ab6eed2505445e50f73a849d91a4f96bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8358ba6a8851784448812e7933f039e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#af8358ba6a8851784448812e7933f039e">set_objetPret</a> (<a class="el" href="struct_pret.html">Pret</a>, int)</td></tr>
+<tr class="memdesc:af8358ba6a8851784448812e7933f039e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer l'objet du prêt.  <a href="#af8358ba6a8851784448812e7933f039e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af8358ba6a8851784448812e7933f039e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bcca0b75fb320a666b4abcd5714b145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a2bcca0b75fb320a666b4abcd5714b145">set_demandeurPret</a> (<a class="el" href="struct_pret.html">Pret</a>, int)</td></tr>
+<tr class="memdesc:a2bcca0b75fb320a666b4abcd5714b145"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer la personne demandant le prêt.  <a href="#a2bcca0b75fb320a666b4abcd5714b145">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2bcca0b75fb320a666b4abcd5714b145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e35550aedc49acb6e9a489ac4baa5b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a7e35550aedc49acb6e9a489ac4baa5b3">set_IDPret</a> (<a class="el" href="struct_pret.html">Pret</a>, int)</td></tr>
+<tr class="memdesc:a7e35550aedc49acb6e9a489ac4baa5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le prêt demandé.  <a href="#a7e35550aedc49acb6e9a489ac4baa5b3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7e35550aedc49acb6e9a489ac4baa5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58c987b0f0ab2386c5014382a6a7892"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#af58c987b0f0ab2386c5014382a6a7892">creer_ID_pret</a> ()</td></tr>
+<tr class="memdesc:af58c987b0f0ab2386c5014382a6a7892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>creer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>3</b>.  <a href="#af58c987b0f0ab2386c5014382a6a7892">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af58c987b0f0ab2386c5014382a6a7892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e33c9f096ea5aa113a15b6f7aa8b8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a33e33c9f096ea5aa113a15b6f7aa8b8c">isPretExist</a> (int)</td></tr>
+<tr class="memdesc:a33e33c9f096ea5aa113a15b6f7aa8b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>vérifier</b> si l'ID du prêt existe déjà.  <a href="#a33e33c9f096ea5aa113a15b6f7aa8b8c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a33e33c9f096ea5aa113a15b6f7aa8b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc28d1be8a388df60b670bef4a0df1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pret.html">Pret</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a5fc28d1be8a388df60b670bef4a0df1d">lire_fichier_pret</a> (char *)</td></tr>
+<tr class="memdesc:a5fc28d1be8a388df60b670bef4a0df1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>prêt</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_pret.html">Pret</a>.  <a href="#a5fc28d1be8a388df60b670bef4a0df1d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5fc28d1be8a388df60b670bef4a0df1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b1bdc086c1b581d99ece412b0458507"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prets_8h.html#a4b1bdc086c1b581d99ece412b0458507">creer_fichier_pret</a> (<a class="el" href="struct_pret.html">Pret</a>)</td></tr>
+<tr class="memdesc:a4b1bdc086c1b581d99ece412b0458507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>prêt</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID du prêt.  <a href="#a4b1bdc086c1b581d99ece412b0458507">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b1bdc086c1b581d99ece412b0458507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des définitions de type</h2>
 <a id="a35683d356f68bd874f1dafb4074ab574"></a>
@@ -129,19 +152,106 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8h_source.html#l00019">19</a> du fichier <a class="el" href="prets_8h_source.html">prets.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8h_source.html#l00021">21</a> du fichier <a class="el" href="prets_8h_source.html">prets.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a20bd32f807c1d06fcd86783f82525484"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20bd32f807c1d06fcd86783f82525484">&#9670;&nbsp;</a></span>get_demandeurPret()</h2>
+<a id="a4b1bdc086c1b581d99ece412b0458507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1bdc086c1b581d99ece412b0458507">&#9670;&nbsp;</a></span>creer_fichier_pret()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_personne.html">Personne</a> get_demandeurPret </td>
+          <td class="memname">void creer_fichier_pret </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_pret.html">Pret</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'un <em>prêt</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID du prêt. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_pret.html">Pret</a></td><td>Prend en paramètre un <em>prêt</em> qui sera sauvegardé dans un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00182">182</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="af58c987b0f0ab2386c5014382a6a7892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58c987b0f0ab2386c5014382a6a7892">&#9670;&nbsp;</a></span>creer_ID_pret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int creer_ID_pret </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>creer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>3</b>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>Ne prend rien en paramètre. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction rend un <b>ID</b> qui est un <b>int</b> de <b>8</b> <b>caractères</b> pour un prêt donc qui commence par 3.</dd></dl>
+<p>Tous les ID des objets commenceront par un 3. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00111">111</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a53d345ad4aacc59bd3ae34f07aa3ca3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d345ad4aacc59bd3ae34f07aa3ca3d">&#9670;&nbsp;</a></span>creer_pret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pret.html">Pret</a> creer_pret </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Constructeur</b> d'un prêt. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>Prend l'ID du demandeur pour l'enregistrer dans le prêt. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_pret.html">Pret</a></b> La fonction a créé un <b>Prêt</b> et l'a <b>initialisé</b> avant de le retourner. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00026">26</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a337e2c34d3a0f1d5c00745e09d30264e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337e2c34d3a0f1d5c00745e09d30264e">&#9670;&nbsp;</a></span>get_demandeurPret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_demandeurPret </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_pret.html">Pret</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -157,20 +267,49 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction retourne une <b>personne</b> de type <b><a class="el" href="struct_personne.html">Personne</a></b>. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID_personne</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00036">36</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00082">82</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
-<a id="a4922c8ea0321c58970100728402499cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4922c8ea0321c58970100728402499cd">&#9670;&nbsp;</a></span>get_objetPret()</h2>
+<a id="a93187c4042369442178c58cdf720b31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93187c4042369442178c58cdf720b31c">&#9670;&nbsp;</a></span>get_IDPret()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_objet.html">Objet</a> get_objetPret </td>
+          <td class="memname">int get_IDPret </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_pret.html">Pret</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Getter</b> permettant d'obtenir le prêt demandé. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_pret.html">Pret</a></td><td>Pour extraire une donnée sur le prêt. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID_pret</b> de type <b>int</b>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00086">86</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a6d60efdfab187832b84c80d1f62584dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d60efdfab187832b84c80d1f62584dd">&#9670;&nbsp;</a></span>get_objetPret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_objetPret </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_pret.html">Pret</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -186,9 +325,9 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction retourne un <b>objet</b> de type <b><a class="el" href="struct_objet.html">Objet</a></b>. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID_objet</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00032">32</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00078">78</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
@@ -217,7 +356,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>struct</b> <b>tm</b> La fonction retourne un <b>temps</b> de type <b>struct</b> <b>tm</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00024">24</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00070">70</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
@@ -246,7 +385,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>struct</b> <b>tm</b> La fonction retourne un <b>temps</b> de type <b>struct</b> <b>tm</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00028">28</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00074">74</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
@@ -265,7 +404,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><b>Constructeur</b> d'un prêt. </p>
+<p><b>Initialisateur</b> d'un prêt. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td>Ne prend rien en paramètre. </td></tr>
@@ -274,12 +413,70 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_pret.html">Pret</a></b> La fonction a créé un <b>Prêt</b> et l'a <b>initialisé</b> avant de le retourner. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00015">15</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00016">16</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
-<a id="ab6eed2505445e50f73a849d91a4f96bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6eed2505445e50f73a849d91a4f96bf">&#9670;&nbsp;</a></span>set_demandeurPret()</h2>
+<a id="a33e33c9f096ea5aa113a15b6f7aa8b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e33c9f096ea5aa113a15b6f7aa8b8c">&#9670;&nbsp;</a></span>isPretExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isPretExist </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>vérifier</b> si l'ID du prêt existe déjà. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>Prend l'ID à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie <b>false</b> si l'objet n'existe pas, <b>true</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00126">126</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a5fc28d1be8a388df60b670bef4a0df1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc28d1be8a388df60b670bef4a0df1d">&#9670;&nbsp;</a></span>lire_fichier_pret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pret.html">Pret</a> lire_fichier_pret </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'un <em>prêt</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_pret.html">Pret</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>Prend en paramètre une chaine de caractère qui est le <b>lien</b> d'un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_pret.html">Pret</a></b> La fonction renvoie une <b>prêt</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00138">138</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="a2bcca0b75fb320a666b4abcd5714b145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bcca0b75fb320a666b4abcd5714b145">&#9670;&nbsp;</a></span>set_demandeurPret()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +490,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -308,18 +505,58 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="struct_pret.html">Pret</a></td><td>Pour fixer une information sur le prêt. </td></tr>
-    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Donnée à écrire dans le prêt. </td></tr>
+    <tr><td class="paramname">int</td><td>Donnée à écrire dans le prêt. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description du prêt. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00052">52</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00102">102</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
-<a id="a768d62e0ce89a238d4273da1b66463a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a768d62e0ce89a238d4273da1b66463a9">&#9670;&nbsp;</a></span>set_objetPret()</h2>
+<a id="a7e35550aedc49acb6e9a489ac4baa5b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e35550aedc49acb6e9a489ac4baa5b3">&#9670;&nbsp;</a></span>set_IDPret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_IDPret </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_pret.html">Pret</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Setter</b> permettant de fixer le prêt demandé. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_pret.html">Pret</a></td><td>Pour fixer une information sur le prêt. </td></tr>
+    <tr><td class="paramname">int</td><td>Donnée à écrire dans le prêt. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description du prêt. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00106">106</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+
+</div>
+</div>
+<a id="af8358ba6a8851784448812e7933f039e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8358ba6a8851784448812e7933f039e">&#9670;&nbsp;</a></span>set_objetPret()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +570,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -348,13 +585,13 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="struct_pret.html">Pret</a></td><td>Pour fixer une information sur le prêt. </td></tr>
-    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Donnée à écrire dans le prêt. </td></tr>
+    <tr><td class="paramname">int</td><td>Donnée à écrire dans le prêt. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description du prêt. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00048">48</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00098">98</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
@@ -394,7 +631,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description du prêt. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00040">40</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00090">90</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>
@@ -434,7 +671,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description du prêt. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00044">44</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="prets_8c_source.html#l00094">94</a> du fichier <a class="el" href="prets_8c_source.html">prets.c</a>.</p>
 
 </div>
 </div>

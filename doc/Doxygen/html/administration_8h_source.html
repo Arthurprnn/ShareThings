@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ShareThings:  Fichier source de /home/saintmaxin/Documents/SDD/ShareThings/include/administration.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ShareThings
+   &#160;<span id="projectnumber">V-02</span>
+   </div>
+   <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">administration.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="administration_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __ADMINISTRATION_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __ADMINISTRATION_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="administration_8h.html#a78c99ffd76a7bb3c8c74db76207e9ab4">    3</a></span>&#160;<span class="preprocessor">#define _XOPEN_SOURCE</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;termios.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;crypt.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="entrees_8h.html">entrees.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="users_8h.html">users.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="administration_8h.html#a1441c815a0aab88f88755304adee94c3">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs__compte.html">s_compte</a> * <a class="code" href="administration_8h.html#a1441c815a0aab88f88755304adee94c3">Compte</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;Compte <a class="code" href="administration_8h.html#a2a643df249ebc50c624645974296da3b">init_compte</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">int</span> <a class="code" href="administration_8h.html#adf298cdc28d9aa471340ba00619bc406">creer_compte</a>(Compte, <a class="code" href="struct_personne.html">Personne</a>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="administration_8h.html#a55538f0a3a32cad18adf006777a60e99">get_nom_utilisateur</a>(Compte);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="administration_8h.html#ab0b1561741a23c914a31681aae693e65">get_mdp</a>(Compte);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="administration_8h.html#aeff3b3fb44a36aa830c2093503fa6a76">get_ID_personne</a>(Compte);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="administration_8h.html#a5e2923d65e922eb02b60bfdfe6cb1e23">set_nom_utilisateur</a>(Compte, <span class="keywordtype">char</span> *);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> <a class="code" href="administration_8h.html#a01600f63bab83cb0ac9dc5e111680868">set_mdp</a>(Compte, <span class="keywordtype">char</span> *);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="administration_8h.html#af752c4f6886a88865302532d166f7695">set_ID_personne</a>(Compte, <span class="keywordtype">int</span>);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="administration_8h.html#a294587294111bfede1e11bdf876b6d10">viderBuffer</a>();</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="administration_8h.html#a160f6d2893bb6b89ab3ad5d863c20e3d">getch</a>();</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="administration_8h.html#aeb71a82e01c80306c32eafd331e1580a">creer_mot_de_passe</a>();</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="administration_8h.html#a23a2f42db8fc8ae193bfc1e1f0da9564">chiffrer_mot_de_passe</a>(<span class="keywordtype">char</span> *);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="administration_8h.html#a525f11913ef145b655d26d6761ca448e">isCompteExist</a>(<span class="keywordtype">char</span> *);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;Compte <a class="code" href="administration_8h.html#a98fc1f53854d0e9b797d1eaa21303f90">lire_fichier_compte</a>(<span class="keywordtype">char</span> *);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keywordtype">void</span> <a class="code" href="administration_8h.html#a05a3fed8cc57413f15d14d299d1d9897">creer_fichier_compte</a>(Compte);</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="administration_8h_html_a294587294111bfede1e11bdf876b6d10"><div class="ttname"><a href="administration_8h.html#a294587294111bfede1e11bdf876b6d10">viderBuffer</a></div><div class="ttdeci">void viderBuffer()</div><div class="ttdoc">Vide le buffer. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00097">administration.c:97</a></div></div>
+<div class="ttc" id="administration_8h_html_aeb71a82e01c80306c32eafd331e1580a"><div class="ttname"><a href="administration_8h.html#aeb71a82e01c80306c32eafd331e1580a">creer_mot_de_passe</a></div><div class="ttdeci">char * creer_mot_de_passe()</div><div class="ttdoc">Permet de créer un mot de passe dynamiquement en remplaçant les caractères saisis par le caractère ét...</div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00116">administration.c:116</a></div></div>
+<div class="ttc" id="administration_8h_html_a160f6d2893bb6b89ab3ad5d863c20e3d"><div class="ttname"><a href="administration_8h.html#a160f6d2893bb6b89ab3ad5d863c20e3d">getch</a></div><div class="ttdeci">int getch()</div><div class="ttdoc">La fonction getch() est l&amp;#39;abréviation de getchar qui permet de lire un caractère ou une touche au cla...</div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00104">administration.c:104</a></div></div>
+<div class="ttc" id="administration_8h_html_a2a643df249ebc50c624645974296da3b"><div class="ttname"><a href="administration_8h.html#a2a643df249ebc50c624645974296da3b">init_compte</a></div><div class="ttdeci">Compte init_compte()</div><div class="ttdoc">Initialisateur du compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00017">administration.c:17</a></div></div>
+<div class="ttc" id="administration_8h_html_a98fc1f53854d0e9b797d1eaa21303f90"><div class="ttname"><a href="administration_8h.html#a98fc1f53854d0e9b797d1eaa21303f90">lire_fichier_compte</a></div><div class="ttdeci">Compte lire_fichier_compte(char *)</div><div class="ttdoc">Cette fonction prend les données d&amp;#39;un compte d&amp;#39;un fichier au format JSON et les sauvegarde dans un Co...</div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00155">administration.c:155</a></div></div>
+<div class="ttc" id="administration_8h_html_ab0b1561741a23c914a31681aae693e65"><div class="ttname"><a href="administration_8h.html#ab0b1561741a23c914a31681aae693e65">get_mdp</a></div><div class="ttdeci">char * get_mdp(Compte)</div><div class="ttdoc">Getter permettant d&amp;#39;obtenir le mot de passe crypté du compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00076">administration.c:76</a></div></div>
+<div class="ttc" id="administration_8h_html_a55538f0a3a32cad18adf006777a60e99"><div class="ttname"><a href="administration_8h.html#a55538f0a3a32cad18adf006777a60e99">get_nom_utilisateur</a></div><div class="ttdeci">char * get_nom_utilisateur(Compte)</div><div class="ttdoc">Getter permettant d&amp;#39;obtenir le nom d&amp;#39;utilisateur du compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00072">administration.c:72</a></div></div>
+<div class="ttc" id="users_8h_html"><div class="ttname"><a href="users_8h.html">users.h</a></div></div>
+<div class="ttc" id="administration_8h_html_af752c4f6886a88865302532d166f7695"><div class="ttname"><a href="administration_8h.html#af752c4f6886a88865302532d166f7695">set_ID_personne</a></div><div class="ttdeci">void set_ID_personne(Compte, int)</div><div class="ttdoc">Setter permettant de fixer l&amp;#39;ID de l&amp;#39;utilisateur d&amp;#39;un compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00092">administration.c:92</a></div></div>
+<div class="ttc" id="entrees_8h_html"><div class="ttname"><a href="entrees_8h.html">entrees.h</a></div></div>
+<div class="ttc" id="administration_8h_html_a05a3fed8cc57413f15d14d299d1d9897"><div class="ttname"><a href="administration_8h.html#a05a3fed8cc57413f15d14d299d1d9897">creer_fichier_compte</a></div><div class="ttdeci">void creer_fichier_compte(Compte)</div><div class="ttdoc">Cette fonction prend les données d&amp;#39;un compte et les sauvegarde dans un fichier au format JSON au nom ...</div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00186">administration.c:186</a></div></div>
+<div class="ttc" id="administration_8h_html_a1441c815a0aab88f88755304adee94c3"><div class="ttname"><a href="administration_8h.html#a1441c815a0aab88f88755304adee94c3">Compte</a></div><div class="ttdeci">struct s_compte * Compte</div><div class="ttdef"><b>Definition:</b> <a href="administration_8h_source.html#l00025">administration.h:25</a></div></div>
+<div class="ttc" id="structs__compte_html"><div class="ttname"><a href="structs__compte.html">s_compte</a></div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00011">administration.c:11</a></div></div>
+<div class="ttc" id="administration_8h_html_a01600f63bab83cb0ac9dc5e111680868"><div class="ttname"><a href="administration_8h.html#a01600f63bab83cb0ac9dc5e111680868">set_mdp</a></div><div class="ttdeci">void set_mdp(Compte, char *)</div><div class="ttdoc">Setter permettant de fixer le mot de passe d&amp;#39;un compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00088">administration.c:88</a></div></div>
+<div class="ttc" id="struct_personne_html"><div class="ttname"><a href="struct_personne.html">Personne</a></div></div>
+<div class="ttc" id="administration_8h_html_a5e2923d65e922eb02b60bfdfe6cb1e23"><div class="ttname"><a href="administration_8h.html#a5e2923d65e922eb02b60bfdfe6cb1e23">set_nom_utilisateur</a></div><div class="ttdeci">void set_nom_utilisateur(Compte, char *)</div><div class="ttdoc">Setter permettant de fixer le nom d&amp;#39;utilisateur d&amp;#39;un compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00084">administration.c:84</a></div></div>
+<div class="ttc" id="administration_8h_html_a525f11913ef145b655d26d6761ca448e"><div class="ttname"><a href="administration_8h.html#a525f11913ef145b655d26d6761ca448e">isCompteExist</a></div><div class="ttdeci">bool isCompteExist(char *)</div><div class="ttdoc">Permet de vérifier si le nom de l&amp;#39;utilisateur existe déjà. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00141">administration.c:141</a></div></div>
+<div class="ttc" id="administration_8h_html_adf298cdc28d9aa471340ba00619bc406"><div class="ttname"><a href="administration_8h.html#adf298cdc28d9aa471340ba00619bc406">creer_compte</a></div><div class="ttdeci">int creer_compte(Compte, Personne)</div><div class="ttdoc">Constructeur d&amp;#39;un compte&amp;#39;. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00025">administration.c:25</a></div></div>
+<div class="ttc" id="administration_8h_html_a23a2f42db8fc8ae193bfc1e1f0da9564"><div class="ttname"><a href="administration_8h.html#a23a2f42db8fc8ae193bfc1e1f0da9564">chiffrer_mot_de_passe</a></div><div class="ttdeci">char * chiffrer_mot_de_passe(char *)</div><div class="ttdoc">Permet de chiffrer un mot de passe en utilisant la bibliothèque &lt;crypt.h&gt;. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00134">administration.c:134</a></div></div>
+<div class="ttc" id="administration_8h_html_aeff3b3fb44a36aa830c2093503fa6a76"><div class="ttname"><a href="administration_8h.html#aeff3b3fb44a36aa830c2093503fa6a76">get_ID_personne</a></div><div class="ttdeci">int get_ID_personne(Compte)</div><div class="ttdoc">Getter permettant d&amp;#39;obtenir l&amp;#39;ID de l&amp;#39;utilisateur du compte. </div><div class="ttdef"><b>Definition:</b> <a href="administration_8c_source.html#l00080">administration.c:80</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

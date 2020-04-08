@@ -33,12 +33,12 @@ int creer_compte(Compte c, Personne p) {
     }
 
     printf("\n");
-    char * mdp = (char*)malloc(32*sizeof(char));
-    mdp = creer_mot_de_passe();
+    char * mdp = creer_mot_de_passe();
+    printf("\nMDP = %ld\n", strlen(mdp));
     printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
-    char * verif_mdp = (char*)malloc(32*sizeof(char));
-    verif_mdp = creer_mot_de_passe();
-    while (isMemeChaine(mdp, verif_mdp) == false) {
+    char * verif_mdp = creer_mot_de_passe();
+    printf("\nMDP = %ld\n", strlen(verif_mdp));
+    while (!isMemeChaine(mdp, verif_mdp)) {
         printf("\nErreur: vous n'avez pas entré les même mots de passe !\n\nEssayez à nouveau:\n\n");
         mdp = "";
         verif_mdp = "";
@@ -47,6 +47,7 @@ int creer_compte(Compte c, Personne p) {
         verif_mdp = creer_mot_de_passe();
     }
     char * mdpcrypt = chiffrer_mot_de_passe(mdp);
+    printf("\nMdpcrypt = %sW\n", mdpcrypt);
     printf("\n");
 
     printf("\nEntrez votre nom : ");
@@ -130,28 +131,10 @@ char * creer_mot_de_passe(){
     return c;
 }
 
-char * chiffrer_mot_de_passe(char * mdp ){
-    int nbsegment= strlen(mdp)/8+1;                                     /*!< Nombre de séquences nécessaires. */
-    char salt[]="lagrossemoula";                                        /*!< Permet d'orienter le chiffrement. */
-    char tempon[9] = "" ;
-    char * cryptmdp = (char *)malloc((nbsegment*13)*sizeof(char));      /*!< On réserve l'éspace nécessaire en mémoire pour le mot de passe chiffré. */ 
-    int j = 0;
-
-    for (int i=0; i<strlen(mdp); i++) {                                 /*!< On enlève le "\n" et on le remplace par "\0". */ 
-        if ((mdp[i] == '\n') || (mdp[i] == '\r')) {
-            mdp[i] = '\0';
-        }
-    }
-
-    for (int i=0; i<strlen(mdp); i++){                                            /*!< On parcours le mot de passe en claire, on le chiffre par 8 caractères que l'on concatène dans cryptmdp. */
-        if ((i%8 == 0) && (i!=0)){                                      /*!< On parcours et récolte 8 caractères avant de les chiffrer, puis de recommencer.*/
-            j=0;
-            cryptmdp = strcat(cryptmdp, crypt(tempon, salt));            
-        }
-        tempon[j] = mdp[i];
-        j++;
-    } 
-    strcpy(cryptmdp, strcat(cryptmdp, crypt(tempon, salt)));                   /*!< Pour chiffrer les derniers caractères présent. */
+char * chiffrer_mot_de_passe(char * mdp ){                                   /*!< Nombre de séquences nécessaires. */
+    char salt[]="la";
+    char * cryptmdp = (char*)malloc(22*sizeof(char));
+    cryptmdp = crypt(mdp, salt);
     return cryptmdp;                                                    /*!< On return le tableau contenant le mot de passe chiffré. */
 }
 
@@ -218,4 +201,24 @@ void creer_fichier_compte(Compte c) {
 	} else {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
+}
+
+
+bool connexion() {
+    printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
+    char * nom_utilisateur = creer_chaine_de_caracteres();
+    char * mdp = creer_mot_de_passe();
+    char * cryptmdp = chiffrer_mot_de_passe(mdp);
+    printf("Cryptmdp: %s\n", cryptmdp);
+    bool isConnexionReussie = false;
+    if (isCompteExist(nom_utilisateur)) {
+        char lien[64] = {0};
+        sprintf(lien, "../../data/Comptes/%s.json", nom_utilisateur);
+        Compte c = lire_fichier_compte(lien);
+        printf("Mdp: %s\n", get_mdp(c));
+        if (strcmp(cryptmdp, get_mdp(c)) == 0) {
+            isConnexionReussie = true;
+        }
+    }
+    return isConnexionReussie;
 }

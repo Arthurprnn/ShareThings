@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
     creer_fichier_compte(c);
     */
 
+    /*
     Personne p = init_personne();
     Compte c = init_compte();
     creer_compte(c, p);
@@ -36,6 +37,17 @@ int main(int argc, char **argv) {
     creer_fichier_personne(p);
 
     printf("Pseudo : %s\nMdp : %s\nID : %d\n", get_nom_utilisateur(c), get_mdp(c), get_ID_personne(c));
+    */
+
+    /*
+    char * mdp = creer_mot_de_passe();
+    char * cryptmdp = chiffrer_mot_de_passe(mdp);
+    printf("\n%s\n", cryptmdp);
+    */
+
+    printf("True: %d\nFalse: %d\n", true, false);
+
+    printf("\nConnexion ? %d\n", connexion());
 
     return 0;
 }

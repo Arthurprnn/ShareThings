@@ -20,6 +20,13 @@
 
 typedef struct s_objet * Objet;
 
+/**
+ * \fn void init_objet(Objet)
+ * \brief \b Initialisateur d'un objet.
+ * \param Objet Prend en paramètre l'objet a initialiser.
+ * \return \b void La fonction ne retourne rien.
+ */
+
 void init_objet(Objet);
 
 /**
@@ -48,6 +55,13 @@ char * get_nomObjet(Objet);
  */
 
 char * get_descriptionObjet(Objet);
+
+/**
+ * \fn char* get_typeObjet(Objet)
+ * \brief \b Getter permettant d'obtenir la description de l'objet.
+ * \param Objet Pour extraire une donnée sur l'objet.
+ * \return \b char* La fonction retourne un \b type \b d'objet de type \b char*.
+ */
 
 char * get_typeObjet(Objet);
 
@@ -98,6 +112,14 @@ void set_nomObjet(Objet, char *);
 
 void set_descriptionObjet(Objet, char *);
 
+/**
+ * \fn void set_typeObjet(Objet, char *)
+ * \brief \b Setter permettant de fixer le type de l'objet.
+ * \param Objet Pour fixer une donnée sur l'objet.
+ * \param char* Donnée à écrire dans l'objet.
+ * \return \b void La fonction ne retourne rien. Elle écrit simplement dans l'objet.
+ */
+
 void set_typeObjet(Objet, char *);
 
 /**
@@ -129,6 +151,13 @@ void set_ID_proprietaireObjet(Objet, int);
  */
 
 void set_delai_pretObjet(Objet, int);
+
+/**
+ * \fn char * BonType(char *)
+ * \brief Permet de vérifier si le type en paramètre est un type du logiciel, aucune erreur d'orthographe n'est permise, par défaut: Autres.
+ * \param char* La fonction prend en paramètre le type de l'objet à vérifier.
+ * \return \b char* La fonction rend une chaine de caractères correspondant au bon type de l'objet.
+ */
 
 char * BonType(char *);
 

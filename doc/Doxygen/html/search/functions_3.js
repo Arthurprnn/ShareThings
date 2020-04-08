@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lire_5ffichier_5fobjet',['lire_fichier_objet',['../fichier_8h.html#a28f8648fc35a18df25611410cbaf7528',1,'lire_fichier_objet(char *):&#160;fichier.c'],['../fichier_8c.html#a83afa62d64806f41063f53e041ece937',1,'lire_fichier_objet(char *lien):&#160;fichier.c']]],
-  ['lire_5ffichier_5fpersonne',['lire_fichier_personne',['../fichier_8h.html#a87acdfcb1a4041a925a0d5a026160e80',1,'lire_fichier_personne(char *):&#160;fichier.c'],['../fichier_8c.html#ad8a63549cdabefc1f518eb0debb521ed',1,'lire_fichier_personne(char *lien):&#160;fichier.c']]]
+  ['forceridcorrect',['forcerIDCorrect',['../entrees_8h.html#aba1a3ed379d8ffcca668fe1468ebd80b',1,'forcerIDCorrect():&#160;entrees.c'],['../entrees_8c.html#aba1a3ed379d8ffcca668fe1468ebd80b',1,'forcerIDCorrect():&#160;entrees.c']]],
+  ['forcernomutilisateurcorrect',['forcerNomUtilisateurCorrect',['../entrees_8h.html#a98727d89879ab668c0c66574b0eeedf3',1,'forcerNomUtilisateurCorrect():&#160;entrees.c'],['../entrees_8c.html#a4355b153dd0f451324dbf04a83decdea',1,'forcerNomUtilisateurCorrect():&#160;entrees.c']]]
 ];

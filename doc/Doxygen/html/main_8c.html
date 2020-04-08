@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Entrees/main.c</title>
+<title>ShareThings: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Main/main.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -61,16 +61,214 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_281b2f34b9ef9f0aa58dafa69f451817.html">Entrees</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4bb77202a85366e5a69049a6555c5ad7.html">Main</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier main.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
+<code>#include &lt;SDL_ttf.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;crypt.h&gt;</code><br />
+<code>#include &lt;json-c/json.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="administration_8h_source.html">../../include/administration.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="entrees_8h_source.html">../../include/entrees.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="objet_8h_source.html">../../include/objet.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="prets_8h_source.html">../../include/prets.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="temps_8h_source.html">../../include/temps.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="users_8h_source.html">../../include/users.h</a>&quot;</code><br />
+</div>
 <p><a href="main_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a6068a247ff9ece1b0a9773c58144906c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6068a247ff9ece1b0a9773c58144906c">LARGEUR_FENETRE</a>&#160;&#160;&#160;1260</td></tr>
+<tr class="separator:a6068a247ff9ece1b0a9773c58144906c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1a1e285af564b849b17498e82e1a41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afd1a1e285af564b849b17498e82e1a41">HAUTEUR_FENETRE</a>&#160;&#160;&#160;720</td></tr>
+<tr class="separator:afd1a1e285af564b849b17498e82e1a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:abed124ab111ee095d48f08e2a3ea4446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abed124ab111ee095d48f08e2a3ea4446">SDL_ExitWithError</a> (const char *message)</td></tr>
+<tr class="separator:abed124ab111ee095d48f08e2a3ea4446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065d3ac8c6ddd7d5a3a4a498a64d2f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a065d3ac8c6ddd7d5a3a4a498a64d2f32">TTF_ExitWithError</a> (const char *message)</td></tr>
+<tr class="separator:a065d3ac8c6ddd7d5a3a4a498a64d2f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c25afa9d203ee183baa22ed6c70970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a31c25afa9d203ee183baa22ed6c70970">Blit</a> (SDL_Surface *image, SDL_Surface *screen, SDL_Window *window)</td></tr>
+<tr class="separator:a31c25afa9d203ee183baa22ed6c70970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="afd1a1e285af564b849b17498e82e1a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1a1e285af564b849b17498e82e1a41">&#9670;&nbsp;</a></span>HAUTEUR_FENETRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAUTEUR_FENETRE&#160;&#160;&#160;720</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00020">20</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a6068a247ff9ece1b0a9773c58144906c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6068a247ff9ece1b0a9773c58144906c">&#9670;&nbsp;</a></span>LARGEUR_FENETRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LARGEUR_FENETRE&#160;&#160;&#160;1260</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00019">19</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a31c25afa9d203ee183baa22ed6c70970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c25afa9d203ee183baa22ed6c70970">&#9670;&nbsp;</a></span>Blit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blit </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>screen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Window *&#160;</td>
+          <td class="paramname"><em>window</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00039">39</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt; Variables pour sdl</p>
+<p>&lt; Varaible pour ttf</p>
+<p>&lt; Booleen pour pouvoir changer et choisir de <em>boucles</em> </p>
+<p>&lt; Lancement de <em>SDL</em> et vérification de sa bonne initialisation.</p>
+<p>&lt; chargement de l'image et vérification de son bon chargement.</p>
+<p>&lt; On détecte les <em>evenements</em> qui se passent sur la <em>fenêtre</em> tant que l'on ne clic pas sur la <b>flèche</b>.</p>
+<p>&lt; Détecte si <em>l'utilisateur</em> ferme la <em>fenètre</em>.</p>
+<p>&lt; Détecte si <em>l'utilisateur</em> appuie sur la <b>fleche</b>.</p>
+<p>&lt; chargement de l'image et vérification de son bon chargement.</p>
+<p>&lt; Boucle pour gérer la <em>connection</em> et <em>l'inscription</em> de l'utilisateur.</p>
+<p>&lt; On détecte les <em>evenements</em> qui se passent sur la fenètre</p>
+<p>&lt; Détecte si <em>l'utilisateur</em> ferme la <em>fenètre</em>.</p>
+<p>&lt; Détecte si <em>l'utilisateur</em> appuie sur le <b>bouton</b> <em>Connection</em> ou <em>Inscription</em> puis arrete la boucle.</p>
+<p>&lt; Affiche l'onglet de <em>connection</em>.</p>
+<p>&lt; Appel des <b>fonctions</b> pour <em>inscrire</em> une <em>personne</em>.</p>
+<p>&lt; chargement de l'image et vérification de son bon chargement.</p>
+<p>&lt; Permet de <em>choisir</em> entre toutes les <b>options</b> du <em>menu</em>.</p>
+<p>&lt; Affiche l'onglet <b>Rechercher</b> <b>des</b> <b>objtes</b>.</p>
+<p>&lt; Détecte si l'utilisateur appuie sur la fleche et renvoie au menu</p>
+<p>&lt; Détecte si l'utilisateur appuie sur la fleche et renvoie au menu</p>
+<p>&lt; Détecte si l'utilisateur appuie sur la fleche et renvoie au menu </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00048">48</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="abed124ab111ee095d48f08e2a3ea4446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed124ab111ee095d48f08e2a3ea4446">&#9670;&nbsp;</a></span>SDL_ExitWithError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDL_ExitWithError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00024">24</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a065d3ac8c6ddd7d5a3a4a498a64d2f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065d3ac8c6ddd7d5a3a4a498a64d2f32">&#9670;&nbsp;</a></span>TTF_ExitWithError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TTF_ExitWithError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00032">32</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

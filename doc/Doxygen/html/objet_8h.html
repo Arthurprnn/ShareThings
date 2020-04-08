@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/include/objet.h</title>
+<title>ShareThings: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/include/objet.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -75,6 +75,9 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;json-c/json.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="entrees_8h_source.html">entrees.h</a>&quot;</code><br />
 </div>
 <p><a href="objet_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -86,9 +89,9 @@ Définitions de type</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a730a9acaf0f7158a5dec99a8f606ef45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a730a9acaf0f7158a5dec99a8f606ef45">init_objet</a> ()</td></tr>
-<tr class="memdesc:a730a9acaf0f7158a5dec99a8f606ef45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Initialisateur</b> de l'objet.  <a href="#a730a9acaf0f7158a5dec99a8f606ef45">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a730a9acaf0f7158a5dec99a8f606ef45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc44994e200c0b2a54cb76f26ecae37d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#afc44994e200c0b2a54cb76f26ecae37d">init_objet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
+<tr class="memdesc:afc44994e200c0b2a54cb76f26ecae37d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Initialisateur</b> d'un objet.  <a href="#afc44994e200c0b2a54cb76f26ecae37d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afc44994e200c0b2a54cb76f26ecae37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a2ae30a01ccbd2a9bab673820fe20ea98">creer_objet</a> (int)</td></tr>
 <tr class="memdesc:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Constructeur</b> de l'objet.  <a href="#a2ae30a01ccbd2a9bab673820fe20ea98">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2ae30a01ccbd2a9bab673820fe20ea98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,6 +101,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a61825b03b5ae9a914dfde39f0130578b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a61825b03b5ae9a914dfde39f0130578b">get_descriptionObjet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
 <tr class="memdesc:a61825b03b5ae9a914dfde39f0130578b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir la description de l'objet.  <a href="#a61825b03b5ae9a914dfde39f0130578b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a61825b03b5ae9a914dfde39f0130578b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a47b4b0c5228fc782ab7efe29ac5639"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a8a47b4b0c5228fc782ab7efe29ac5639">get_typeObjet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
+<tr class="memdesc:a8a47b4b0c5228fc782ab7efe29ac5639"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir la description de l'objet.  <a href="#a8a47b4b0c5228fc782ab7efe29ac5639">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8a47b4b0c5228fc782ab7efe29ac5639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1a69b18cb77d9d5caa5580310801306"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#af1a69b18cb77d9d5caa5580310801306">get_ID_objetObjet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
 <tr class="memdesc:af1a69b18cb77d9d5caa5580310801306"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Getter</b> permettant d'obtenir l'ID de l'objet.  <a href="#af1a69b18cb77d9d5caa5580310801306">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af1a69b18cb77d9d5caa5580310801306"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,6 +119,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:ab7f016d93213d317de7fcc54f8aad97e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#ab7f016d93213d317de7fcc54f8aad97e">set_descriptionObjet</a> (<a class="el" href="struct_objet.html">Objet</a>, char *)</td></tr>
 <tr class="memdesc:ab7f016d93213d317de7fcc54f8aad97e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer la description de l'objet.  <a href="#ab7f016d93213d317de7fcc54f8aad97e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab7f016d93213d317de7fcc54f8aad97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46bf3e707a921720d0a631503e48caad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a46bf3e707a921720d0a631503e48caad">set_typeObjet</a> (<a class="el" href="struct_objet.html">Objet</a>, char *)</td></tr>
+<tr class="memdesc:a46bf3e707a921720d0a631503e48caad"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le type de l'objet.  <a href="#a46bf3e707a921720d0a631503e48caad">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a46bf3e707a921720d0a631503e48caad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3070cd6781d977f1e887b951640a961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#ae3070cd6781d977f1e887b951640a961">set_ID_objetObjet</a> (<a class="el" href="struct_objet.html">Objet</a>, int)</td></tr>
 <tr class="memdesc:ae3070cd6781d977f1e887b951640a961"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le nom de l'objet.  <a href="#ae3070cd6781d977f1e887b951640a961">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae3070cd6781d977f1e887b951640a961"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +131,21 @@ Fonctions</h2></td></tr>
 <tr class="memitem:afc1eba3d9995e63d4e88bc1603f9efbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#afc1eba3d9995e63d4e88bc1603f9efbe">set_delai_pretObjet</a> (<a class="el" href="struct_objet.html">Objet</a>, int)</td></tr>
 <tr class="memdesc:afc1eba3d9995e63d4e88bc1603f9efbe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de fixer le nom de l'objet.  <a href="#afc1eba3d9995e63d4e88bc1603f9efbe">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afc1eba3d9995e63d4e88bc1603f9efbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee783cc4ee79312389faf2e1a91599da"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#aee783cc4ee79312389faf2e1a91599da">BonType</a> (char *)</td></tr>
+<tr class="memdesc:aee783cc4ee79312389faf2e1a91599da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de vérifier si le type en paramètre est un type du logiciel, aucune erreur d'orthographe n'est permise, par défaut: Autres.  <a href="#aee783cc4ee79312389faf2e1a91599da">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aee783cc4ee79312389faf2e1a91599da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17cc0cd25ee08bebd5df9e448b36e3ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a17cc0cd25ee08bebd5df9e448b36e3ee">isObjetExist</a> (int, char *)</td></tr>
+<tr class="memdesc:a17cc0cd25ee08bebd5df9e448b36e3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>vérifier</b> si l'ID de l'objet existe déjà.  <a href="#a17cc0cd25ee08bebd5df9e448b36e3ee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a17cc0cd25ee08bebd5df9e448b36e3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079b359a44f99cc4dd458ef8d8964883"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a079b359a44f99cc4dd458ef8d8964883">creer_ID_objet</a> (char *)</td></tr>
+<tr class="memdesc:a079b359a44f99cc4dd458ef8d8964883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>créer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>1</b>.  <a href="#a079b359a44f99cc4dd458ef8d8964883">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a079b359a44f99cc4dd458ef8d8964883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f8648fc35a18df25611410cbaf7528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_objet.html">Objet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a28f8648fc35a18df25611410cbaf7528">lire_fichier_objet</a> (char *)</td></tr>
+<tr class="memdesc:a28f8648fc35a18df25611410cbaf7528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_objet.html">Objet</a>.  <a href="#a28f8648fc35a18df25611410cbaf7528">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a28f8648fc35a18df25611410cbaf7528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df83ecd3299231c6e4627f2672c2798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objet_8h.html#a5df83ecd3299231c6e4627f2672c2798">creer_fichier_objet</a> (<a class="el" href="struct_objet.html">Objet</a>)</td></tr>
+<tr class="memdesc:a5df83ecd3299231c6e4627f2672c2798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>objet</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de l'objet.  <a href="#a5df83ecd3299231c6e4627f2672c2798">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5df83ecd3299231c6e4627f2672c2798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des définitions de type</h2>
 <a id="aab2bc60dd3d2bd902e8cad849e077b04"></a>
@@ -136,11 +160,99 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8h_source.html#l00017">17</a> du fichier <a class="el" href="objet_8h_source.html">objet.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8h_source.html#l00021">21</a> du fichier <a class="el" href="objet_8h_source.html">objet.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="aee783cc4ee79312389faf2e1a91599da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee783cc4ee79312389faf2e1a91599da">&#9670;&nbsp;</a></span>BonType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * BonType </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de vérifier si le type en paramètre est un type du logiciel, aucune erreur d'orthographe n'est permise, par défaut: Autres. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>La fonction prend en paramètre le type de l'objet à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction rend une chaine de caractères correspondant au bon type de l'objet. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00106">106</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="a5df83ecd3299231c6e4627f2672c2798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df83ecd3299231c6e4627f2672c2798">&#9670;&nbsp;</a></span>creer_fichier_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_fichier_objet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'un <em>objet</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de l'objet. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Prend en paramètre un <em>objet</em> qui sera sauvegardé dans un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00213">213</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="a079b359a44f99cc4dd458ef8d8964883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079b359a44f99cc4dd458ef8d8964883">&#9670;&nbsp;</a></span>creer_ID_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int creer_ID_objet </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>créer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>1</b>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>La fonction prend en paramètre le type de l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction rend un <b>ID</b> qui est un <b>int</b> de <b>8</b> <b>caractères</b> pour un objet donc qui commence par 1.</dd></dl>
+<p>Tous les ID des objets commenceront par un 1. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00155">155</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
 <a id="a2ae30a01ccbd2a9bab673820fe20ea98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ae30a01ccbd2a9bab673820fe20ea98">&#9670;&nbsp;</a></span>creer_objet()</h2>
 
@@ -195,7 +307,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>délai</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00060">60</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00077">77</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -224,7 +336,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne une <b>description</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00048">48</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00061">61</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -253,7 +365,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00052">52</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00069">69</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -282,7 +394,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00056">56</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00073">73</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -311,35 +423,134 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne un <b>nom</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00044">44</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00057">57</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
-<a id="a730a9acaf0f7158a5dec99a8f606ef45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a730a9acaf0f7158a5dec99a8f606ef45">&#9670;&nbsp;</a></span>init_objet()</h2>
+<a id="a8a47b4b0c5228fc782ab7efe29ac5639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a47b4b0c5228fc782ab7efe29ac5639">&#9670;&nbsp;</a></span>get_typeObjet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_objet.html">Objet</a> init_objet </td>
+          <td class="memname">char * get_typeObjet </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><b>Initialisateur</b> de l'objet. </p>
+<p><b>Getter</b> permettant d'obtenir la description de l'objet. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">void</td><td>Ne prend rien en paramètre. </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Pour extraire une donnée sur l'objet. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction a initialisé un <b>objet</b> avant de le retourner. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne un <b>type</b> <b>d'objet</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00019">19</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00065">65</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="afc44994e200c0b2a54cb76f26ecae37d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc44994e200c0b2a54cb76f26ecae37d">&#9670;&nbsp;</a></span>init_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_objet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Initialisateur</b> d'un objet. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Prend en paramètre l'objet a initialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00020">20</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="a17cc0cd25ee08bebd5df9e448b36e3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cc0cd25ee08bebd5df9e448b36e3ee">&#9670;&nbsp;</a></span>isObjetExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isObjetExist </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>vérifier</b> si l'ID de l'objet existe déjà. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>Prend l'ID à vérifier. </td></tr>
+    <tr><td class="paramname">char*</td><td>Prend le type de l'objet, pour rechercher dans le bon répertoire de data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie <b>false</b> si l'objet n'existe pas, <b>true</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00143">143</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="a28f8648fc35a18df25611410cbaf7528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f8648fc35a18df25611410cbaf7528">&#9670;&nbsp;</a></span>lire_fichier_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_objet.html">Objet</a> lire_fichier_objet </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'un <em>objet</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans un <a class="el" href="struct_objet.html">Objet</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>Prend en paramètre une chaine de caractère qui est le <b>lien</b> d'un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_objet.html">Objet</a></b> La fonction renvoie un <b>objet</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00171">171</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -379,7 +590,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00080">80</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00101">101</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -419,7 +630,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00068">68</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00085">85</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -459,7 +670,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00072">72</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00093">93</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -499,7 +710,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00076">76</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00097">97</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>
@@ -539,7 +750,47 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00064">64</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00081">81</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
+
+</div>
+</div>
+<a id="a46bf3e707a921720d0a631503e48caad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bf3e707a921720d0a631503e48caad">&#9670;&nbsp;</a></span>set_typeObjet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_typeObjet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Setter</b> permettant de fixer le type de l'objet. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Pour fixer une donnée sur l'objet. </td></tr>
+    <tr><td class="paramname">char*</td><td>Donnée à écrire dans l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans l'objet. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="objet_8c_source.html#l00089">89</a> du fichier <a class="el" href="objet_8c_source.html">objet.c</a>.</p>
 
 </div>
 </div>

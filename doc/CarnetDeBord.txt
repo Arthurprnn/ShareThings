@@ -57,3 +57,14 @@ De plus, on se penche beaucoup sur ce qui va être de l'interface graphique qui 
 On doit encore revoir pas mal de choses vis à vis des fonctions restantes.
 Le main va permettre de nous éclaircir la dessus.
 
+-Mercredi 08 Avril 2020 16:11:33 :
+Nous avons beaucoup avancé à présent non sans problèmes.
+Tout d'abord la partie interface graphique est prête, il ne reste qu'à incorporer les différentes fonctions du logiciel.
+Nous avons opté pour avoir une interface qui permet de rendre plus ludique le logiciel; pour autant, les saisies de l'utilisateur se feront via le terminal.
+Nous avons alors préparé toutes les images qui serviront de menus pour l'interface graphique, et des bontons y ont été ajoutés pour les différentes options du logiciel.
+De plus, pas mal de correction ont été apportées.
+Tout d'abord, nous avons ajouté des types aux objets pour pouvoir mieux les stocker et les retrouver. (une vingtaine de types environ)
+Puis le répertoire fichier a été supprimé et ses fonctions ont migré vers d'autres répertoire.
+Correction de bug au niveau de creer_chaine_de_caractere et pour chiffrer un mot de passe, qui écrivaient pas au bon endroit dans la mémoire et des caractères apparaissaient dans la sauvegarde des fichiers.
+A présent, il nous manque plus qu'à écrire le main de notre projet, et quelques fonctions que nous n'avons pas encore fait au niveau des prêts et de création de fichier html pour afficher par exemple les liste des demandeurs/prêteurs etc ...
+

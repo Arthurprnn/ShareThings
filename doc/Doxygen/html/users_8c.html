@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ShareThings Documentation: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Comptes/users.c</title>
+<title>ShareThings: Référence du fichier /home/saintmaxin/Documents/SDD/ShareThings/src/Personnes/users.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Tokimori l'otarie"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ShareThings Documentation
+   <div id="projectname">ShareThings
    &#160;<span id="projectnumber">V-02</span>
    </div>
    <div id="projectbrief">Projet de Structure de données par Théo Saint-Maxin et Arthur Peresson</div>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_534159bde15fa34d48decc1edf344210.html">Comptes</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_62eca16195a53f457d9df0b7616776eb.html">Personnes</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -138,8 +138,114 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a05511ccf8b30a1ff07c68f806b8d2e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#a05511ccf8b30a1ff07c68f806b8d2e98">set_element_liste_objet</a> (int *liste, int indice, int element)</td></tr>
 <tr class="memdesc:a05511ccf8b30a1ff07c68f806b8d2e98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Setter</b> permettant de rentrer un ID dans la liste d'objets de la personne.  <a href="#a05511ccf8b30a1ff07c68f806b8d2e98">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a05511ccf8b30a1ff07c68f806b8d2e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3340ddb0d63d8ada6ec451f5c40ce1af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#a3340ddb0d63d8ada6ec451f5c40ce1af">add_objet_dans_liste_objet</a> (<a class="el" href="struct_personne.html">Personne</a> p, <a class="el" href="struct_objet.html">Objet</a> o)</td></tr>
+<tr class="memdesc:a3340ddb0d63d8ada6ec451f5c40ce1af"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ajouteur</b> permettant d'ajouter l'ID d'un objet dans la liste d'objets de la personne.  <a href="#a3340ddb0d63d8ada6ec451f5c40ce1af">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3340ddb0d63d8ada6ec451f5c40ce1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945f0c22265ffce4fc91a6ea73899fb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#a945f0c22265ffce4fc91a6ea73899fb3">creer_ID_personne</a> ()</td></tr>
+<tr class="memdesc:a945f0c22265ffce4fc91a6ea73899fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>creer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>2</b>.  <a href="#a945f0c22265ffce4fc91a6ea73899fb3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a945f0c22265ffce4fc91a6ea73899fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a046e991cf547bbd8a9ed2be52af58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#a52a046e991cf547bbd8a9ed2be52af58">isPersonneExist</a> (int ID_personne)</td></tr>
+<tr class="memdesc:a52a046e991cf547bbd8a9ed2be52af58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>vérifier</b> si l'ID de la personne existe déjà.  <a href="#a52a046e991cf547bbd8a9ed2be52af58">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a52a046e991cf547bbd8a9ed2be52af58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a63549cdabefc1f518eb0debb521ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_personne.html">Personne</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#ad8a63549cdabefc1f518eb0debb521ed">lire_fichier_personne</a> (char *lien)</td></tr>
+<tr class="memdesc:ad8a63549cdabefc1f518eb0debb521ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'une <em>personne</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans une <a class="el" href="struct_personne.html">Personne</a>.  <a href="#ad8a63549cdabefc1f518eb0debb521ed">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad8a63549cdabefc1f518eb0debb521ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5086bf5bef9b094d8b3e982c9144f3b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8c.html#a5086bf5bef9b094d8b3e982c9144f3b4">creer_fichier_personne</a> (<a class="el" href="struct_personne.html">Personne</a> p)</td></tr>
+<tr class="memdesc:a5086bf5bef9b094d8b3e982c9144f3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'une <em>personne</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de la personne.  <a href="#a5086bf5bef9b094d8b3e982c9144f3b4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5086bf5bef9b094d8b3e982c9144f3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a3340ddb0d63d8ada6ec451f5c40ce1af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3340ddb0d63d8ada6ec451f5c40ce1af">&#9670;&nbsp;</a></span>add_objet_dans_liste_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add_objet_dans_liste_objet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Ajouteur</b> permettant d'ajouter l'ID d'un objet dans la liste d'objets de la personne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Pour fixer une information sur la personne. </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Information à écrire dans la liste d'objets de la personne (juste l'ID). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la liste d'objets de la personne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00119">119</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="a5086bf5bef9b094d8b3e982c9144f3b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5086bf5bef9b094d8b3e982c9144f3b4">&#9670;&nbsp;</a></span>creer_fichier_personne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_fichier_personne </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'une <em>personne</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de la personne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Prend en paramètre une <em>personne</em> qui sera sauvegardée dans un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00221">221</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="a945f0c22265ffce4fc91a6ea73899fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945f0c22265ffce4fc91a6ea73899fb3">&#9670;&nbsp;</a></span>creer_ID_personne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int creer_ID_personne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>creer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>2</b>. </p>
+<p>Tous les ID des objets commenceront par un 2. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00134">134</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
 <a id="ac31a0061ec0d93685c2e9975d6da2d20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac31a0061ec0d93685c2e9975d6da2d20">&#9670;&nbsp;</a></span>creer_personne()</h2>
 
@@ -436,6 +542,64 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction a créé une <b><a class="el" href="struct_personne.html">Personne</a></b> et l'a <b>initialisé</b> avant de le retourner. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00022">22</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="a52a046e991cf547bbd8a9ed2be52af58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a046e991cf547bbd8a9ed2be52af58">&#9670;&nbsp;</a></span>isPersonneExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isPersonneExist </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ID_personne</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de <b>vérifier</b> si l'ID de la personne existe déjà. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>Prend l'ID à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie <b>false</b> si l'objet n'existe pas, <b>true</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00149">149</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="ad8a63549cdabefc1f518eb0debb521ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a63549cdabefc1f518eb0debb521ed">&#9670;&nbsp;</a></span>lire_fichier_personne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_personne.html">Personne</a> lire_fichier_personne </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>lien</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction prend les <b>données</b> d'une <em>personne</em> d'un fichier au format <b>JSON</b> et les sauvegarde dans une <a class="el" href="struct_personne.html">Personne</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>Prend en paramètre une chaine de caractère qui est le <b>lien</b> d'un fichier <b>JSON</b> . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction renvoie une <b>personne</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00162">162</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
