@@ -211,7 +211,10 @@ int main(int argc, char* argv[])
                                     SDL_ExitWithError("Impossible de charger l'image");
                                 }
                                 Blit(image, screen, window);
-                                SDL_Delay(2000);
+
+                                if (connexion() == false) {
+                                    goto Deconnection;
+                                }
 
                                 continuer = false;
                                 isLogin = true;
@@ -585,7 +588,12 @@ int main(int argc, char* argv[])
                                 SDL_ExitWithError("Impossible de charger l'image");
                             }       
                             Blit(image, screen, window);
-                            SDL_Delay(2000);
+                            
+                            Objet o = creer_objet(21702301);
+                            Personne p = lire_fichier_personne("../../data/Users/21702301.json");
+                            creer_fichier_objet(o);
+                            add_objet_dans_liste_objet(p, o);
+
                             goto Objets;  
                                                     
                         }

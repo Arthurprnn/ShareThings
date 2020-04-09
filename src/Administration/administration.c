@@ -34,12 +34,10 @@ int creer_compte(Compte c, Personne p) {
 
     printf("\n");
     char * mdp = creer_mot_de_passe();
-    printf("\nMDP = %ld\n", strlen(mdp));
     printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
     char * verif_mdp = creer_mot_de_passe();
-    printf("\nMDP = %ld\n", strlen(verif_mdp));
-    while (!isMemeChaine(mdp, verif_mdp)) {
-        printf("\nErreur: vous n'avez pas entré les même mots de passe !\n\nEssayez à nouveau:\n\n");
+    while (!isMemeChaine(mdp, verif_mdp) || (strlen(mdp) > 7)) {
+        printf("\nErreur: vous n'avez pas entré les même mots de passe ou mot de passe trop long !\n\nEssayez à nouveau:\n\n");
         mdp = "";
         verif_mdp = "";
         mdp = creer_mot_de_passe();
@@ -47,7 +45,6 @@ int creer_compte(Compte c, Personne p) {
         verif_mdp = creer_mot_de_passe();
     }
     char * mdpcrypt = chiffrer_mot_de_passe(mdp);
-    printf("\nMdpcrypt = %sW\n", mdpcrypt);
     printf("\n");
 
     printf("\nEntrez votre nom : ");
@@ -115,7 +112,7 @@ int getch(){                                                             /*!< Pe
 
 char * creer_mot_de_passe(){
     char mdp[32], ch;
-    printf("Veuillez saisir votre mot de passe : ");
+    printf("Veuillez saisir votre mot de passe : Attention le mot de passe doit contenir au maximum 6 caractères !\nMdp: ");
     int i=0;
 
     do {
@@ -208,14 +205,13 @@ bool connexion() {
     printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
     char * nom_utilisateur = creer_chaine_de_caracteres();
     char * mdp = creer_mot_de_passe();
+    printf("\n");
     char * cryptmdp = chiffrer_mot_de_passe(mdp);
-    printf("Cryptmdp: %s\n", cryptmdp);
     bool isConnexionReussie = false;
     if (isCompteExist(nom_utilisateur)) {
         char lien[64] = {0};
         sprintf(lien, "../../data/Comptes/%s.json", nom_utilisateur);
         Compte c = lire_fichier_compte(lien);
-        printf("Mdp: %s\n", get_mdp(c));
         if (strcmp(cryptmdp, get_mdp(c)) == 0) {
             isConnexionReussie = true;
         }

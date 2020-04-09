@@ -18,16 +18,16 @@ struct s_objet {
 };
 
 void init_objet(Objet o) {
-    o->nom = (char *)malloc(32*sizeof(char));
-    o->description = (char *)malloc(256*sizeof(char));
-    o->type = (char *)malloc(16*sizeof(char));
+    o->nom = (char *)malloc(sizeof(char));
+    o->description = (char *)malloc(sizeof(char));
+    o->type = (char *)malloc(sizeof(char));
     o->ID_obj = 0;
     o->ID_prop = 0;
     o->delai_de_pret = 0;
 }
 
 Objet creer_objet(int ID_prop) {
-    Objet o = malloc(sizeof(Objet));
+    Objet o = (Objet)malloc(sizeof(struct s_objet));
     init_objet(o);
     printf("Entrer le nom que vous voulez donner à votre objet : ");
     char * ch = creer_chaine_de_caracteres();
@@ -37,8 +37,8 @@ Objet creer_objet(int ID_prop) {
     set_descriptionObjet(o, creer_chaine_de_caracteres());
 
     printf("\nEntrer le type d'objet: Attention ! Si le type entré n'existe pas ou est mal orthographié, le type sera automatiquement Autres\n");
-    char * chaine = creer_chaine_de_caracteres();
-    set_typeObjet(o, BonType(chaine));
+    char * type = creer_chaine_de_caracteres();
+    set_typeObjet(o, BonType(type));
 
     set_ID_objetObjet(o, creer_ID_objet(get_typeObjet(o)));
     set_ID_proprietaireObjet(o, ID_prop);
@@ -142,7 +142,7 @@ char * BonType(char * type) {
 
 bool isObjetExist(int ID_objet, char * type) {
     FILE * fichier = NULL;
-    char nom[32]={0};
+    char nom[64]={0};
 	sprintf(nom, "../../data/Objets/%s/%d.json", type, ID_objet);
     fichier = fopen(nom, "r");
 
@@ -156,7 +156,7 @@ int creer_ID_objet(char * type) {
     srand(time(NULL));
     int bon_ID = 0;
     int ID_temp = 0;
-    while (isObjetExist(ID_temp, type) || bon_ID == 0) {
+    while (isObjetExist(bon_ID, type) || bon_ID == 0) {
         ID_temp = 1;
         for (int i=0; i<7; i++) {
             ID_temp *= 10;
@@ -212,7 +212,7 @@ Objet lire_fichier_objet(char *lien) {
 
 void creer_fichier_objet(Objet o) {
 	FILE *fichier = NULL;
-	char nom[32]={0};
+	char nom[64]={0};
 	sprintf(nom, "../../data/Objets/%s/%d.json", get_typeObjet(o) ,get_ID_objetObjet(o));
 	fichier = fopen(nom, "w+");
 
