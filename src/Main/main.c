@@ -68,13 +68,13 @@ int main(int argc, char* argv[])
     SDL_Surface *texteNom;
     SDL_Surface *texteID;
 
-    Nom.x = 140;
-    Nom.y = 186;
+    Nom.x = 142;
+    Nom.y = 183;
     Nom.w = 130;
     Nom.h = 37;
 
-    ID.x = 140;
-    ID.y = 213;
+    ID.x = 130;
+    ID.y = 211;
     ID.w = 130;
     ID.h = 20;
 
@@ -83,6 +83,8 @@ int main(int argc, char* argv[])
     bool isLogin = false;
     bool isAdmin = false;
 
+    Personne p;
+    Compte c;
 
 
     /*!< Lancement de \a SDL et vérification de sa bonne initialisation. */
@@ -105,7 +107,7 @@ int main(int argc, char* argv[])
     }
 
     /*!< Chargement de la police et vérification de son bon chargement. */
-    police = TTF_OpenFont("../Images/arial.ttf", 11);
+    police = TTF_OpenFont("../Images/arial.ttf", 16);
     if (!police)
     {
         TTF_ExitWithError("Impossible de charger la police");
@@ -210,18 +212,20 @@ int main(int argc, char* argv[])
                                     SDL_DestroyWindow(window);
                                     SDL_ExitWithError("Impossible de charger l'image");
                                 }
-                                Blit(image, screen, window);
-
+                                Blit(image, screen, window);                               
                                 if (connexion() == false) {
                                     goto Deconnection;
                                 }
-
                                 continuer = false;
                                 isLogin = true;
-                                isAdmin = false;
+                                isAdmin = true;
                                 if ((isAdmin == false) && isLogin == true)
                                 {
                                     goto MenuNonAdmin; 
+                                }
+                                else
+                                {
+                                    goto MenuAdmin;
                                 }
                             }
 
@@ -237,11 +241,11 @@ int main(int argc, char* argv[])
                                 }
                                 Blit(image, screen, window);
 
-                                SDL_Delay(2000);
+                                
                                 /*!< Appel des \b fonctions pour \a inscrire une \a personne. */
                             
-                                Personne p = init_personne();
-                                Compte c = init_compte();
+                                p = init_personne();
+                                c = init_compte();
                                 creer_compte(c,p);
                                 creer_fichier_compte(c);
                                 creer_fichier_personne(p);
@@ -254,6 +258,161 @@ int main(int argc, char* argv[])
                                     goto MenuNonAdmin; 
                                 }                                                        
                             }                   
+                            continue;
+                        default :
+                            continue;
+                    }
+                    continue;
+
+                default :
+                    break;
+            }
+        }
+    }
+
+
+    MenuAdmin :
+    continuer = true;
+    /*!< chargement de l'image et vérification de son bon chargement. */
+    image = SDL_LoadBMP("../Images/menuAdmin.bmp");
+    if (image == NULL)
+    {
+        SDL_DestroyWindow(window);
+        SDL_ExitWithError("Impossible de charger l'image ");
+    }
+
+    /*!< \b Blit la \a surface sur la \a fenetre, \b liberation de la \a surface puis mise à jour de la \a fenetre. */
+    Blit(image, screen, window);
+
+    /*!< Boucle pour gérer la \a connection et \a l'inscription de l'utilisateur. */                                                     
+    while (program_launched)
+    {   
+        /*!< On détecte les \a evenements qui se passent sur la fenètre */                     
+        while (SDL_PollEvent(&event) && continuer)
+        {                                        
+            switch(event.type)
+            {
+                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                case SDL_QUIT :
+                    goto Fin;                                                                             
+                    break;
+
+                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrete la boucle. */ 
+                case SDL_MOUSEBUTTONUP :                                                     
+                    switch(event.button.button)
+                    {
+                        case SDL_BUTTON_LEFT :
+
+                            positionClic.x = event.button.x;
+                            positionClic.y = event.button.y;
+
+                            /*!< \a Déconnexion. */
+                            if ((positionClic.x > 884 && positionClic.x < 1211) && (positionClic.y > 39) && (positionClic.y < 86))
+                            {
+                                goto MenuConnection;                            
+                            }
+
+                            /*!< \a Liste \a des \a demendeurs. */
+                            if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 239) && (positionClic.y < 310))
+                            {
+                                printf("a\n");                            
+                            }
+
+                            /*!< \a Modifier \a les \a données \a des \a demandeurs. */
+                            if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 376) && (positionClic.y < 448))
+                            {
+                                goto ModifierDonneesAdmin;
+                            }                             
+
+                            /*!< \a Changer \a le \a mot \a de \a passe \a des \a demandeurs. */
+                            if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 513) && (positionClic.y < 585))
+                            {
+                                printf("b\n");
+                            }
+
+                            /*!< \a Doxygen. */
+                            if ((positionClic.x > 804 && positionClic.x < 1147) && (positionClic.y > 376) && (positionClic.y < 448))
+                            {
+                                system("x-www-browser ../../doc/Doxygen/html/index.html");
+                            } 
+
+                            continue;
+                        default :
+                            continue;
+                    }
+                    continue;
+
+                default :
+                    break;
+            }
+        }
+    }
+
+
+    ModifierDonneesAdmin :
+    continuer = true;
+    /*!< chargement de l'image et vérification de son bon chargement. */
+    image = SDL_LoadBMP("../Images/modifierDonneesAdmin.bmp");
+    if (image == NULL)
+    {
+        SDL_DestroyWindow(window);
+        SDL_ExitWithError("Impossible de charger l'image ");
+    }
+
+    /*!< \b Blit la \a surface sur la \a fenetre, \b liberation de la \a surface puis mise à jour de la \a fenetre. */
+    Blit(image, screen, window);
+
+    /*!< Boucle pour gérer la \a connection et \a l'inscription de l'utilisateur. */                                                     
+    while (program_launched)
+    {   
+        /*!< On détecte les \a evenements qui se passent sur la fenètre */                     
+        while (SDL_PollEvent(&event) && continuer)
+        {                                        
+            switch(event.type)
+            {
+                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                case SDL_QUIT :
+                    goto Fin;                                                                             
+                    break;
+
+                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrete la boucle. */ 
+                case SDL_MOUSEBUTTONUP :                                                     
+                    switch(event.button.button)
+                    {
+                        case SDL_BUTTON_LEFT :
+
+                            positionClic.x = event.button.x;
+                            positionClic.y = event.button.y;
+
+                            /*!< Détecte si l'utilisateur appuie sur la fleche, et reviens au menu Admin. */
+                            if ((positionClic.x > 410 && positionClic.x < 477) && (positionClic.y > 590) && (positionClic.y < 644))
+                            {
+                                goto MenuAdmin;                            
+                            }
+
+                            /*!< Nom. */
+                            if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 306) && (positionClic.y < 362))
+                            {
+                                printf("a\n");
+                            }                             
+
+                            /*!< Prenom. */
+                            if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 378) && (positionClic.y < 434))
+                            {
+                                printf("b\n");
+                            }
+
+                            /*!< Mail. */
+                            if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 451) && (positionClic.y < 505))
+                            {
+                                printf("c\n");
+                            }
+
+                            /*!< Age. */
+                            if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 523) && (positionClic.y < 578))
+                            {
+                                printf("d\n");
+                            } 
                             continue;
                         default :
                             continue;
@@ -280,7 +439,22 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Impossible de charger l'image ");
     }
     /*!< \b Blit la \a surface sur la \a fenêtre, \b liberation de la \a surface puis mise à jour de la \a fenêtre. */
-    Blit(image, screen, window);            
+    Blit(image, screen, window); 
+
+    /*!< Affiche ID et Nom sur le menuNonAdmin. */
+    int IDPersonne = get_IDPersonne(p);
+    char IDChar[9];
+    sprintf(IDChar, "%d", IDPersonne);
+    texteID = TTF_RenderText_Blended(police, IDChar, couleurNoire);
+    SDL_BlitSurface(texteID, NULL, screen, &ID);
+    SDL_FreeSurface(texteID);
+    SDL_UpdateWindowSurface(window);
+
+    char *NomUtilisateur = get_nom_utilisateur(c);
+    texteNom = TTF_RenderText_Blended(police, NomUtilisateur, couleurNoire);
+    SDL_BlitSurface(texteNom, NULL, screen, &Nom);
+    SDL_FreeSurface(texteNom);
+    SDL_UpdateWindowSurface(window);
                 
     while (program_launched && continuer)
     {
@@ -296,7 +470,6 @@ int main(int argc, char* argv[])
                 case SDL_MOUSEBUTTONUP :                                                     
                     switch(event.button.button)
                     {
-
                         case SDL_BUTTON_LEFT :
 
                             positionClic.x = event.button.x;
@@ -588,12 +761,7 @@ int main(int argc, char* argv[])
                                 SDL_ExitWithError("Impossible de charger l'image");
                             }       
                             Blit(image, screen, window);
-                            
-                            Objet o = creer_objet(21702301);
-                            Personne p = lire_fichier_personne("../../data/Users/21702301.json");
-                            creer_fichier_objet(o);
-                            add_objet_dans_liste_objet(p, o);
-
+                            SDL_Delay(2000);
                             goto Objets;  
                                                     
                         }
@@ -702,23 +870,3 @@ int main(int argc, char* argv[])
     SDL_Quit();
     return EXIT_SUCCESS;
 }
-
-
-/*            
-            if (isAdmin)
-            {
-                while (SDL_PollEvent(&event))
-                {
-                    switch(event.type)
-                    {
-                        case SDL_QUIT :                                                         
-                            program_launched = SDL_FALSE;
-                            break;
-                
-                        default :
-                            break;
-
-                    }
-                }
-            }
-*/
