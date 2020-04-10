@@ -117,7 +117,6 @@ void set_element_liste_objet(int *liste, int indice, int element) {
 
 
 void add_objet_dans_liste_objet(Personne p, Objet o) {
-    
     int *new_liste = (int*)malloc((get_longueur_liste_objetPersonne(p)+1)*sizeof(int));
     int *liste = get_liste_objetPersonne(p);
 

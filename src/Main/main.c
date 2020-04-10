@@ -85,6 +85,7 @@ int main(int argc, char* argv[])
 
 
     Compte c;
+    int IDPersonne;
 
 
     /*!< Lancement de \a SDL et vérification de sa bonne initialisation. */
@@ -467,7 +468,7 @@ int main(int argc, char* argv[])
     Blit(image, screen, window); 
 
     /*!< Affiche ID et Nom sur le menuNonAdmin. */
-    int IDPersonne = get_ID_personne(c);
+    IDPersonne = get_ID_personne(c);
     char IDChar[9];
     sprintf(IDChar, "%d", IDPersonne);
     texteID = TTF_RenderText_Blended(police, IDChar, couleurNoire);
@@ -786,7 +787,15 @@ int main(int argc, char* argv[])
                                 SDL_ExitWithError("Impossible de charger l'image");
                             }       
                             Blit(image, screen, window);
-                            SDL_Delay(2000);
+                            
+                            Objet o = creer_objet(IDPersonne);
+                            creer_fichier_objet(o);
+                            char lien[64] = {0};
+                            sprintf(lien, "../../data/Users/%d.json", IDPersonne);
+                            Personne p = lire_fichier_personne(lien);
+                            add_objet_dans_liste_objet(p, o);
+                            creer_fichier_personne(p);
+
                             goto Objets;  
                                                     
                         }

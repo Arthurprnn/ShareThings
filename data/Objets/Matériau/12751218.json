@@ -1,0 +1,8 @@
+{
+	"nom": "Planche",
+	"description": "Bois.",
+	"type": "Matériau",
+	"ID_obj": 12751218,
+	"ID_prop": 20073605,
+	"delai_de_pret": 15
+}
