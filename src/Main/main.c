@@ -83,7 +83,7 @@ int main(int argc, char* argv[])
     bool isLogin = false;
     bool isAdmin = false;
 
-    Personne p;
+
     Compte c;
 
 
@@ -212,13 +212,38 @@ int main(int argc, char* argv[])
                                     SDL_DestroyWindow(window);
                                     SDL_ExitWithError("Impossible de charger l'image");
                                 }
-                                Blit(image, screen, window);                               
-                                if (connexion() == false) {
+                                Blit(image, screen, window);   
+                                
+                                c = init_compte();
+
+                                printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
+                                char * nom_utilisateur = creer_chaine_de_caracteres();
+                                char * mdp = creer_mot_de_passe();
+                                printf("\n");
+                                char * cryptmdp = chiffrer_mot_de_passe(mdp);
+                                bool isConnexionReussie = false;
+                                if (isCompteExist(nom_utilisateur)) {
+                                    char lien[64] = {0};
+                                    sprintf(lien, "../../data/Comptes/%s.json", nom_utilisateur);
+                                    c = lire_fichier_compte(lien);
+                                    if (strcmp(cryptmdp, get_mdp(c)) == 0) {
+                                        isConnexionReussie = true;
+                                    }
+                                }
+
+                                if (isConnexionReussie == false) {
                                     goto Deconnection;
                                 }
+
+                                if (get_ID_personne(c) == 0) {
+                                    isAdmin = true;
+                                } else {
+                                    isAdmin = false;
+                                }
+
                                 continuer = false;
                                 isLogin = true;
-                                isAdmin = true;
+
                                 if ((isAdmin == false) && isLogin == true)
                                 {
                                     goto MenuNonAdmin; 
@@ -244,8 +269,8 @@ int main(int argc, char* argv[])
                                 
                                 /*!< Appel des \b fonctions pour \a inscrire une \a personne. */
                             
-                                p = init_personne();
                                 c = init_compte();
+                                Personne p = init_personne();
                                 creer_compte(c,p);
                                 creer_fichier_compte(c);
                                 creer_fichier_personne(p);
@@ -442,7 +467,7 @@ int main(int argc, char* argv[])
     Blit(image, screen, window); 
 
     /*!< Affiche ID et Nom sur le menuNonAdmin. */
-    int IDPersonne = get_IDPersonne(p);
+    int IDPersonne = get_ID_personne(c);
     char IDChar[9];
     sprintf(IDChar, "%d", IDPersonne);
     texteID = TTF_RenderText_Blended(police, IDChar, couleurNoire);

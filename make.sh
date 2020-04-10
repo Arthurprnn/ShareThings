@@ -5,4 +5,5 @@ make
 cd ./Main
 make clean
 make
+clear
 ./ShareThings.exe

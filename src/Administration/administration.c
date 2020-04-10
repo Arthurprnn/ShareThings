@@ -199,22 +199,3 @@ void creer_fichier_compte(Compte c) {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
 }
-
-
-bool connexion() {
-    printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
-    char * nom_utilisateur = creer_chaine_de_caracteres();
-    char * mdp = creer_mot_de_passe();
-    printf("\n");
-    char * cryptmdp = chiffrer_mot_de_passe(mdp);
-    bool isConnexionReussie = false;
-    if (isCompteExist(nom_utilisateur)) {
-        char lien[64] = {0};
-        sprintf(lien, "../../data/Comptes/%s.json", nom_utilisateur);
-        Compte c = lire_fichier_compte(lien);
-        if (strcmp(cryptmdp, get_mdp(c)) == 0) {
-            isConnexionReussie = true;
-        }
-    }
-    return isConnexionReussie;
-}

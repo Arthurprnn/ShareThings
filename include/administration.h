@@ -164,13 +164,4 @@ Compte lire_fichier_compte(char *);
 
 void creer_fichier_compte(Compte);
 
-/**
- * \fn bool connexion()
- * \brief Cette fonction \b vérifie si la connexion est possible.
- * \param void La fonction ne prend rien en paramètre.
- * \return \b bool La fonction retourne true ou false selon si la connexion est possible.
- */
-
-bool connexion();
-
 #endif
