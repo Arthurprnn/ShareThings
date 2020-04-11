@@ -796,7 +796,7 @@ int main(int argc, char* argv[])
                             add_objet_dans_liste_objet(p, o);
                             creer_fichier_personne(p);
 
-                            goto Objets;  
+                            goto MenuNonAdmin;  
                                                     
                         }
 
@@ -811,6 +811,8 @@ int main(int argc, char* argv[])
                                 sprintf(commande, "sh ../Personnes/liste_objet.sh");
                                 printf("\nCommande: %s\n", commande);
                                 system(commande);
+
+                                system("touch ./Test/test.json");
 
                                 char lien[64] = {0};
                                 sprintf(lien, "./Test/%d.json", ID_obj);
@@ -843,6 +845,8 @@ int main(int argc, char* argv[])
                             } else {
                                 printf("\nL'entier entré n'est pas un ID d'objet !\n");
                             }
+
+                            goto MenuNonAdmin;
                         }
 
                         /*!< Voir ses objets */
