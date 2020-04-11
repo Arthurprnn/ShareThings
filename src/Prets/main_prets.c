@@ -12,5 +12,7 @@ int main(int argc, char *argv[]) {
 
     printf("ID du prêt : %d\n", get_IDPret(p));
 
+    creer_fichier_pret(p);
+
     return 0;
 }

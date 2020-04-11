@@ -27,11 +27,14 @@ Pret creer_pret(int ID_demandeur) {
     Pret p = init_pret();
     int ID_objet = 0;
     bool rester = true;
+    char * type;
 
     while (rester == true) {
         printf("Entrez l'ID de l'objet que vous voulez emprunter : ");
         lire_entier(&ID_objet);
-        if (isPretExist(ID_objet) == true) {
+        printf("Entrez le type de l'objet a emprunter: Attention, si le type est incorrect, l'objet sera recherché dans le type Autres !\nType : ");
+        type = creer_chaine_de_caracteres();
+        if (isObjetExist(ID_objet, BonType(type)) == true) {
             rester = false;
         } else {
             printf("Attention: l'ID \"%d\" n'existe pas ! Veuillez saisir un ID d'objet existant.\n", ID_objet);
@@ -49,7 +52,7 @@ Pret creer_pret(int ID_demandeur) {
     FILE *fp;
 	char buffer[1024];
     char lien[32]={0};
-	sprintf(lien, "../../data/Objets/%d.json", ID_objet);
+	sprintf(lien, "../../data/Objets/%s/%d.json", BonType(type), ID_objet);
 	struct json_object *parsed_json;
 	struct json_object *delai_de_pret;
     fp = fopen(lien,"r");
