@@ -49,8 +49,6 @@ Objet creer_objet(int ID_prop) {
     set_delai_pretObjet(o, delai);
     set_nomObjet(o, ch);
 
-    printf("Chaine: %s\n", get_nomObjet(o));
-
     return o;
 }
 

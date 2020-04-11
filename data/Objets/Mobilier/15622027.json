@@ -1,0 +1,8 @@
+{
+	"nom": "Lit",
+	"description": "Permet de dormir confortablement la nuit.",
+	"type": "Mobilier",
+	"ID_obj": 15622027,
+	"ID_prop": 20073605,
+	"delai_de_pret": 56
+}

@@ -115,7 +115,6 @@ void set_element_liste_objet(int *liste, int indice, int element) {
 }
 
 
-
 void add_objet_dans_liste_objet(Personne p, Objet o) {
     int *new_liste = (int*)malloc((get_longueur_liste_objetPersonne(p)+1)*sizeof(int));
     int *liste = get_liste_objetPersonne(p);
@@ -129,6 +128,29 @@ void add_objet_dans_liste_objet(Personne p, Objet o) {
     set_liste_objetPersonne(p, new_liste);
     set_longueur_liste_objetPersonne(p, get_longueur_liste_objetPersonne(p)+1);
 }
+
+void delete_objet_dans_liste_objet(Personne p, int ID) {
+    int *liste = get_liste_objetPersonne(p);
+    int *new_liste = (int*)malloc((get_longueur_liste_objetPersonne(p)-1)*sizeof(int));
+
+    for (int i=0; i<get_longueur_liste_objetPersonne(p); i++) {
+        if (liste[i] != ID) {
+            new_liste[i] = liste[i];
+        }
+    }
+
+    for (int i=0; i<get_longueur_liste_objetPersonne(p); i++) {
+        printf("%d \n", liste[i]);
+    }
+
+    for (int i=0; i<get_longueur_liste_objetPersonne(p)-1; i++) {
+        printf("%d \n", new_liste[i]);
+    }
+
+    set_liste_objetPersonne(p, new_liste);
+    set_longueur_liste_objetPersonne(p, get_longueur_liste_objetPersonne(p)-1);
+}
+
 
 int creer_ID_personne() {
     srand(time(NULL));

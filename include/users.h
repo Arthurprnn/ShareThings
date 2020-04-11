@@ -203,6 +203,8 @@ void set_element_liste_objet(int *, int, int);
 
 void add_objet_dans_liste_objet(Personne, Objet);
 
+void delete_objet_dans_liste_objet(Personne, int);
+
 /**
  * \fn int creer_ID_personne()
  * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 2.

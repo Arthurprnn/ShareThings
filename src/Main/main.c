@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 
     /*!< Varaible pour ttf */
     TTF_Font *police = NULL;
-    SDL_Color couleurNoire = {0, 0, 0};
+    SDL_Color couleurNoire = {0, 255, 255};
 
     SDL_Rect Nom;
     SDL_Rect ID;
@@ -803,7 +803,46 @@ int main(int argc, char* argv[])
                         /*!< Supprimer un objet */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 515) && (positionClic.y < 571))
                         { 
-                            printf("b\n");                          
+                            printf("\nVeuillez rentrer l'ID de l'objet à supprimer: Attention vous ne pouvez supprimer un objet que s'il est dans votre liste d'objets et seulement s'il vous appartient !\nID: ");
+                            int ID_obj = 0;
+                            lire_entier(&ID_obj);
+                            if ((ID_obj>=10000000) && (ID_obj<=19999999)) {
+                                char commande[64] = {0};
+                                sprintf(commande, "sh ../Personnes/liste_objet.sh");
+                                printf("\nCommande: %s\n", commande);
+                                system(commande);
+
+                                char lien[64] = {0};
+                                sprintf(lien, "./Test/%d.json", ID_obj);
+                                
+                                FILE *fichier = NULL;
+                                fichier = fopen(lien, "r");
+
+                                if (fichier != NULL) {
+                                    Objet o = lire_fichier_objet(lien);
+
+                                    if (get_ID_proprietaireObjet(o) == IDPersonne) {
+                                        char lienPersonne[64] = {0};
+                                        sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_proprietaireObjet(o));
+                                        Personne p = lire_fichier_personne(lienPersonne);
+                                        delete_objet_dans_liste_objet(p, ID_obj);
+
+                                        char commandeObjet[64] = {0};
+                                        sprintf(commandeObjet, "rm ../../data/Objets/%s/%d.json", get_typeObjet(o), ID_obj);
+                                        system(commandeObjet);
+
+                                        creer_fichier_personne(p);
+                                    } else {
+                                        printf("\nVous n'êtes pas le propriétaire de cet objet !\n");
+                                    }
+                                } else {
+                                    printf("\nCet ID n'existe pas, il n'y a pas d'objets portant cet ID !\n");
+                                }
+                                system("rm ./Test/*.json");
+                                system("rmdir Test");
+                            } else {
+                                printf("\nL'entier entré n'est pas un ID d'objet !\n");
+                            }
                         }
 
                         /*!< Voir ses objets */
