@@ -15,6 +15,7 @@
 #include "../../include/prets.h"
 #include "../../include/temps.h"
 #include "../../include/users.h"
+#include "../../include/html.h"
 
 #define LARGEUR_FENETRE 1260
 #define HAUTEUR_FENETRE 720
@@ -269,7 +270,8 @@ int main(int argc, char* argv[])
 
                                 
                                 /*!< Appel des \b fonctions pour \a inscrire une \a personne. */
-                            
+
+                                printf("Bienvenue sur ShareThings !\n\n");
                                 c = init_compte();
                                 Personne p = init_personne();
                                 creer_compte(c,p);
@@ -278,11 +280,9 @@ int main(int argc, char* argv[])
                             
                                 continuer = false;
                                 isLogin = true;
-                                isAdmin = false;
-                                if ((isAdmin == false) && isLogin == true)
-                                {
-                                    goto MenuNonAdmin; 
-                                }                                                        
+                                isAdmin = false;                                                                
+                                goto MenuNonAdmin; 
+                                                                                        
                             }                   
                             continue;
                         default :
@@ -851,8 +851,16 @@ int main(int argc, char* argv[])
 
                         /*!< Voir ses objets */
                         if ((positionClic.x >536 && positionClic.x < 864) && (positionClic.y > 584) && (positionClic.y < 623))
-                        { 
-                            printf("c\n");                          
+                        {
+                            
+                            char lienPersonne[64] = {0};
+                            sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_personne(c));
+                            Personne p = lire_fichier_personne(lienPersonne); 
+                            printf("%s\n",lienPersonne);
+                            afficheObjetsPersonne(p); 
+                            system("x-www-browser ../HTML/afficheObjetsPersonne.html");
+                            
+                            goto MenuNonAdmin;                         
                         }
                         
                         continue;
@@ -912,14 +920,27 @@ int main(int argc, char* argv[])
                                 SDL_ExitWithError("Impossible de charger l'image");
                             }       
                             Blit(image, screen, window);
-                            SDL_Delay(2000);
+
+                            printf("\n");
+                            Personne p = init_personne();                            
+                            char commandeRMCompte[64] = {0};                            
+                            sprintf(commandeRMCompte, "rm ../../data/Comptes/%s.json", get_nom_utilisateur(c)); 
+                            system(commandeRMCompte);
+                            creer_compte(c, p);
+                            set_ID_personne(c, IDPersonne);
+                            set_IDPersonne(p, IDPersonne);
+                            creer_fichier_compte(c);
+                            creer_fichier_personne(p);
+
+
                             goto Profil;                         
                         }
 
                         /*!< Supprimer Profil */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 505) && (positionClic.y < 560))
                         { 
-                            printf("b\n");                          
+                            supprimer_compte(c);
+                                                         
                         }                                                
                         continue;
 

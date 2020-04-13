@@ -2,7 +2,7 @@
 CC= gcc
 CFLAGS=  -Wall -g `sdl2-config --cflags --libs` -lSDL2 -lSDL2_ttf 
 LIB= ../../lib
-LDFLAGS= -lm -ladministration -lentrees -lusers -lobjet -lprets -ltemps -ljson-c -lcrypt
+LDFLAGS= -lm -ladministration -lentrees -lusers -lobjet -lprets -lhtml -ltemps -ljson-c -lcrypt
 INC= ../../include
 EXEC= ShareThings.exe
 SRC= main.c

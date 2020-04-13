@@ -18,3 +18,6 @@ make -f libprets.mk
 cd ../Administration
 make -f libadministration.mk clean 
 make -f libadministration.mk
+cd ../HTML
+make -f libhtml.mk clean 
+make -f libhtml.mk
