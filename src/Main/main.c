@@ -21,7 +21,7 @@
 #define HAUTEUR_FENETRE 720
 
 
-//Permet d'afficher un message d'erreur, et de quitter SDL
+/*!< Permet d'afficher un message d'erreur, et de quitter SDL. */
 void SDL_ExitWithError(const char *message)
 {
     SDL_Log("ERREUR : %s > %s\n", message, SDL_GetError());
@@ -29,7 +29,7 @@ void SDL_ExitWithError(const char *message)
     exit(EXIT_FAILURE);
 }
 
-//Permet d'afficher un message d'erreur, et de quitter TTF
+/*!< Permet d'afficher un message d'erreur, et de quitter TTF. */
 void TTF_ExitWithError(const char *message)
 {
     printf("ERREUR : %s > %s\n", message, TTF_GetError());
@@ -37,6 +37,7 @@ void TTF_ExitWithError(const char *message)
     exit(EXIT_FAILURE);
 }
 
+/*!< Permet de blit une surface sur une autre surface, de librer de liberer la premiere surface, puis de mettre à jour la fenêtre. */
 void Blit(SDL_Surface *image, SDL_Surface *screen, SDL_Window *window)
 {
     SDL_BlitSurface(image, NULL, screen, NULL);
@@ -85,6 +86,7 @@ int main(int argc, char* argv[])
     bool isAdmin = false;
 
 
+    /*!< On initialise un compte et une id. */
     Compte c;
     int IDPersonne;
 
@@ -207,7 +209,7 @@ int main(int argc, char* argv[])
                             /*!< Affiche l'onglet de \a connection. */
                             if ((positionClic.x >210 && positionClic.x < 425) && (positionClic.y > 514) && (positionClic.y < 549))
                             {
-                                                
+                                /*!< Afficher l'image. */                
                                 image = SDL_LoadBMP("../Images/connection.bmp");
                                 if (image == NULL)
                                 {
@@ -216,6 +218,7 @@ int main(int argc, char* argv[])
                                 }
                                 Blit(image, screen, window);   
                                 
+                                /*!< Gere la \b connection. */
                                 c = init_compte();
 
                                 printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
@@ -232,11 +235,11 @@ int main(int argc, char* argv[])
                                         isConnexionReussie = true;
                                     }
                                 }
-
+                                /*!< Si la \a connection ne \b réussit \b pas, on renvoie l'utilisateur au menue \b d'accueil. */
                                 if (isConnexionReussie == false) {
                                     goto Deconnection;
                                 }
-
+                                /*!< On vérifie si le compte connecté \b est un \b compte \a admin ou \a non. */
                                 if (get_ID_personne(c) == 0) {
                                     isAdmin = true;
                                 } else {
@@ -245,7 +248,7 @@ int main(int argc, char* argv[])
 
                                 continuer = false;
                                 isLogin = true;
-
+                                /*!< Redirige l'utilisateur vers l'onglet \a Admin ou l'onglet \a NonAdmin. */
                                 if ((isAdmin == false) && isLogin == true)
                                 {
                                     goto MenuNonAdmin; 
@@ -467,7 +470,7 @@ int main(int argc, char* argv[])
     /*!< \b Blit la \a surface sur la \a fenêtre, \b liberation de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window); 
 
-    /*!< Affiche ID et Nom sur le menuNonAdmin. */
+    /*!< Affiche ID et Nom sur le menuNonAdmin de l'utilisateur. */
     IDPersonne = get_ID_personne(c);
     char IDChar[9];
     sprintf(IDChar, "%d", IDPersonne);
@@ -554,6 +557,22 @@ int main(int argc, char* argv[])
                                 goto Profil;
 
                             }
+
+                            /*!< Demander un \a Objet. */
+                            if ((positionClic.x >82 && positionClic.x < 596) && (positionClic.y > 580) && (positionClic.y < 618))
+                            {
+                                            
+                                printf("a\n");
+
+                            }
+
+                            /*!< Rendre un \a Objet. */
+                            if ((positionClic.x >676 && positionClic.x < 1189) && (positionClic.y > 580) && (positionClic.y < 618))
+                            {
+                                            
+                                printf("b\n");
+
+                            }
                             continue;                            
                 
                         default :
@@ -602,124 +621,147 @@ int main(int argc, char* argv[])
                             goto MenuNonAdmin;                          
                         }
 
+                        /*!< Affiche la listes des objets disponibles dans les 20 catégories differentes. */
+
                         /*!< Aliment */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
-                            printf("a\n");                         
+                            AfficherObjetsParType("Aliment");
+                            goto MenuNonAdmin;                         
                         }
 
                         /*!< Cosmétique */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
-                            printf("b\n");                          
+                            AfficherObjetsParType("Cosmétique");
+                            goto MenuNonAdmin;                         
                         }
 
                         /*!< Cuisine */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
-                            printf("c\n");                          
+                            AfficherObjetsParType("Cuisine");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Décoration */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
-                            printf("d\n");                          
+                            AfficherObjetsParType("Décoration");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Divertissement */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
-                            printf("e\n");                          
+                            AfficherObjetsParType("Divertissement");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Electrique */
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
-                            printf("f\n");                          
+                            AfficherObjetsParType("Electrique");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Electronique */
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 307) && (positionClic.y < 345))
-                        { 
+                        {
+                            AfficherObjetsParType("Electronique");
+                            goto MenuNonAdmin; 
                                                   
                         }
 
                         /*!< Fourniture */
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
-                                                  
+                            AfficherObjetsParType("Fourniture");
+                            goto MenuNonAdmin;                      
                         }
 
                         /*!< Internet */
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
-                                                  
+                            AfficherObjetsParType("Internet");
+                            goto MenuNonAdmin;                      
                         }
 
                         /*!< Jouet */
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
-                                                  
+                            AfficherObjetsParType("Jouet");
+                            goto MenuNonAdmin;                      
                         }
 
                         /*!< Matériau */
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
-                                                  
+                            AfficherObjetsParType("Matériau");
+                            goto MenuNonAdmin;                     
                         }
 
                         /*!< Mobilier */
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
-                                                  
+                            AfficherObjetsParType("Mobilier");
+                            goto MenuNonAdmin;                     
                         }
 
                         /*!< Musique */
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
-                                                  
+                            AfficherObjetsParType("Musique");
+                            goto MenuNonAdmin;                         
                         }
 
                         /*!< Nature */
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
-                                                  
+                            AfficherObjetsParType("Nature");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Outil */
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 513) && (positionClic.y < 550))
-                        { 
-                                                  
+                        {    
+                            AfficherObjetsParType("Outil");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Pharmaceutique */
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
-                                                  
+                            AfficherObjetsParType("Pharmaceutique");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Produit ménager */
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
-                                                  
+                            AfficherObjetsParType("Produit_ménager");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Véhicule */
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
-                                                  
+                            AfficherObjetsParType("Véhicule");
+                            goto MenuNonAdmin;                         
                         }
 
                         /*!< Vêtement */
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
-                                                  
+                            AfficherObjetsParType("Vêtement");
+                            goto MenuNonAdmin;                          
                         }
 
                         /*!< Autres */
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
-                                                  
+                            AfficherObjetsParType("Autres");
+                            goto MenuNonAdmin;                          
                         }
 
                         continue;
@@ -939,7 +981,7 @@ int main(int argc, char* argv[])
                         /*!< Supprimer Profil */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 505) && (positionClic.y < 560))
                         { 
-                            supprimer_compte(c);
+                            //supprimer_compte(c);
                                                          
                         }                                                
                         continue;
@@ -957,12 +999,11 @@ int main(int argc, char* argv[])
 
 
     Deconnection :
-    //Deconnection
     goto MenuConnection;
 
 
     Fin:
-    //On libere la mémoire et on quitte SDL
+    /*!< On libere la mémoire et on quitte SDL. */
     SDL_DestroyWindow(window);
     TTF_Quit();
     SDL_Quit();
