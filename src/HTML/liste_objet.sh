@@ -1,5 +1,6 @@
 #! /bin/sh
 
+cd ../HTML
 mkdir Test
 cd ../../data/Objets/
 cp ./Aliment/*.json ../../src/HTML/Test

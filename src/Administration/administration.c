@@ -199,3 +199,70 @@ void creer_fichier_compte(Compte c) {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
 }
+
+bool supprimer_compte(Compte c) {
+    system("sh ../Administration/liste_objets.sh");
+    char lienPersonne[64] = {0};
+    sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_personne(c));
+    Personne p = lire_fichier_personne(lienPersonne);
+    int *liste = get_liste_objetPersonne(p);
+    int longueur = get_longueur_liste_objetPersonne(p);
+    bool canRMcompte = true;
+    
+    for (int i=0; i<longueur; i++)
+    {
+        char lien[64] = {0};
+        sprintf(lien, "../Administration/Fichierjson/%d.json", liste[i]);
+        
+        Objet o = lire_fichier_objet(lien);
+        if (get_ID_proprietaireObjet(o) != get_ID_personne(c))
+        {
+            canRMcompte = false;    
+        }
+    }
+    if (canRMcompte == false)
+    {
+        printf("Attention : vous n'avez pas rendu tous les objets que vous avez emprunté !\n");
+        return false;
+    }
+    else
+    {
+        system("sh ../Administration/fichierPret.sh");
+        FILE *Fichierlongueur = NULL;
+        FILE *FichierPret = NULL;
+        Fichierlongueur = fopen("../Administration/NombreFichierPrets.txt", "r");
+        FichierPret = fopen("../Administration/ListeFichierPretsjson.txt", "r");
+        if ((Fichierlongueur != NULL ) && (FichierPret != NULL))
+        {
+            fscanf(Fichierlongueur, "%d", &longueur);
+            for (int i=0; i<longueur; i++)
+            {
+                char nomPret[16] = {0};
+                fscanf(FichierPret, "%s", nomPret);
+                char lienPret[64] = {0};
+                sprintf(lienPret, "../../data/Prets/%s", nomPret);
+
+                Pret p = lire_fichier_pret(lienPret);
+
+                char lienObjet[64] = {0};
+                sprintf(lienObjet, "../Administration/Fichierjson/%d.json", get_objetPret(p));
+                Objet o = lire_fichier_objet(lienObjet);
+                if (get_ID_proprietaireObjet(o) == get_ID_personne(c))
+                {
+                    printf("Attention : l'objet %d est toujours emprunté !\n", get_ID_proprietaireObjet(o));
+                    canRMcompte = false;
+                }
+                free(o);
+                free(p);   
+            }
+        } 
+        else
+        {
+            printf("Erreur : le fichier NombreFichierPrets.txt ou le fichier ListeFichierPretsjson.txt n'a pas pu s'ouvrir\n");
+            canRMcompte = false;
+        }
+        
+    }
+    return canRMcompte;
+    
+}

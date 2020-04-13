@@ -854,7 +854,6 @@ int main(int argc, char* argv[])
                                 printf("\nCommande: %s\n", commande);
                                 system(commande);
 
-                                system("touch ./Test/test.json");
 
                                 char lien[64] = {0};
                                 sprintf(lien, "./Test/%d.json", ID_obj);
@@ -981,8 +980,11 @@ int main(int argc, char* argv[])
                         /*!< Supprimer Profil */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 505) && (positionClic.y < 560))
                         { 
-                            //supprimer_compte(c);
-                                                         
+                            if (!supprimer_compte(c))
+                            {
+                                printf("Votre compte ne peut être supprimé.\n");
+                            }
+                            goto MenuNonAdmin;                                 
                         }                                                
                         continue;
 

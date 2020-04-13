@@ -19,8 +19,8 @@ struct s_objet {
 
 void init_objet(Objet o) {
     o->nom = (char *)malloc(sizeof(char));
-    o->description = (char *)malloc(sizeof(char));
-    o->type = (char *)malloc(sizeof(char));
+    o->description = (char *)malloc(256*sizeof(char));
+    o->type = (char *)malloc(32*sizeof(char));
     o->ID_obj = 0;
     o->ID_prop = 0;
     o->delai_de_pret = 0;

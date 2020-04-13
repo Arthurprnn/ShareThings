@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
 
-    Pret p = creer_pret(65656565);
+    Pret p = creer_pret(25772225);
 
     Temps debut = get_temps_debutPret(p);
     Temps fin = get_temps_finPret(p);

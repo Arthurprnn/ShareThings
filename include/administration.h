@@ -12,6 +12,7 @@
 #include <crypt.h>
 #include "entrees.h"
 #include "users.h"
+#include "prets.h"
 
 
 /**
@@ -163,5 +164,7 @@ Compte lire_fichier_compte(char *);
  */
 
 void creer_fichier_compte(Compte);
+
+bool supprimer_compte(Compte c);
 
 #endif
