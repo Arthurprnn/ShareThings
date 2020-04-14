@@ -177,7 +177,7 @@ Objet lire_fichier_objet(char *lien) {
 	struct json_object *ID_prop;
     struct json_object *delai_de_pret;
 
-    Objet o = malloc(sizeof(Objet));
+    Objet o = (Objet)malloc(sizeof(struct s_objet));
     init_objet(o);
 
 	fp = fopen(lien,"r");

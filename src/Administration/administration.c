@@ -36,7 +36,7 @@ int creer_compte(Compte c, Personne p) {
     char * mdp = creer_mot_de_passe();
     printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
     char * verif_mdp = creer_mot_de_passe();
-    while (!isMemeChaine(mdp, verif_mdp) || (strlen(mdp) > 7)) {
+    while (!isMemeChaine(mdp, verif_mdp) || (strlen(mdp) != 7)) {
         printf("\nErreur: vous n'avez pas entré les même mots de passe ou mot de passe trop long !\n\nEssayez à nouveau:\n\n");
         mdp = "";
         verif_mdp = "";

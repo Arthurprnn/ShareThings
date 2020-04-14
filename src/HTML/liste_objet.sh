@@ -23,6 +23,6 @@ cp ./Pharmaceutique/*.json ../../src/HTML/Test
 cp ./Produit_ménager/*.json ../../src/HTML/Test
 cp ./Véhicule/*.json ../../src/HTML/Test
 cp ./Vêtement/*.json ../../src/HTML/Test
-clear
+#clear
 
 exit 0

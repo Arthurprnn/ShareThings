@@ -627,6 +627,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
                             AfficherObjetsParType("Aliment");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                         
                         }
 
@@ -634,6 +635,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
                             AfficherObjetsParType("Cosmétique");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                         
                         }
 
@@ -641,6 +643,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
                             AfficherObjetsParType("Cuisine");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -648,6 +651,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
                             AfficherObjetsParType("Décoration");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -655,6 +659,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
                             AfficherObjetsParType("Divertissement");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -662,6 +667,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
                             AfficherObjetsParType("Electrique");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -669,6 +675,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 307) && (positionClic.y < 345))
                         {
                             AfficherObjetsParType("Electronique");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin; 
                                                   
                         }
@@ -677,6 +684,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
                             AfficherObjetsParType("Fourniture");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                      
                         }
 
@@ -684,6 +692,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
                             AfficherObjetsParType("Internet");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                      
                         }
 
@@ -691,6 +700,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >380 && positionClic.x < 596) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
                             AfficherObjetsParType("Jouet");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                      
                         }
 
@@ -698,6 +708,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
                             AfficherObjetsParType("Matériau");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                     
                         }
 
@@ -705,6 +716,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
                             AfficherObjetsParType("Mobilier");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                     
                         }
 
@@ -712,6 +724,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
                             AfficherObjetsParType("Musique");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                         
                         }
 
@@ -719,6 +732,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
                             AfficherObjetsParType("Nature");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -726,6 +740,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >676 && positionClic.x < 893) && (positionClic.y > 513) && (positionClic.y < 550))
                         {    
                             AfficherObjetsParType("Outil");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -733,6 +748,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 238) && (positionClic.y < 276))
                         { 
                             AfficherObjetsParType("Pharmaceutique");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -740,6 +756,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 307) && (positionClic.y < 345))
                         { 
                             AfficherObjetsParType("Produit_ménager");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -747,6 +764,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 376) && (positionClic.y < 412))
                         { 
                             AfficherObjetsParType("Véhicule");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                         
                         }
 
@@ -754,6 +772,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 444) && (positionClic.y < 481))
                         { 
                             AfficherObjetsParType("Vêtement");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
@@ -761,6 +780,7 @@ int main(int argc, char* argv[])
                         if ((positionClic.x >973 && positionClic.x < 1190) && (positionClic.y > 513) && (positionClic.y < 550))
                         { 
                             AfficherObjetsParType("Autres");
+                            system("x-www-browser ../HTML/fichier.html");
                             goto MenuNonAdmin;                          
                         }
 
