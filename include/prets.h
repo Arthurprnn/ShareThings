@@ -44,7 +44,7 @@ Pret creer_pret(int);
  * \fn Temps get_temps_debutPret(Pret)
  * \brief \b Getter permettant d'obtenir le temps de début du prêt.
  * \param Pret Pour extraire une information sur le prêt.
- * \return \b struct \b tm La fonction retourne un \b temps de type \b struct \b tm.
+ * \return \b Struct \b tm La fonction retourne un \b temps de type \b Struct \b tm.
  */
 
 Temps get_temps_debutPret(Pret);
@@ -53,7 +53,7 @@ Temps get_temps_debutPret(Pret);
  * \fn Temps get_temps_finPret(Pret)
  * \brief \b Getter permettant d'obtenir le temps de fin du prêt.
  * \param Pret Pour extraire une information sur le prêt.
- * \return \b struct \b tm La fonction retourne un \b temps de type \b struct \b tm.
+ * \return \b struct \b tm La fonction retourne un \b temps de type \b Struct \b tm.
  */
 
 Temps get_temps_finPret(Pret);

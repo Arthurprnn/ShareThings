@@ -90,6 +90,8 @@ int main(int argc, char* argv[])
     Compte c;
     int IDPersonne;
 
+    char lienPersonne[64] = {0};
+
 
     /*!< Lancement de \a SDL et vérification de sa bonne initialisation. */
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -512,29 +514,15 @@ int main(int argc, char* argv[])
 
                             /*!< Affiche l'onglet \b Liste \b des \b prets. */
                             if ((positionClic.x >465 && positionClic.x < 808) && (positionClic.y > 478) && (positionClic.y < 514))
-                            {
-                                                
-                                image = SDL_LoadBMP("../Images/connection.bmp");
-                                if (image == NULL)
-                                {
-                                    SDL_DestroyWindow(window);
-                                    SDL_ExitWithError("Impossible de charger l'image");
-                                }
-                                Blit(image, screen, window);
+                            {                                                
+                                goto ListePrets;
 
                             }
 
                             /*!< Affiche l'onglet \b Liste \b des \b demandes. */
                             if ((positionClic.x >465&& positionClic.x < 808) && (positionClic.y > 515) && (positionClic.y < 550))
-                            {
-                                                
-                                image = SDL_LoadBMP("../Images/connection.bmp");
-                                if (image == NULL)
-                                {
-                                    SDL_DestroyWindow(window);
-                                    SDL_ExitWithError("Impossible de charger l'image");
-                                }
-                                Blit(image, screen, window);
+                            {                                
+                                goto ListeDemandes; 
 
                             }
 
@@ -796,14 +784,22 @@ int main(int argc, char* argv[])
     }
     }
 
-/*
-    ListePrets :
-    //code html
-*/
 
-/*
-    ListeDemandes :
-*/
+    ListePrets :
+    sprintf(lienPersonne, "../../data/Users/%d.json", IDPersonne);
+    Personne p = lire_fichier_personne(lienPersonne);
+    listePret(p);
+    system("x-www-browser ../HTML/affichePret.html");
+    goto MenuNonAdmin;
+
+
+
+    ListeDemandes : 
+    sprintf(lienPersonne, "../../data/Users/%d.json", IDPersonne);
+    p = lire_fichier_personne(lienPersonne);
+    listeDemande(p);
+    system("x-www-browser ../HTML/afficheDemande.html");
+    goto MenuNonAdmin;
 
 
     Objets :
