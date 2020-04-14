@@ -888,13 +888,25 @@ int main(int argc, char* argv[])
                                         char lienPersonne[64] = {0};
                                         sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_proprietaireObjet(o));
                                         Personne p = lire_fichier_personne(lienPersonne);
-                                        delete_objet_dans_liste_objet(p, ID_obj);
+                                        bool isInListe = false;
+                                        int *liste = get_liste_objetPersonne(p);
 
-                                        char commandeObjet[64] = {0};
-                                        sprintf(commandeObjet, "rm ../../data/Objets/%s/%d.json", get_typeObjet(o), ID_obj);
-                                        system(commandeObjet);
+                                        for (int i=0; i<get_longueur_liste_objetPersonne(p); i++) {
+                                            if (liste[i] == ID_obj) {
+                                                isInListe = true;
+                                            }
+                                        }
 
-                                        creer_fichier_personne(p);
+                                        if (isInListe) {
+                                            delete_objet_dans_liste_objet(p, ID_obj);
+                                            char commandeObjet[64] = {0};
+                                            sprintf(commandeObjet, "rm ../../data/Objets/%s/%d.json", get_typeObjet(o), ID_obj);
+                                            system(commandeObjet);
+                                            creer_fichier_personne(p);
+                                        } else {
+                                            printf("L'objet existe bien mais n'est pas dans votre liste d'objet, vous ne pouvez pas le supprimer !\n");
+                                        }
+                                        
                                     } else {
                                         printf("\nVous n'êtes pas le propriétaire de cet objet !\n");
                                     }
