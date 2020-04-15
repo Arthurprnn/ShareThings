@@ -170,6 +170,8 @@ bool isPersonneExist(int ID_personne) {
     if (fichier == NULL) {
         return false;
     }
+
+    fclose(fichier);
     return true;
 }
 

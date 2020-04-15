@@ -120,6 +120,8 @@ bool isPretExist(int ID_pret) {
     if (fichier == NULL) {
         return false;
     }
+
+    fclose(fichier);
     return true;
 }
 
@@ -274,7 +276,8 @@ void demander_objet(Personne p)
                             printf("Attention : l'objet est déjà prêté !\n");
                         }
                         
-
+                        fclose(NombreFichierPret);
+                        fclose(ListeFichierPret);
                     }
                     else
                     {
@@ -298,6 +301,110 @@ void demander_objet(Personne p)
 
         system("rm ../Prets/Test/*.json");
         system("rmdir ../Prets/Test");
+    }
+    else
+    {
+        printf("Erreur : l'entier entré n'est pas un ID ou l'ID ne correspond pas à un objet existant !\n");
+    }
+}
+
+void rendre_objet(Personne p)
+{
+    int ID = 0; 
+    printf("Veuiller renseigner l'ID de l'objet à rendre : ");
+    lire_entier(&ID);
+    if ((ID>=10000000) && (ID<=19999999)) 
+    {
+        int *liste = get_liste_objetPersonne(p);
+        bool isInList = false;
+
+        for (int i=0; i<get_longueur_liste_objetPersonne(p); i++)
+        {
+            if (liste[i] == ID)
+            {
+                isInList = true;
+            }
+        }
+        if (isInList)
+        {
+            system("sh ../Prets/liste_objets.sh");
+
+            char lien[64] = {0};
+            sprintf(lien, "../Prets/Test/%d.json", ID);
+
+            Objet o = lire_fichier_objet(lien);
+
+            if (get_ID_proprietaireObjet(o) != get_IDPersonne(p))
+            {
+                system("sh ../Prets/liste_pret.sh");
+                    
+                FILE * NombreFichierPret = NULL;
+                FILE * ListeFichierPret = NULL;
+                NombreFichierPret = fopen("../Prets/NombreFichierPret.txt", "r");
+                ListeFichierPret = fopen("../Prets/ListeFichierPret.txt", "r");
+
+                if ((NombreFichierPret != NULL) && (ListeFichierPret != NULL))
+                {
+                    int nb = 0;
+                    fscanf(NombreFichierPret, "%d", &nb);
+
+                    int IDpret = 0;
+
+                    for (int i=0; i<nb; i++)
+                    {
+                        char fichierPret[16] = {0};
+                        fscanf(ListeFichierPret, "%s", fichierPret);
+
+                        char lien[64] = {0};
+                        sprintf(lien, "../../data/Prets/%s", fichierPret);
+
+                        Pret pret = lire_fichier_pret(lien);
+
+                        if (get_objetPret(pret) == ID)
+                        {
+                            IDpret = get_IDPret(pret);
+                        }
+                            
+                    }
+
+                    char lienProp[64] = {0};
+                    sprintf(lienProp, "../../data/Users/%d.json", get_ID_proprietaireObjet(o));
+                    Personne proprietaire = lire_fichier_personne(lienProp);
+                    swap(proprietaire, p, o);
+
+                    creer_fichier_personne(p);
+                    creer_fichier_personne(proprietaire);
+
+                    char commande[64] = {0};
+                    sprintf(commande, "rm ../../data/Prets/%d.json", IDpret);
+                    system(commande);
+
+                    printf("L'objet a été rendu avec succes !\n");
+
+                    fclose(NombreFichierPret);
+                    fclose(ListeFichierPret);
+                }
+                else
+                {
+                    printf("Erreur : impossible d'ouvrir NombreFichierPret.txt ou ListeFichierPret.txt !\n");
+                }
+                
+            }
+            else
+            {
+                printf("Attention : cet objet vous appartient, vous ne pouvez pas le rendre !\n");
+            }
+            
+
+
+            system("rm ../Prets/Test/*.json");
+            system("rmdir ../Prets/Test");
+        }
+        else
+        {
+            printf("Attention : vous n'avez pas emprunté cet objet !\n");
+        }
+    
     }
     else
     {

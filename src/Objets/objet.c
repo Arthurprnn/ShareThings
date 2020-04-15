@@ -147,6 +147,7 @@ bool isObjetExist(int ID_objet, char * type) {
     if (fichier == NULL) {
         return false;
     }
+    fclose(fichier);
     return true;
 }
 

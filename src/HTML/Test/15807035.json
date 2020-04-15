@@ -1,0 +1,8 @@
+{
+	"nom": "Un thermos",
+	"description": "Pour garder sa boisson chaude.",
+	"type": "Cuisine",
+	"ID_obj": 15807035,
+	"ID_prop": 23763368,
+	"delai_de_pret": 3
+}

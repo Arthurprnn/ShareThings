@@ -557,8 +557,11 @@ int main(int argc, char* argv[])
                             /*!< Rendre un \a Objet. */
                             if ((positionClic.x >676 && positionClic.x < 1189) && (positionClic.y > 580) && (positionClic.y < 618))
                             {
-                                            
-                                printf("b\n");
+                                char lienPersonne[64] = {0};
+                                sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_personne(c));
+                                Personne p = lire_fichier_personne(lienPersonne);            
+                                
+                                rendre_objet(p);
 
                             }
                             continue;                            

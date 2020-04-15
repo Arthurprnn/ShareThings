@@ -1,0 +1,8 @@
+{
+	"nom": "une écharpe",
+	"description": "Pour rester au chaud.",
+	"type": "Vêtement",
+	"ID_obj": 17058571,
+	"ID_prop": 23763368,
+	"delai_de_pret": 50
+}

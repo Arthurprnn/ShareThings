@@ -118,7 +118,6 @@ void afficheObjetsPersonne(Personne p)
             int ID = get_element_liste_objet(get_liste_objetPersonne(p), i);
             char lien[64] = {0};
             sprintf(lien, "../HTML/Test/%d.json", ID);
-            printf("%s\n", lien);
             Objet o = lire_fichier_objet(lien);
             
             if (get_ID_objetObjet(o) != 0)
@@ -242,6 +241,9 @@ void listeDemande(Personne p)
                     fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
                     fprintf(FichierHTML, "\t\t\t Type : %s\n", get_typeObjet(o));
                     fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
+                    fprintf(FichierHTML, "\t\t\t ID du propriétaire : %d\n", get_ID_proprietaireObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
                     fprintf(FichierHTML, "\t\t\t Délai de prêt : %d \n", get_delai_pretObjet(o));  
                     fprintf(FichierHTML, "\t\t</p>\n");
@@ -361,6 +363,9 @@ void listePret(Personne p)
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
                     fprintf(FichierHTML, "\t\t\t Type : %s\n", get_typeObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
+                    fprintf(FichierHTML, "\t\t\t ID du propriétaire : %d\n", get_ID_proprietaireObjet(o));
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
                     fprintf(FichierHTML, "\t\t\t Délai de prêt : %d \n", get_delai_pretObjet(o));  

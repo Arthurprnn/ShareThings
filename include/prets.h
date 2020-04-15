@@ -166,5 +166,6 @@ Pret lire_fichier_pret(char *);
 void creer_fichier_pret(Pret);
 
 void demander_objet(Personne);
+void rendre_objet(Personne);
 
 #endif

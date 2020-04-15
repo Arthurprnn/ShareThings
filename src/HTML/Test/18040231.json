@@ -1,0 +1,8 @@
+{
+	"nom": "Une basse",
+	"description": "Pour jouer de la musique et être stillé",
+	"type": "Musique",
+	"ID_obj": 18040231,
+	"ID_prop": 23763368,
+	"delai_de_pret": 12
+}
