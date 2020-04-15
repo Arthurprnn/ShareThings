@@ -354,6 +354,10 @@ bool supprimer_compte(Compte c) {
                 free(o);
                 free(p);   
             }
+            system("rm ../Administration/Fichierjson/*.json");
+            system("rmdir ../Administration/Fichierjson");
+            fclose(Fichierlongueur);
+            fclose(FichierPret);
         } 
         else
         {

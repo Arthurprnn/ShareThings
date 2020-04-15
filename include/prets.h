@@ -30,14 +30,7 @@ typedef struct s_pret * Pret;
 
 Pret init_pret();
 
-/**
- * \fn Pret creer_pret(int)
- * \brief \b Constructeur d'un prêt.
- * \param int Prend l'ID du demandeur pour l'enregistrer dans le prêt.
- * \return \b Pret La fonction a créé un \b Prêt et l'a \b initialisé avant de le retourner.
- */
-
-Pret creer_pret(int);
+Pret creer_pret(int, int);
 
 
 /**
@@ -171,5 +164,7 @@ Pret lire_fichier_pret(char *);
  */
 
 void creer_fichier_pret(Pret);
+
+void demander_objet(Personne);
 
 #endif

@@ -241,4 +241,6 @@ Personne lire_fichier_personne(char *);
 
 void creer_fichier_personne(Personne);
 
+void swap(Personne , Personne , Objet);
+
 #endif

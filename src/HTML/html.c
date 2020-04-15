@@ -215,13 +215,38 @@ void listeDemande(Personne p)
 
                 if (isDemande == true)
                 {
+                    system("sh ../HTML/liste_objet.sh");
+
+                    char lienObjet[64] = {0};
+                    sprintf(lienObjet, "../HTML/Test/%d.json", get_objetPret(pret));
+
+                    Objet o = lire_fichier_objet(lienObjet);
+                    
                     
                     fprintf(FichierHTML, "\t\t<p>\n");
                     fprintf(FichierHTML, "\t\t<p>\n");                               
                     fprintf(FichierHTML, "\t\t\t<strong>Prêt numéro : %d</strong>\n", get_IDPret(pret));
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p>\n");
-                    fprintf(FichierHTML, "\t\t\t<strong>ID de l'Objet : </strong>%d\n",get_objetPret(pret));
+                    fprintf(FichierHTML, "\t\t\t<strong>ID de l'Objet : %d</strong>\n",get_objetPret(pret));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p>\n");
+                    fprintf(FichierHTML, "\t\t\t{ \n");
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");
+                    fprintf(FichierHTML, "\t\t\t Nom : %s,\n", get_nomObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
+                    fprintf(FichierHTML, "\t\t\t Description : %s\n", get_descriptionObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
+                    fprintf(FichierHTML, "\t\t\t Type : %s\n", get_typeObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
+                    fprintf(FichierHTML, "\t\t\t Délai de prêt : %d \n", get_delai_pretObjet(o));  
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p>\n");                               
+                    fprintf(FichierHTML, "\t\t\t } \n");                    
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p>\n");
                     fprintf(FichierHTML, "\t\t\t<strong>Début du prêt : </strong>Le %02d/%02d/%4d à %d:%d:%d\n", get_joursTemps(get_temps_debutPret(pret)), get_moisTemps(get_temps_debutPret(pret))+1, get_anneesTemps(get_temps_debutPret(pret))+1900, get_heuresTemps(get_temps_debutPret(pret)), get_minutesTemps(get_temps_debutPret(pret)), get_secondesTemps(get_temps_debutPret(pret)));
@@ -323,7 +348,25 @@ void listePret(Personne p)
                     fprintf(FichierHTML, "\t\t\t<strong>Prêt numéro : %d</strong>\n", get_IDPret(pret));
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p>\n");
-                    fprintf(FichierHTML, "\t\t\t<strong>ID de l'Objet : </strong>%d\n",get_objetPret(pret));
+                    fprintf(FichierHTML, "\t\t\t<strong>ID de l'Objet : %d</strong>\n",get_objetPret(pret));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p>\n");
+                    fprintf(FichierHTML, "\t\t\t{ \n");
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");
+                    fprintf(FichierHTML, "\t\t\t Nom : %s,\n", get_nomObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
+                    fprintf(FichierHTML, "\t\t\t Description : %s\n", get_descriptionObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                                
+                    fprintf(FichierHTML, "\t\t\t Type : %s\n", get_typeObjet(o));
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p STYLE=\"padding:0 0 0 20px;\">\n");                               
+                    fprintf(FichierHTML, "\t\t\t Délai de prêt : %d \n", get_delai_pretObjet(o));  
+                    fprintf(FichierHTML, "\t\t</p>\n");
+                    fprintf(FichierHTML, "\t\t<p>\n");                               
+                    fprintf(FichierHTML, "\t\t\t } \n");                    
                     fprintf(FichierHTML, "\t\t</p>\n");
                     fprintf(FichierHTML, "\t\t<p>\n");
                     fprintf(FichierHTML, "\t\t\t<strong>Début du prêt : </strong>Le %02d/%02d/%4d à %d:%d:%d\n", get_joursTemps(get_temps_debutPret(pret)), get_moisTemps(get_temps_debutPret(pret))+1, get_anneesTemps(get_temps_debutPret(pret))+1900, get_heuresTemps(get_temps_debutPret(pret)), get_minutesTemps(get_temps_debutPret(pret)), get_secondesTemps(get_temps_debutPret(pret)));
@@ -334,6 +377,7 @@ void listePret(Personne p)
                     fprintf(FichierHTML, "---------------------------------------------------------------------------------------\n");             
                     fprintf(FichierHTML, "\n");
                     fprintf(FichierHTML, "\t\t</p>\n");
+
 
                     have = true;
                     

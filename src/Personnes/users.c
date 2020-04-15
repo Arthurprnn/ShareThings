@@ -267,3 +267,9 @@ void creer_fichier_personne(Personne p) {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
 }
+
+void swap(Personne demandeur, Personne preteur, Objet o)
+{
+    delete_objet_dans_liste_objet(preteur, get_ID_objetObjet(o));
+    add_objet_dans_liste_objet(demandeur, o);
+}

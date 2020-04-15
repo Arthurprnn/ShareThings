@@ -23,23 +23,8 @@ Pret init_pret() {
     return p;
 }
 
-Pret creer_pret(int ID_demandeur) {
+Pret creer_pret(int ID_demandeur, int ID_objet) {
     Pret p = init_pret();
-    int ID_objet = 0;
-    bool rester = true;
-    char * type;
-
-    while (rester == true) {
-        printf("Entrez l'ID de l'objet que vous voulez emprunter : ");
-        lire_entier(&ID_objet);
-        printf("Entrez le type de l'objet a emprunter: Attention, si le type est incorrect, l'objet sera recherché dans le type Autres !\nType : ");
-        type = creer_chaine_de_caracteres();
-        if (isObjetExist(ID_objet, BonType(type)) == true) {
-            rester = false;
-        } else {
-            printf("Attention: l'ID \"%d\" n'existe pas ! Veuillez saisir un ID d'objet existant.\n", ID_objet);
-        }
-    }
 
     set_objetPret(p, ID_objet);
     set_demandeurPret(p, ID_demandeur);
@@ -52,7 +37,7 @@ Pret creer_pret(int ID_demandeur) {
     FILE *fp;
 	char buffer[1024];
     char lien[32]={0};
-	sprintf(lien, "../../data/Objets/%s/%d.json", BonType(type), ID_objet);
+	sprintf(lien, "../Prets/Test/%d.json", ID_objet);
 	struct json_object *parsed_json;
 	struct json_object *delai_de_pret;
     fp = fopen(lien,"r");
@@ -204,4 +189,118 @@ void creer_fichier_pret(Pret p) {
 	} else {
 		printf("Impossible d'ouvrir le fichier %s !\n", nom);
 	}
+}
+
+void demander_objet(Personne p)
+{
+    int ID = 0; 
+    printf("Veuiller renseigner l'ID de l'objet recherché : ");
+    lire_entier(&ID);
+    if ((ID>=10000000) && (ID<=19999999)) 
+    {
+        system("sh ../Prets/liste_objets.sh");
+
+        char lien[64] = {0};
+        sprintf(lien, "../Prets/Test/%d.json", ID);
+
+        Objet o = lire_fichier_objet(lien);
+
+        if (get_ID_objetObjet(o) != 0)
+        {
+            if (get_ID_proprietaireObjet(o) != get_IDPersonne(p))
+            {
+                bool isInList = false;           
+                int *liste = get_liste_objetPersonne(p);
+                
+                for (int i=0; i<get_longueur_liste_objetPersonne(p); i-=-1)
+                {
+                    if (liste[i] == ID)
+                    {
+                        isInList = true;
+                    }
+                }
+                if (!isInList)
+                {
+                    system("sh ../Prets/liste_pret.sh");
+                    
+                    FILE * NombreFichierPret = NULL;
+                    FILE * ListeFichierPret = NULL;
+                    NombreFichierPret = fopen("../Prets/NombreFichierPret.txt", "r");
+                    ListeFichierPret = fopen("../Prets/ListeFichierPret.txt", "r");
+
+                    if ((NombreFichierPret != NULL) && (ListeFichierPret != NULL))
+                    {
+                        int nb = 0;
+                        fscanf(NombreFichierPret, "%d", &nb);
+
+                        bool isPrete = false;
+
+                        for (int i=0; i<nb; i++)
+                        {
+                            char fichierPret[16] = {0};
+                            fscanf(ListeFichierPret, "%s", fichierPret);
+
+                            char lien[64] = {0};
+                            sprintf(lien, "../../data/Prets/%s", fichierPret);
+
+                            Pret pret = lire_fichier_pret(lien);
+
+                            if (get_objetPret(pret) == ID)
+                            {
+                                isPrete = true;
+                            }
+                            
+                        }
+
+                        if (!isPrete)
+                        {
+                            char lienPreteur[64] = {0};
+                            sprintf(lienPreteur, "../../data/Users/%d.json", get_ID_proprietaireObjet(o));
+
+                            Personne preteur = lire_fichier_personne(lienPreteur);
+                            swap(p, preteur, o);
+                            creer_fichier_personne(p);
+                            creer_fichier_personne(preteur);
+
+                            Pret truePret = creer_pret(get_IDPersonne(p), ID);
+                            creer_fichier_pret(truePret);
+
+                            printf("La transaction %d de l'objet %d est effectuée !\n", get_IDPret(truePret), ID);
+
+
+                        }
+                        else
+                        {
+                            printf("Attention : l'objet est déjà prêté !\n");
+                        }
+                        
+
+                    }
+                    else
+                    {
+                        printf("Erreur : impossible d'ouvrir NombreFichierPret.txt ou ListeFichierPret.txt !\n");
+                    }
+                }
+                else
+                {
+                    printf("Attention : vous avez déjà emprunté l'objet !\n");
+                }
+            }   
+            else 
+            {
+                printf("Attention : l'objet vous appartient, vous ne pouvez pas l'emprunter !\n");
+            }
+        }
+        else
+        {
+            printf("Erreur : l'ID ne correspond pas à un objet existant !\n");
+        }
+
+        system("rm ../Prets/Test/*.json");
+        system("rmdir ../Prets/Test");
+    }
+    else
+    {
+        printf("Erreur : l'entier entré n'est pas un ID ou l'ID ne correspond pas à un objet existant !\n");
+    }
 }

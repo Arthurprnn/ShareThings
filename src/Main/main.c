@@ -540,18 +540,18 @@ int main(int argc, char* argv[])
 
                             /*!< Affiche l'onglet \b Profil. */
                             if ((positionClic.x >889 && positionClic.x < 1190) && (positionClic.y > 102) && (positionClic.y < 139))
-                            {
-                                            
+                            {                                           
                                 goto Profil;
-
                             }
 
                             /*!< Demander un \a Objet. */
                             if ((positionClic.x >82 && positionClic.x < 596) && (positionClic.y > 580) && (positionClic.y < 618))
                             {
+                                char lienPersonne[64] = {0};
+                                sprintf(lienPersonne, "../../data/Users/%d.json", get_ID_personne(c));
+                                Personne p = lire_fichier_personne(lienPersonne);
                                             
-                                printf("a\n");
-
+                                demander_objet(p);
                             }
 
                             /*!< Rendre un \a Objet. */
