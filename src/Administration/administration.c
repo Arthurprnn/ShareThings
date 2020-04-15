@@ -37,7 +37,7 @@ int creer_compte(Compte c, Personne p) {
     printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
     char * verif_mdp = creer_mot_de_passe();
     while (!isMemeChaine(mdp, verif_mdp) || (strlen(mdp) != 7)) {
-        printf("\nErreur: vous n'avez pas entré les même mots de passe ou mot de passe trop long !\n\nEssayez à nouveau:\n\n");
+        printf("\nErreur: vous n'avez pas entré les même mots de passe ou mot de passe ne contient pas 6 caractères !\n\nEssayez à nouveau:\n\n");
         mdp = "";
         verif_mdp = "";
         mdp = creer_mot_de_passe();
@@ -112,7 +112,7 @@ int getch(){                                                             /*!< Pe
 
 char * creer_mot_de_passe(){
     char mdp[32], ch;
-    printf("Veuillez saisir votre mot de passe : Attention le mot de passe doit contenir au maximum 6 caractères !\nMdp: ");
+    printf("Veuillez saisir votre mot de passe : Attention le mot de passe doit contenir 6 caractères !\nMdp: ");
     int i=0;
 
     do {
@@ -133,6 +133,105 @@ char * chiffrer_mot_de_passe(char * mdp ){                                   /*!
     char * cryptmdp = (char*)malloc(22*sizeof(char));
     cryptmdp = crypt(mdp, salt);
     return cryptmdp;                                                    /*!< On return le tableau contenant le mot de passe chiffré. */
+}
+
+void changer_mot_de_passe(void)
+{
+    printf("\nVeuillez rentrer un ");
+    char * nomUtilisateur = forcerNomUtilisateurCorrect();
+    char lienCompte[64] = {0};
+    sprintf(lienCompte, "../../data/Comptes/%s.json", nomUtilisateur);
+
+    Compte c = lire_fichier_compte(lienCompte);
+    if (get_ID_personne(c) != 0)
+    {
+        char * mdp = creer_mot_de_passe();
+        printf("\nVeuillez entrer de nouveau votre mot de passe :\n");
+        char * verif_mdp = creer_mot_de_passe();
+        while (!isMemeChaine(mdp, verif_mdp) || (strlen(mdp) != 7)) 
+        {
+            printf("\nErreur: vous n'avez pas entré les même mots de passe ou mot de passe ne contient pas 6 caractères !\n\nEssayez à nouveau:\n\n");
+            mdp = "";
+            verif_mdp = "";
+            mdp = creer_mot_de_passe();
+            printf("\nVeuillez saisir de nouveau votre mot de passe :\n");
+            verif_mdp = creer_mot_de_passe();
+        }
+        char * mdpcrypt = chiffrer_mot_de_passe(mdp);
+        printf("\n");
+
+        set_mdp(c, mdpcrypt);
+        creer_fichier_compte(c);
+    }
+    else
+    {
+        printf("Erreur : impossible d'ouvrir le compte au nom \"%s\" !\n", nomUtilisateur);
+    }
+}
+
+void changer_donnees_utilisateur(int donnees)
+{
+    printf("\nVeuillez rentrer l'ID de la personne à modifier : ");
+    int ID = 0;
+    lire_entier(&ID);
+    if ((ID>=20000000) && (ID<=29999999)) 
+    {
+        char lien[64] = {0};
+        sprintf(lien, "../../data/Users/%d.json", ID);
+
+        Personne p = lire_fichier_personne(lien);
+        if (get_IDPersonne(p) != 0)
+        {
+            char * nom;
+            char * prenom;
+            char * mail;
+            int age = 0;
+            switch(donnees)
+            {
+                /*!< Nom */
+                case 0 :
+                    printf("Veuillez entrer le nouveau nom : ");
+                    nom = creer_chaine_de_caracteres();
+                    set_nomPersonne(p, nom);
+                    break;
+
+                /*!< Prenom */
+                case 1 :
+                    printf("Veuillez entrer le nouveau prenom : ");
+                    prenom = creer_chaine_de_caracteres();
+                    set_prenomPersonne(p, prenom);
+                    break;
+
+                /*!< Mail */
+                case 2 :
+                    printf("Veuillez entrer le nouveau mail : ");
+                    mail = creer_chaine_de_caracteres();
+                    set_mailPersonne(p, mail);
+                    break;
+
+                /*!< Age */
+                case 3 :
+                    printf("Veuillez entrer le nouvel âge : ");               
+                    lire_entier(&age);
+                    set_agePersonne(p, age);        
+                    break;
+
+                default :
+                    break;
+            }
+            printf("\n");
+            creer_fichier_personne(p);
+        }
+        else
+        {
+            printf("\nErreur : l'ID entré n'existe pas !\n");
+        }
+                                
+    } 
+    else 
+    {
+        printf("\nL'entier entré n'est pas un ID de personne !\n");
+    }
 }
 
 bool isCompteExist(char * nom_utilisateur) {

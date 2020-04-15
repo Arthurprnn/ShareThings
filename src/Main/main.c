@@ -358,7 +358,7 @@ int main(int argc, char* argv[])
                             /*!< \a Changer \a le \a mot \a de \a passe \a des \a demandeurs. */
                             if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 513) && (positionClic.y < 585))
                             {
-                                printf("b\n");
+                                changer_mot_de_passe();
                             }
 
                             /*!< \a Doxygen. */
@@ -424,25 +424,25 @@ int main(int argc, char* argv[])
                             /*!< Nom. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 306) && (positionClic.y < 362))
                             {
-                                printf("a\n");
+                                changer_donnees_utilisateur(0);                                
                             }                             
 
                             /*!< Prenom. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 378) && (positionClic.y < 434))
                             {
-                                printf("b\n");
+                                changer_donnees_utilisateur(1); 
                             }
 
                             /*!< Mail. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 451) && (positionClic.y < 505))
                             {
-                                printf("c\n");
+                                changer_donnees_utilisateur(2); 
                             }
 
                             /*!< Age. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 523) && (positionClic.y < 578))
                             {
-                                printf("d\n");
+                                changer_donnees_utilisateur(3); 
                             } 
                             continue;
                         default :
@@ -616,7 +616,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Aliment");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                         
+                            goto RechercheObjet;                         
                         }
 
                         /*!< Cosmétique */
@@ -624,7 +624,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Cosmétique");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                         
+                            goto RechercheObjet;                         
                         }
 
                         /*!< Cuisine */
@@ -632,7 +632,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Cuisine");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Décoration */
@@ -640,7 +640,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Décoration");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Divertissement */
@@ -648,7 +648,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Divertissement");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Electrique */
@@ -656,7 +656,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Electrique");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Electronique */
@@ -664,7 +664,7 @@ int main(int argc, char* argv[])
                         {
                             AfficherObjetsParType("Electronique");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin; 
+                            goto RechercheObjet; 
                                                   
                         }
 
@@ -673,7 +673,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Fourniture");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                      
+                            goto RechercheObjet;                      
                         }
 
                         /*!< Internet */
@@ -681,7 +681,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Internet");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                      
+                            goto RechercheObjet;                      
                         }
 
                         /*!< Jouet */
@@ -689,7 +689,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Jouet");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                      
+                            goto RechercheObjet;                      
                         }
 
                         /*!< Matériau */
@@ -697,7 +697,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Matériau");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                     
+                            goto RechercheObjet;                     
                         }
 
                         /*!< Mobilier */
@@ -705,7 +705,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Mobilier");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                     
+                            goto RechercheObjet;                     
                         }
 
                         /*!< Musique */
@@ -713,7 +713,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Musique");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                         
+                            goto RechercheObjet;                         
                         }
 
                         /*!< Nature */
@@ -721,7 +721,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Nature");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Outil */
@@ -729,7 +729,7 @@ int main(int argc, char* argv[])
                         {    
                             AfficherObjetsParType("Outil");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Pharmaceutique */
@@ -737,7 +737,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Pharmaceutique");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Produit ménager */
@@ -745,7 +745,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Produit_ménager");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Véhicule */
@@ -753,7 +753,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Véhicule");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                         
+                            goto RechercheObjet;                         
                         }
 
                         /*!< Vêtement */
@@ -761,7 +761,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Vêtement");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         /*!< Autres */
@@ -769,7 +769,7 @@ int main(int argc, char* argv[])
                         { 
                             AfficherObjetsParType("Autres");
                             system("x-www-browser ../HTML/fichier.html");
-                            goto MenuNonAdmin;                          
+                            goto RechercheObjet;                          
                         }
 
                         continue;
@@ -854,7 +854,7 @@ int main(int argc, char* argv[])
                             add_objet_dans_liste_objet(p, o);
                             creer_fichier_personne(p);
 
-                            goto MenuNonAdmin;  
+                            goto Objets;  
                                                     
                         }
 
@@ -915,7 +915,7 @@ int main(int argc, char* argv[])
                                 printf("\nL'entier entré n'est pas un ID d'objet !\n");
                             }
 
-                            goto MenuNonAdmin;
+                            goto Objets;
                         }
 
                         /*!< Voir ses objets */
@@ -929,7 +929,7 @@ int main(int argc, char* argv[])
                             afficheObjetsPersonne(p); 
                             system("x-www-browser ../HTML/afficheObjetsPersonne.html");
                             
-                            goto MenuNonAdmin;                         
+                            goto Objets;                         
                         }
                         
                         continue;
@@ -1012,7 +1012,21 @@ int main(int argc, char* argv[])
                             {
                                 printf("Votre compte ne peut être supprimé.\n");
                             }
-                            goto MenuNonAdmin;                                 
+                            else
+                            {
+                                char commandeCompte[64] = {0};
+                                sprintf(commandeCompte, "rm ../../data/Comptes/%s.json", get_nom_utilisateur(c));
+                                system(commandeCompte);
+
+                                char commandeUsers[64] = {0};
+                                sprintf(commandeUsers, "rm ../../data/Users/%d.json", get_ID_personne(c));
+                                system(commandeUsers);
+
+                                printf("Le compte \"%s\" à été supprimé avec succès, merci d'avoir utilisé ShareThings !\n", get_nom_utilisateur(c));
+                                goto MenuConnection;
+                            }
+                            
+                            goto Profil;                                 
                         }                                                
                         continue;
 

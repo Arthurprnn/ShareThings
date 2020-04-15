@@ -138,6 +138,9 @@ char * creer_mot_de_passe();
 
 char * chiffrer_mot_de_passe(char *);
 
+void changer_mot_de_passe(void);
+void changer_donnees_utilisateur(int donnees);
+
 /**
  * \fn bool isCompteExist(char *)
  * \brief Permet de \b vérifier si le nom de l'utilisateur existe déjà.
