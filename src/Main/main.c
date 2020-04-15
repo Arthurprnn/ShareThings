@@ -609,6 +609,17 @@ int main(int argc, char* argv[])
                             goto MenuNonAdmin;                          
                         }
 
+                        /*!< Rechercher un objet par ID */
+                        if ((positionClic.x >634 && positionClic.x < 1147) && (positionClic.y > 597) && (positionClic.y < 634))
+                        { 
+                            if (RechercherParID())
+                            {
+                            system("x-www-browser ../HTML/afficheRecherID.html");
+                            }
+
+                            goto RechercheObjet;                          
+                        }
+
                         /*!< Affiche la listes des objets disponibles dans les 20 catégories differentes. */
 
                         /*!< Aliment */

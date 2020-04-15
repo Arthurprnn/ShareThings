@@ -13,4 +13,5 @@ void AfficherObjetsParType(char*);
 void afficheObjetsPersonne(Personne);
 void listeDemande(Personne);
 void listePret(Personne);
+bool RechercherParID(void);
 #endif

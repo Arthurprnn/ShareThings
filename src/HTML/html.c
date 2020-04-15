@@ -87,7 +87,7 @@ void AfficherObjetsParType(char* type)
     }
     else
     {
-        printf("Erreur : le fichier html n'as pas pu être ouvert !\n");
+        printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
     }
 
 }
@@ -162,7 +162,7 @@ void afficheObjetsPersonne(Personne p)
     }
     else
     {
-        printf("Erreur : le fichier html n'as pas pu être ouvert !\n");
+        printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
     }
 }
 
@@ -263,7 +263,7 @@ void listeDemande(Personne p)
     }
     else
     {
-        printf("Erreur : le fichier html n'as pas pu être ouvert !\n");
+        printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
     }
 }
 
@@ -365,6 +365,89 @@ void listePret(Personne p)
     }
     else
     {
-        printf("Erreur : le fichier html n'as pas pu être ouvert !\n");
+        printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
+    }
+}
+
+bool RechercherParID(void)
+{
+    int ID = 0; 
+    printf("Veuiller renseigner l'ID de l'objet recherché : ");
+    lire_entier(&ID);
+    if ((ID>=10000000) && (ID<=19999999)) 
+    {
+
+        FILE *FichierHTML = NULL;
+        FichierHTML = fopen("../HTML/afficheRecherID.html", "w+");
+    
+        if (FichierHTML != NULL)
+        {
+            fprintf(FichierHTML, "<!DOCTYPE html>\n");
+            fprintf(FichierHTML, "<html>\n");
+            fprintf(FichierHTML, "\t<head>\n");
+            fprintf(FichierHTML, "\t\t<meta charset=""utf-8"" />\n");
+            fprintf(FichierHTML, "\t\t<title>Recher d'Objets par ID</title>\n");
+            fprintf(FichierHTML, "\t</head>\n");
+            fprintf(FichierHTML, "\t<body>\n");
+            fprintf(FichierHTML, "\t\t<p><h1> Voici l'objets recherché : </h1></p>\n");
+
+            system("sh ../HTML/liste_objet.sh");
+
+            bool have = false;
+
+
+            char lien[64] = {0};
+            sprintf(lien, "../HTML/Test/%d.json", ID);
+
+            Objet o = lire_fichier_objet(lien);
+
+            if (get_ID_objetObjet(o) == ID)
+            {
+
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");                               
+                fprintf(FichierHTML, "\t\t\t<strong>Nom de l'objet : </strong>%s\n", get_nomObjet(o));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t\t<strong>Description de l'objet : </strong>%s\n", get_descriptionObjet(o));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t\t<strong>ID de l'objet : </strong>%d\n", get_ID_objetObjet(o));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");   
+                fprintf(FichierHTML, "\t\t\t<strong>Nombre de jours disponible : </strong>%d\n", get_delai_pretObjet(o));
+                fprintf(FichierHTML, "\t\t</p>\n");                            
+                fprintf(FichierHTML, "---------------------------------------------------------------------------------------\n");             
+                fprintf(FichierHTML, "\n");
+                fprintf(FichierHTML, "\t\t</p>\n");
+
+                have = true;
+                    
+            }
+            if (!have)
+            {   
+                
+                fprintf(FichierHTML, "\t\t<p>\n");                               
+                fprintf(FichierHTML, "\t\t\t<strong>Aucun objet ne correspond a cet ID !</strong>\n");
+                fprintf(FichierHTML, "\t\t</p>\n");
+
+            }
+
+            fprintf(FichierHTML, "\t</body></html>\n");
+            system("rm ../HTML/Test/*.json");
+            system("rmdir ../HTML/Test");
+            fclose(FichierHTML);
+            return true;
+        }
+        else
+        {
+            printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
+            return false;
+        }
+    }
+    else
+    {
+        printf("Erreur : l'entier entré n'est pas un ID ou l'ID ne correspond pas à un objet existant !\n");
+        return false;
     }
 }
