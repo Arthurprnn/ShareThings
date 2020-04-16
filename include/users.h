@@ -203,6 +203,14 @@ void set_element_liste_objet(int *, int, int);
 
 void add_objet_dans_liste_objet(Personne, Objet);
 
+/**
+ * \fn void delete_objet_dans_liste_objet(Personne, int)
+ * \brief Permer de supprimer l'ID d'un objet dans la liste d'objets de la personne.
+ * \param Personne Pour fixer une information sur la personne.
+ * \param Objet Information à supprimer dans la liste d'objets de la personne (juste l'ID).
+ * \return \b void La fonction ne retourne rien. Elle supprime simplement l'ID de l'objet contenue dans la liste d'objets de la personne.
+ */
+
 void delete_objet_dans_liste_objet(Personne, int);
 
 /**
@@ -240,6 +248,15 @@ Personne lire_fichier_personne(char *);
  */
 
 void creer_fichier_personne(Personne);
+
+/**
+ * \fn void swap(Personne , Personne , Objet)
+ * \brief Cette fonction permet \b d'échanger un \a objet entre \b deux \b utilisateur.
+ * \param Personne Personne qui \b demande \a l'objet.
+ * \param Personne Personnne qui \b prête \a l'objet.
+ * \param Objet \b L'objet qui est \b échangé entre \a les \a deux \a comptes.
+ * \return \b void La fonction ne renvoie rien, elle sauvegarde juste.
+ */
 
 void swap(Personne , Personne , Objet);
 

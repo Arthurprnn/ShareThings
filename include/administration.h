@@ -138,8 +138,23 @@ char * creer_mot_de_passe();
 
 char * chiffrer_mot_de_passe(char *);
 
+/**
+ * \fn void changer_mot_de_passe(void)
+ * \brief Permet à l'administrateur de \b changer le \b mot \b de \b passe d'un \a utilisateur. 
+ * \param void Ne prend rien en paramètre. 
+ * \return \b void La fonction ne renvoie rien.
+ */
+
 void changer_mot_de_passe(void);
-void changer_donnees_utilisateur(int donnees);
+
+/**
+ * \fn void changer_donnees_utilisateur(int)
+ * \brief Permet à l'administrateur de \b changer les \b données d'un \a utilisateur. 
+ * \param int Permet de savoir quelle données (0=nom, 1=prenom, 2=mail, 3=âge) la fonction doit changer.
+ * \return \b void La fonction ne renvoie rien.
+ */
+
+void changer_donnees_utilisateur(int);
 
 /**
  * \fn bool isCompteExist(char *)
@@ -168,6 +183,13 @@ Compte lire_fichier_compte(char *);
 
 void creer_fichier_compte(Compte);
 
-bool supprimer_compte(Compte c);
+/**
+ * \fn bool supprimer_compte(Compte)
+ * \brief Cette fonction permet de savoir si un compte vérifie toutes les conditions pour pouvoir être supprimé.
+ * \param Compte Prend en paramètre le \a compte voulant être supprimé. 
+ * \return \b vool La fonction renvoie \b true si le compte \a peut-être \a supprimé, \b false sinon.
+ */
+
+bool supprimer_compte(Compte);
 
 #endif

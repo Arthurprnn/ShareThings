@@ -30,6 +30,14 @@ typedef struct s_pret * Pret;
 
 Pret init_pret();
 
+/**
+ * \fn Pret creer_pret(int, int)
+ * \brief \b Créateur d'un prêt.
+ * \param int L'ID du demandeur du prêt.
+ * \param int L'ID de l'objet.
+ * \return \b Pret La fonction a créé le \b Prêt et l'a retourné.
+ */
+
 Pret creer_pret(int, int);
 
 
@@ -165,7 +173,22 @@ Pret lire_fichier_pret(char *);
 
 void creer_fichier_pret(Pret);
 
+/**
+ * \fn void demander_objet(Personne)
+ * \brief Cette fonction vérifie si \a l'utilisateur \b peut \b emprunter l'objet qu'il demande et \a effectue le prêt si il \b peut \b bien l'emprunter. 
+ * \param Personne Prend en paramètre la \a personne qui \b demande \a l'objet.
+ * \return \b void La fonction ne renvoie rien.
+ */
+
 void demander_objet(Personne);
+
+/**
+ * \fn void rendre_objet(Personne)
+ * \brief Cette fonction vérifie si \a l'utilisateur \b peut rendre l'objet qu'il a renseigné et \b rend l'objet à son \a propriétaire. 
+ * \param Personne Prend en paramètre la \a personne qui rend l'objet \b emprunté.
+ * \return \b void La fonction ne renvoie rien.
+ */
+
 void rendre_objet(Personne);
 
 #endif

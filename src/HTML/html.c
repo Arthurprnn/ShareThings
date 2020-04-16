@@ -276,6 +276,9 @@ void listeDemande(Personne p)
 
             fclose(ListeFichiersPret);
             fclose(nbFichierPret);
+            //system("rm ../HTML/Test/*.json");
+            //system("rmdir ../HTML/Test");
+            
         }
         else
         {
@@ -400,6 +403,8 @@ void listePret(Personne p)
 
             fclose(ListeFichiersPret);
             fclose(nbFichierPret);
+            //system("rm ../HTML/Test/*.json");
+            //system("rmdir ../HTML/Test");
         }
         else
         {
