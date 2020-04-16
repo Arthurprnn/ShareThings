@@ -104,9 +104,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aba1a3ed379d8ffcca668fe1468ebd80b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entrees_8c.html#aba1a3ed379d8ffcca668fe1468ebd80b">forcerIDCorrect</a> ()</td></tr>
 <tr class="memdesc:aba1a3ed379d8ffcca668fe1468ebd80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction <b>force</b> l'utilisateur à entrer un <b>ID</b> d'objet, de personne ou de prêt correct. (i.e. l'ID fait 8 chiffres et commence par 1, 2 ou 3)  <a href="#aba1a3ed379d8ffcca668fe1468ebd80b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aba1a3ed379d8ffcca668fe1468ebd80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6131ef075db0cfb61e9eb3eb2115ccff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entrees_8c.html#a6131ef075db0cfb61e9eb3eb2115ccff">isSur</a> ()</td></tr>
-<tr class="memdesc:a6131ef075db0cfb61e9eb3eb2115ccff"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction <b>demande</b> à l'utilisateur un oui = 0 sinon non.  <a href="#a6131ef075db0cfb61e9eb3eb2115ccff">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a6131ef075db0cfb61e9eb3eb2115ccff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b99000e685f0f510b98aa5ef2197da7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entrees_8c.html#a4b99000e685f0f510b98aa5ef2197da7">isSur</a> ()</td></tr>
+<tr class="memdesc:a4b99000e685f0f510b98aa5ef2197da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction <b>demande</b> à l'utilisateur un oui = 0 ou un non = 1.  <a href="#a4b99000e685f0f510b98aa5ef2197da7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b99000e685f0f510b98aa5ef2197da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a010a288b64c5db85dd1c19d61a254477"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entrees_8c.html#a010a288b64c5db85dd1c19d61a254477">isMemeChaine</a> (char *chaine_1, char *chaine_2)</td></tr>
 <tr class="memdesc:a010a288b64c5db85dd1c19d61a254477"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction <b>compare</b> si deux chaines de caractères sont les mêmes.  <a href="#a010a288b64c5db85dd1c19d61a254477">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a010a288b64c5db85dd1c19d61a254477"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,7 +261,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie true si ce sont les mêmes chaines sinon false. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="entrees_8c_source.html#l00142">142</a> du fichier <a class="el" href="entrees_8c_source.html">entrees.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="entrees_8c_source.html#l00146">146</a> du fichier <a class="el" href="entrees_8c_source.html">entrees.c</a>.</p>
 
 </div>
 </div>
@@ -306,14 +306,14 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6131ef075db0cfb61e9eb3eb2115ccff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6131ef075db0cfb61e9eb3eb2115ccff">&#9670;&nbsp;</a></span>isSur()</h2>
+<a id="a4b99000e685f0f510b98aa5ef2197da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b99000e685f0f510b98aa5ef2197da7">&#9670;&nbsp;</a></span>isSur()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool isSur </td>
+          <td class="memname">int isSur </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -321,14 +321,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>La fonction <b>demande</b> à l'utilisateur un oui = 0 sinon non. </p>
+<p>La fonction <b>demande</b> à l'utilisateur un oui = 0 ou un non = 1. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td>La fonction ne prend rien en paramètre. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie true ou false. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction renvoie 0 ou 1. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="entrees_8c_source.html#l00132">132</a> du fichier <a class="el" href="entrees_8c_source.html">entrees.c</a>.</p>
 

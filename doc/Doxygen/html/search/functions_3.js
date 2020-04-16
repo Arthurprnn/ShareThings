@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['forceridcorrect',['forcerIDCorrect',['../entrees_8h.html#aba1a3ed379d8ffcca668fe1468ebd80b',1,'forcerIDCorrect():&#160;entrees.c'],['../entrees_8c.html#aba1a3ed379d8ffcca668fe1468ebd80b',1,'forcerIDCorrect():&#160;entrees.c']]],
-  ['forcernomutilisateurcorrect',['forcerNomUtilisateurCorrect',['../entrees_8h.html#a98727d89879ab668c0c66574b0eeedf3',1,'forcerNomUtilisateurCorrect():&#160;entrees.c'],['../entrees_8c.html#a4355b153dd0f451324dbf04a83decdea',1,'forcerNomUtilisateurCorrect():&#160;entrees.c']]]
+  ['delete_5fobjet_5fdans_5fliste_5fobjet',['delete_objet_dans_liste_objet',['../users_8h.html#a71779aac93c8d0a51b48a19cdab540b2',1,'delete_objet_dans_liste_objet(Personne, int):&#160;users.c'],['../users_8c.html#a990e98f0ae4cf768a6dad70c556f8af3',1,'delete_objet_dans_liste_objet(Personne p, int ID):&#160;users.c']]],
+  ['demander_5fobjet',['demander_objet',['../prets_8h.html#afdd4fd97e54fbe8d9bd1d58a089ad16e',1,'demander_objet(Personne):&#160;prets.c'],['../prets_8c.html#a28df3023f9ef828a93b9cfcd1e47084d',1,'demander_objet(Personne p):&#160;prets.c']]]
 ];

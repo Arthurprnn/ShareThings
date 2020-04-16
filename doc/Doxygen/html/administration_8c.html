@@ -119,6 +119,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a5551388c867a3ad475fbb7f887f7b25d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#a5551388c867a3ad475fbb7f887f7b25d">chiffrer_mot_de_passe</a> (char *mdp)</td></tr>
 <tr class="memdesc:a5551388c867a3ad475fbb7f887f7b25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>chiffrer</b> un <b>mot</b> <b>de</b> <b>passe</b> en utilisant la bibliothèque <em>&lt;crypt.h&gt;</em>.  <a href="#a5551388c867a3ad475fbb7f887f7b25d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5551388c867a3ad475fbb7f887f7b25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80bb1809e9e301ac4aed4c5141595f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#ab80bb1809e9e301ac4aed4c5141595f0">changer_mot_de_passe</a> (void)</td></tr>
+<tr class="memdesc:ab80bb1809e9e301ac4aed4c5141595f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet à l'administrateur de <b>changer</b> le <b>mot</b> <b>de</b> <b>passe</b> d'un <em>utilisateur</em>.  <a href="#ab80bb1809e9e301ac4aed4c5141595f0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab80bb1809e9e301ac4aed4c5141595f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f02598138d003996524dd37f2295ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#ab1f02598138d003996524dd37f2295ea">changer_donnees_utilisateur</a> (int donnees)</td></tr>
+<tr class="memdesc:ab1f02598138d003996524dd37f2295ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet à l'administrateur de <b>changer</b> les <b>données</b> d'un <em>utilisateur</em>.  <a href="#ab1f02598138d003996524dd37f2295ea">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab1f02598138d003996524dd37f2295ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8275407c86fc35d11a488586d0bdeb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#ad8275407c86fc35d11a488586d0bdeb6">isCompteExist</a> (char *nom_utilisateur)</td></tr>
 <tr class="memdesc:ad8275407c86fc35d11a488586d0bdeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>vérifier</b> si le nom de l'utilisateur existe déjà.  <a href="#ad8275407c86fc35d11a488586d0bdeb6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad8275407c86fc35d11a488586d0bdeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,8 +134,73 @@ Fonctions</h2></td></tr>
 <tr class="memitem:afbfde9461531fe4da32da2f7d02ca42c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#afbfde9461531fe4da32da2f7d02ca42c">creer_fichier_compte</a> (<a class="el" href="struct_compte.html">Compte</a> c)</td></tr>
 <tr class="memdesc:afbfde9461531fe4da32da2f7d02ca42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'un <em>compte</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'utilisateur.  <a href="#afbfde9461531fe4da32da2f7d02ca42c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afbfde9461531fe4da32da2f7d02ca42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa288f1acfe54bf7daff14b3365f67b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="administration_8c.html#afa288f1acfe54bf7daff14b3365f67b1">supprimer_compte</a> (<a class="el" href="struct_compte.html">Compte</a> c)</td></tr>
+<tr class="memdesc:afa288f1acfe54bf7daff14b3365f67b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction permet de savoir si un compte vérifie toutes les conditions pour pouvoir être supprimé.  <a href="#afa288f1acfe54bf7daff14b3365f67b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afa288f1acfe54bf7daff14b3365f67b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ab1f02598138d003996524dd37f2295ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f02598138d003996524dd37f2295ea">&#9670;&nbsp;</a></span>changer_donnees_utilisateur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void changer_donnees_utilisateur </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>donnees</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet à l'administrateur de <b>changer</b> les <b>données</b> d'un <em>utilisateur</em>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>Permet de savoir quelle données (0=nom, 1=prenom, 2=mail, 3=âge) la fonction doit changer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien. </dd></dl>
+<p>&lt; Nom</p>
+<p>&lt; Prenom</p>
+<p>&lt; Mail</p>
+<p>&lt; Age </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00171">171</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+
+</div>
+</div>
+<a id="ab80bb1809e9e301ac4aed4c5141595f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80bb1809e9e301ac4aed4c5141595f0">&#9670;&nbsp;</a></span>changer_mot_de_passe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void changer_mot_de_passe </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet à l'administrateur de <b>changer</b> le <b>mot</b> <b>de</b> <b>passe</b> d'un <em>utilisateur</em>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>Ne prend rien en paramètre. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00137">137</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+
+</div>
+</div>
 <a id="a5551388c867a3ad475fbb7f887f7b25d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5551388c867a3ad475fbb7f887f7b25d">&#9670;&nbsp;</a></span>chiffrer_mot_de_passe()</h2>
 
@@ -157,7 +228,7 @@ Fonctions</h2></td></tr>
 <p>&lt; Nombre de séquences nécessaires.</p>
 <p>&lt; On return le tableau contenant le mot de passe chiffré. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00134">134</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00130">130</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -226,7 +297,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00186">186</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00281">281</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -259,7 +330,7 @@ Fonctions</h2></td></tr>
 <p>&lt; Tant que le mot de passe est inférieur à 32 et que l'on ne détecte pas que l'utilisateur appuie sur entrée.</p>
 <p>&lt; On réserve en mémoire une taille adaptée à la longueur du mot de passe. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00116">116</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00112">112</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -288,7 +359,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne un <b>ID</b> de type <b>int</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00080">80</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00076">76</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -317,7 +388,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne un <b>mot</b> <b>de</b> <b>passe</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00076">76</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00072">72</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -346,7 +417,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>char*</b> La fonction retourne un <b>nom</b> de type <b>char*</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00072">72</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00068">68</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -375,7 +446,7 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction retourne l'encodage du caractère récupéré. </dd></dl>
 <p>&lt; Permet de recuperer un caractère rentré au clavier sans avoir à appuyer sur entrée. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00104">104</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00100">100</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -432,7 +503,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie <b>false</b> si l'objet n'existe pas, <b>true</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00141">141</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00236">236</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -461,7 +532,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_compte.html">Compte</a></b> La fonction renvoie un <b>compte</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00155">155</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00250">250</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -501,7 +572,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le compte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00092">92</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00088">88</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -541,7 +612,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le compte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00088">88</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00084">84</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -581,7 +652,36 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans le compte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00084">84</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00080">80</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+
+</div>
+</div>
+<a id="afa288f1acfe54bf7daff14b3365f67b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa288f1acfe54bf7daff14b3365f67b1">&#9670;&nbsp;</a></span>supprimer_compte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool supprimer_compte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_compte.html">Compte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction permet de savoir si un compte vérifie toutes les conditions pour pouvoir être supprimé. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_compte.html">Compte</a></td><td>Prend en paramètre le <em>compte</em> voulant être supprimé. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>vool</b> La fonction renvoie <b>true</b> si le compte <em>peut-être</em> <em>supprimé</em>, <b>false</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00301">301</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>
@@ -610,7 +710,7 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b>Void</b> La fonction a vidé le <b>buffer</b>. </dd></dl>
 <p>&lt; Permet de vider le buffer </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00097">97</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="administration_8c_source.html#l00093">93</a> du fichier <a class="el" href="administration_8c_source.html">administration.c</a>.</p>
 
 </div>
 </div>

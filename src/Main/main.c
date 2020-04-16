@@ -239,6 +239,7 @@ int main(int argc, char* argv[])
                                 }
                                 /*!< Si la \a connection ne \b réussit \b pas, on renvoie l'utilisateur au menue \b d'accueil. */
                                 if (isConnexionReussie == false) {
+                                    system("clear");
                                     goto Deconnection;
                                 }
                                 /*!< On vérifie si le compte connecté \b est un \b compte \a admin ou \a non. */

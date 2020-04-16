@@ -147,6 +147,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aeb8dd0e2f88ca145cf57071de043a525"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8h.html#aeb8dd0e2f88ca145cf57071de043a525">add_objet_dans_liste_objet</a> (<a class="el" href="struct_personne.html">Personne</a>, <a class="el" href="struct_objet.html">Objet</a>)</td></tr>
 <tr class="memdesc:aeb8dd0e2f88ca145cf57071de043a525"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ajouteur</b> permettant d'ajouter l'ID d'un objet dans la liste d'objets de la personne.  <a href="#aeb8dd0e2f88ca145cf57071de043a525">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aeb8dd0e2f88ca145cf57071de043a525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71779aac93c8d0a51b48a19cdab540b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8h.html#a71779aac93c8d0a51b48a19cdab540b2">delete_objet_dans_liste_objet</a> (<a class="el" href="struct_personne.html">Personne</a>, int)</td></tr>
+<tr class="memdesc:a71779aac93c8d0a51b48a19cdab540b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permer de supprimer l'ID d'un objet dans la liste d'objets de la personne.  <a href="#a71779aac93c8d0a51b48a19cdab540b2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a71779aac93c8d0a51b48a19cdab540b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a945f0c22265ffce4fc91a6ea73899fb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8h.html#a945f0c22265ffce4fc91a6ea73899fb3">creer_ID_personne</a> ()</td></tr>
 <tr class="memdesc:a945f0c22265ffce4fc91a6ea73899fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de <b>creer</b> un <b>ID</b> de <b>8</b> chiffres <b>commençant</b> par un <b>2</b>.  <a href="#a945f0c22265ffce4fc91a6ea73899fb3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a945f0c22265ffce4fc91a6ea73899fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +162,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a32a451e03aded5e7346b53498d8ea301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8h.html#a32a451e03aded5e7346b53498d8ea301">creer_fichier_personne</a> (<a class="el" href="struct_personne.html">Personne</a>)</td></tr>
 <tr class="memdesc:a32a451e03aded5e7346b53498d8ea301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction prend les <b>données</b> d'une <em>personne</em> et les sauvegarde dans un fichier au format <b>JSON</b> au nom de l'ID de la personne.  <a href="#a32a451e03aded5e7346b53498d8ea301">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a32a451e03aded5e7346b53498d8ea301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89fc0a6e93e59e9165ea737d48785808"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="users_8h.html#a89fc0a6e93e59e9165ea737d48785808">swap</a> (<a class="el" href="struct_personne.html">Personne</a>, <a class="el" href="struct_personne.html">Personne</a>, <a class="el" href="struct_objet.html">Objet</a>)</td></tr>
+<tr class="memdesc:a89fc0a6e93e59e9165ea737d48785808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction permet <b>d'échanger</b> un <em>objet</em> entre <b>deux</b> <b>utilisateur</b>.  <a href="#a89fc0a6e93e59e9165ea737d48785808">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a89fc0a6e93e59e9165ea737d48785808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des définitions de type</h2>
 <a id="a38657c621a4cb609842d81a8f31b8c0b"></a>
@@ -214,7 +220,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la liste d'objets de la personne. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00119">119</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00118">118</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -243,7 +249,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00221">221</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00238">238</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -272,7 +278,7 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b>int</b> La fonction rend un <b>ID</b> qui est un <b>int</b> de <b>8</b> <b>caractères</b> pour une personne donc qui commence par 2.</dd></dl>
 <p>Tous les ID des objets commenceront par un 2. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00134">134</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00149">149</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -301,6 +307,46 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction a créé une <b>personne</b> , l'a <b>initialisée</b> puis <b>complétée</b> avant de la retourner. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00034">34</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="a71779aac93c8d0a51b48a19cdab540b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71779aac93c8d0a51b48a19cdab540b2">&#9670;&nbsp;</a></span>delete_objet_dans_liste_objet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void delete_objet_dans_liste_objet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permer de supprimer l'ID d'un objet dans la liste d'objets de la personne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Pour fixer une information sur la personne. </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td>Information à supprimer dans la liste d'objets de la personne (juste l'ID). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle supprime simplement l'ID de l'objet contenue dans la liste d'objets de la personne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00132">132</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -600,7 +646,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>bool</b> La fonction renvoie <b>false</b> si l'objet n'existe pas, <b>true</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00149">149</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00164">164</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -629,7 +675,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b><a class="el" href="struct_personne.html">Personne</a></b> La fonction renvoie une <b>personne</b> avec les données du fichier JSON qui y sont stockées. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00162">162</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00179">179</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>
@@ -957,6 +1003,53 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne retourne rien. Elle écrit simplement dans la description de la personne. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00089">89</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
+
+</div>
+</div>
+<a id="a89fc0a6e93e59e9165ea737d48785808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89fc0a6e93e59e9165ea737d48785808">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_personne.html">Personne</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_objet.html">Objet</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette fonction permet <b>d'échanger</b> un <em>objet</em> entre <b>deux</b> <b>utilisateur</b>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td><a class="el" href="struct_personne.html">Personne</a> qui <b>demande</b> <em>l'objet</em>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_personne.html">Personne</a></td><td>Personnne qui <b>prête</b> <em>l'objet</em>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_objet.html">Objet</a></td><td><b>L'objet</b> qui est <b>échangé</b> entre <em>les</em> <em>deux</em> <em>comptes</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>void</b> La fonction ne renvoie rien, elle sauvegarde juste. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="users_8c_source.html#l00273">273</a> du fichier <a class="el" href="users_8c_source.html">users.c</a>.</p>
 
 </div>
 </div>

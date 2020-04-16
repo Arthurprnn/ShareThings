@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['changer_5fdonnees_5futilisateur',['changer_donnees_utilisateur',['../administration_8h.html#ae7011ad53a5afa7121252e4682dadce9',1,'changer_donnees_utilisateur(int):&#160;administration.c'],['../administration_8c.html#ab1f02598138d003996524dd37f2295ea',1,'changer_donnees_utilisateur(int donnees):&#160;administration.c']]],
+  ['changer_5fmot_5fde_5fpasse',['changer_mot_de_passe',['../administration_8h.html#ab80bb1809e9e301ac4aed4c5141595f0',1,'changer_mot_de_passe(void):&#160;administration.c'],['../administration_8c.html#ab80bb1809e9e301ac4aed4c5141595f0',1,'changer_mot_de_passe(void):&#160;administration.c']]],
   ['chiffrer_5fmot_5fde_5fpasse',['chiffrer_mot_de_passe',['../administration_8h.html#a23a2f42db8fc8ae193bfc1e1f0da9564',1,'chiffrer_mot_de_passe(char *):&#160;administration.c'],['../administration_8c.html#a5551388c867a3ad475fbb7f887f7b25d',1,'chiffrer_mot_de_passe(char *mdp):&#160;administration.c']]],
   ['compte',['Compte',['../struct_compte.html',1,'Compte'],['../administration_8h.html#a1441c815a0aab88f88755304adee94c3',1,'Compte():&#160;administration.h']]],
   ['creer_5fchaine_5fde_5fcaracteres',['creer_chaine_de_caracteres',['../entrees_8h.html#a8e9e786664bfea0f922541560f4006ad',1,'creer_chaine_de_caracteres():&#160;entrees.c'],['../entrees_8c.html#a761abc9094df0f154b22a00a3974c2f2',1,'creer_chaine_de_caracteres():&#160;entrees.c']]],
@@ -14,7 +16,7 @@ var searchData=
   ['creer_5fmot_5fde_5fpasse',['creer_mot_de_passe',['../administration_8h.html#aeb71a82e01c80306c32eafd331e1580a',1,'creer_mot_de_passe():&#160;administration.c'],['../administration_8c.html#a1ed57b59fc1da31a4e596d8b29d550b3',1,'creer_mot_de_passe():&#160;administration.c']]],
   ['creer_5fobjet',['creer_objet',['../objet_8h.html#a2ae30a01ccbd2a9bab673820fe20ea98',1,'creer_objet(int):&#160;objet.c'],['../objet_8c.html#a5c667023db4a686f8ddb484a8a4307ad',1,'creer_objet(int ID_prop):&#160;objet.c']]],
   ['creer_5fpersonne',['creer_personne',['../users_8h.html#ac31a0061ec0d93685c2e9975d6da2d20',1,'creer_personne():&#160;users.c'],['../users_8c.html#ac31a0061ec0d93685c2e9975d6da2d20',1,'creer_personne():&#160;users.c']]],
-  ['creer_5fpret',['creer_pret',['../prets_8h.html#a53d345ad4aacc59bd3ae34f07aa3ca3d',1,'creer_pret(int):&#160;prets.c'],['../prets_8c.html#a3fb0d6f561079367da388f487a66fd2f',1,'creer_pret(int ID_demandeur):&#160;prets.c']]],
+  ['creer_5fpret',['creer_pret',['../prets_8h.html#a9453ab8d8cbb6eb29b24945c88fce793',1,'creer_pret(int, int):&#160;prets.c'],['../prets_8c.html#aae2da4fc52aa5b230384b3837220fe4c',1,'creer_pret(int ID_demandeur, int ID_objet):&#160;prets.c']]],
   ['creer_5fsecondes_5fdepuis_5f1970',['creer_secondes_depuis_1970',['../temps_8h.html#aad632f1032e444e863f5979caec8dc85',1,'creer_secondes_depuis_1970(Temps):&#160;temps.c'],['../temps_8c.html#a14cc668f739a09df6fc04c0a107a441f',1,'creer_secondes_depuis_1970(Temps temps):&#160;temps.c']]],
   ['creer_5ftemps',['creer_temps',['../temps_8h.html#a3bd16dcab00652dcc9a3e00662b54fae',1,'creer_temps(time_t):&#160;temps.c'],['../temps_8c.html#ae9f22c05d213fc6ac253e12f76f85551',1,'creer_temps(time_t temps):&#160;temps.c']]],
   ['cryptmdp',['cryptmdp',['../structs__compte.html#a6aee50b9be045353e734e678823c497a',1,'s_compte']]]
