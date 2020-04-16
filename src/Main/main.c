@@ -123,7 +123,9 @@ int main(int argc, char* argv[])
     /*!< Associer la surface \a screen à la fenètre \a window. */
     screen = SDL_GetWindowSurface(window);
 
-
+    SDL_Surface* iconSurface;
+    iconSurface = SDL_LoadBMP("../Images/Tokimori.bmp");
+    SDL_SetWindowIcon(window, iconSurface);
 
     /*!< chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/information.bmp");
