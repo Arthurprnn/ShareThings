@@ -91,13 +91,13 @@ int lire_decimal(float *);
 int forcerIDCorrect();
 
 /**
- * \fn bool isSur()
- * \brief La fonction \b demande à l'utilisateur un oui = 0 sinon non.
+ * \fn int isSur()
+ * \brief La fonction \b demande à l'utilisateur un oui = 0 ou un non = 1.
  * \param void La fonction ne prend rien en paramètre.
- * \return \b bool La fonction renvoie true ou false.
+ * \return \b int La fonction renvoie 0 ou 1.
  */
 
-bool isSur();
+int isSur();
 
 /**
  * \fn bool isMemeChaine(char *, char *)

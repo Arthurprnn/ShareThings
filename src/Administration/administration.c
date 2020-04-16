@@ -23,7 +23,6 @@ Compte init_compte() {
 }
 
 int creer_compte(Compte c, Personne p) {
-    printf("Bienvenue sur ShareThings !\n\n");
     char * nom_utilisateur = (char*)malloc(sizeof(char));
     nom_utilisateur = forcerNomUtilisateurCorrect();
     while (isCompteExist(nom_utilisateur)) {

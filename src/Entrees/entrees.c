@@ -129,14 +129,18 @@ int forcerIDCorrect() {
     return ID;
 }
 
-bool isSur() {
-    int sur = lire_entier(&sur);
-    switch(sur) {
-        case 0:
-            return true;
-        default:
-            return false;
+int isSur() {
+    printf("Êtes vous vraiment sûr ? (0 = oui; 1 = non) : ");
+    int sur = 0;
+    lire_entier(&sur);
+    printf("\n");
+    while ((sur < 0) || (sur > 1)) {
+        printf("\nAttention : vous devez entrer soit 1 soit 0 !\n");
+        printf("\nÊtes vous vraiment sûr ? (0 = oui; 1 = non) : ");
+        lire_entier(&sur);
+        printf("\n");
     }
+    return sur;
 }
 
 bool isMemeChaine(char * chaine_1, char * chaine_2) {
