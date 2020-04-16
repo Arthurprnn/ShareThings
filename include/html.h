@@ -47,9 +47,18 @@ void listePret(Personne);
 /**
  * \fn bool RechercherParID(void)
  * \brief \b Permet de savoir si un objet avec une certaine \a ID \b existe et de \b l'afficher sur une \a page \a html.
- * \param void La fonction ne prend \b aucun paramètres.
+ * \param void La fonction ne prend \b aucun paramètre.
  * \return \b bool La fonction return \b true si l'objet \a existe et \b false si l'objet \a n'existe \a pas.
  */
 
 bool RechercherParID(void);
+
+/**
+ * \fn void afficheUsers(void)
+ * \brief \b Permet d'afficher tout \a les \a utilisateurs sur une \a page \a html.
+ * \param void La fonction ne prend \b aucun paramètre.
+ * \return La fonction ne renvoie rien.
+ */
+
+void afficheUsers(void);
 #endif

@@ -191,4 +191,6 @@ void demander_objet(Personne);
 
 void rendre_objet(Personne);
 
+bool verifieDatePret(int);
+
 #endif

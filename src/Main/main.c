@@ -250,6 +250,16 @@ int main(int argc, char* argv[])
 
                                 continuer = false;
                                 isLogin = true;
+
+                                char lien[64] = {0};
+                                sprintf(lien, "../../data/Users/%d.json", get_ID_personne(c));
+                                Personne personne = lire_fichier_personne(lien);
+
+                                while (!verifieDatePret(get_ID_personne(c)))
+                                {
+                                    rendre_objet(personne);
+                                }
+
                                 /*!< Redirige l'utilisateur vers l'onglet \a Admin ou l'onglet \a NonAdmin. */
                                 if ((isAdmin == false) && isLogin == true)
                                 {
@@ -346,7 +356,8 @@ int main(int argc, char* argv[])
                             /*!< \a Liste \a des \a demendeurs. */
                             if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 239) && (positionClic.y < 310))
                             {
-                                printf("a\n");                            
+                                afficheUsers(); 
+                                system("x-www-browser ../HTML/afficheUtilisateurs.html");
                             }
 
                             /*!< \a Modifier \a les \a données \a des \a demandeurs. */

@@ -276,8 +276,8 @@ void listeDemande(Personne p)
 
             fclose(ListeFichiersPret);
             fclose(nbFichierPret);
-            //system("rm ../HTML/Test/*.json");
-            //system("rmdir ../HTML/Test");
+            system("rm ../HTML/Test/*.json");
+            system("rmdir ../HTML/Test");
             
         }
         else
@@ -403,8 +403,8 @@ void listePret(Personne p)
 
             fclose(ListeFichiersPret);
             fclose(nbFichierPret);
-            //system("rm ../HTML/Test/*.json");
-            //system("rmdir ../HTML/Test");
+            system("rm ../HTML/Test/*.json");
+            system("rmdir ../HTML/Test");
         }
         else
         {
@@ -504,4 +504,102 @@ bool RechercherParID(void)
         printf("Erreur : l'entier entré n'est pas un ID ou l'ID ne correspond pas à un objet existant !\n");
         return false;
     }
+}
+
+void afficheUsers()
+{
+    FILE *FichierHTML = NULL;
+    FichierHTML = fopen("../HTML/afficheUtilisateurs.html", "w+");
+    
+    if (FichierHTML != NULL)
+    {
+        fprintf(FichierHTML, "<!DOCTYPE html>\n");
+        fprintf(FichierHTML, "<html>\n");
+        fprintf(FichierHTML, "\t<head>\n");
+        fprintf(FichierHTML, "\t\t<meta charset=""utf-8"" />\n");
+        fprintf(FichierHTML, "\t\t<title>Liste Utilisateurs</title>\n");
+        fprintf(FichierHTML, "\t</head>\n");
+        fprintf(FichierHTML, "\t<body>\n");
+        fprintf(FichierHTML, "\t\t<p><h1> Voici la liste de tous les utilisateurs : </h1></p>\n");
+
+
+        system("sh ../HTML/NombreDeUsers.sh");
+
+        FILE *nbFichierUsers = NULL;
+        FILE *ListeFichierUsers = NULL;
+
+        nbFichierUsers = fopen("../HTML/NombreUsers.txt", "r");
+        ListeFichierUsers = fopen("../HTML/ListeUsers.txt", "r");
+
+        if ((nbFichierUsers != NULL) && (ListeFichierUsers != NULL))
+        {
+            int nb = 0;
+            fscanf(nbFichierUsers, "%d", &nb);
+
+            for (int i=0; i<nb; i++)
+            {
+                char fichierUsers[16] = {0};
+                fscanf(ListeFichierUsers, "%s", fichierUsers);
+
+                char lien[64] = {0};
+                sprintf(lien, "../../data/Users/%s", fichierUsers);
+
+                Personne p = lire_fichier_personne(lien);
+
+
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");                               
+                fprintf(FichierHTML, "\t\t\t<strong>Nom : </strong>%s\n", get_nomPersonne(p));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t\t<strong>Prénom : </strong>%s\n", get_prenomPersonne(p));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");
+                fprintf(FichierHTML, "\t\t\t<strong>ID : </strong>%d\n", get_IDPersonne(p));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "\t\t<p>\n");   
+                fprintf(FichierHTML, "\t\t\t<strong>Mail : </strong>%s\n", get_mailPersonne(p));
+                fprintf(FichierHTML, "\t\t</p>\n");  
+                fprintf(FichierHTML, "\t\t<p>\n");   
+                fprintf(FichierHTML, "\t\t\t<strong>Age : </strong>%d\n", get_agePersonne(p));
+                fprintf(FichierHTML, "\t\t</p>\n"); 
+
+
+                fprintf(FichierHTML, "\t\t<p>\n");                               
+                fprintf(FichierHTML, "\t\t\t<strong> Liste d'objet : </strong>\n");
+
+                for (int i=0; i<get_longueur_liste_objetPersonne(p)-1; i++)
+                {
+                    fprintf(FichierHTML, "%d - \n", get_element_liste_objet(get_liste_objetPersonne(p), i)); 
+                }
+
+                fprintf(FichierHTML, "%d\n", get_element_liste_objet(get_liste_objetPersonne(p), get_longueur_liste_objetPersonne(p)-1));
+                fprintf(FichierHTML, "\t\t</p>\n");
+                fprintf(FichierHTML, "---------------------------------------------------------------------------------------\n");             
+                fprintf(FichierHTML, "\n");
+                fprintf(FichierHTML, "\t\t</p>\n");
+
+
+            }
+
+            fprintf(FichierHTML, "\t</body></html>\n");
+            fclose(nbFichierUsers);
+            fclose(ListeFichierUsers);
+        }
+        else
+        {
+            printf("Erreur : le fichier NombreUsers.txt ou ListeUsers.txt n'as pas pu être ouvert !\n");
+        }
+
+
+        system("rm ../HTML/NombreUsers.txt");
+        system("rm ../HTML/ListeUsers.txt");
+        fclose(FichierHTML);
+    }
+    else
+    {
+        printf("Erreur : le fichier html n'a pas pu être ouvert !\n");
+    }
+    
+    
 }

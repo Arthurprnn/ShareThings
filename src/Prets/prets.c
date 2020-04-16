@@ -411,3 +411,70 @@ void rendre_objet(Personne p)
         printf("Erreur : l'entier entré n'est pas un ID ou l'ID ne correspond pas à un objet existant !\n");
     }
 }
+
+bool verifieDatePret(int ID)
+{
+    bool isLate = true;
+    system("sh ../Prets/liste_pret.sh");
+    FILE *nbFichierPret = NULL;
+    FILE *ListeFichierPret= NULL;
+
+    nbFichierPret = fopen("../Prets/NombreFichierPret.txt", "r");
+    ListeFichierPret = fopen("../Prets/ListeFichierPret.txt", "r");
+
+    if ((nbFichierPret != NULL) && (ListeFichierPret != NULL))
+    {
+        int nb = 0;
+        fscanf(nbFichierPret, "%d", &nb);
+
+        for (int i=0; i<nb; i++)
+        {
+            char fichierPret[16] = {0};
+            fscanf(ListeFichierPret, "%s", fichierPret);
+
+            char lien[64] = {0};
+            sprintf(lien, "../../data/Prets/%s", fichierPret);
+
+            Pret pret = lire_fichier_pret(lien);
+
+            if (get_demandeurPret(pret) == ID)
+            {
+                time_t actuel = time(&actuel);
+                time_t finPret = creer_secondes_depuis_1970(get_temps_finPret(pret));
+                int i = 0;
+
+                if (finPret <= actuel)
+                {
+                    i++;
+                    printf("Attention : vous devez rendre l'objet %d maintenant car vous êtes en retard de %ld secondes !\n", get_objetPret(pret), actuel-finPret);
+                    isLate = false;
+                }
+
+                if ((finPret - 82800 <= actuel) && (i==0))
+                {
+                    time_t tempsRestant = finPret-actuel;
+                    Temps t = creer_temps(tempsRestant);
+                    printf("Rappel : vous devez bientôt rendre l'objet %d car le prêt se termine dans %d heures, %d minutes et %d secondes !\n", get_objetPret(pret), get_heuresTemps(t)-1, get_minutesTemps(t), get_secondesTemps(t));
+
+                }
+
+            }
+        }
+
+        fclose(ListeFichierPret);
+        fclose(nbFichierPret);
+    }
+    else
+    {
+        printf("Erreur : impossible d'ouvrir NombreFichierPret.txt ou ListeFichierPret.txt !\n");
+    }
+    
+
+
+
+
+    system("rm ../Prets/NombreFichierPret.txt");
+    system("rm ../Prets/ListeFichierPret.txt");
+    return isLate;
+
+}
