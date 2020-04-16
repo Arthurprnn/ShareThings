@@ -37,7 +37,7 @@ void TTF_ExitWithError(const char *message)
     exit(EXIT_FAILURE);
 }
 
-/*!< Permet de blit une surface sur une autre surface, de librer de liberer la premiere surface, puis de mettre à jour la fenêtre. */
+/*!< Permet de blit une surface sur une autre surface, de libérer la première surface, puis de mettre à jour la fenêtre. */
 void Blit(SDL_Surface *image, SDL_Surface *screen, SDL_Window *window)
 {
     SDL_BlitSurface(image, NULL, screen, NULL);
@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
     SDL_bool program_launched = SDL_TRUE;
     SDL_Event event;
 
-    /*!< Varaible pour ttf */
+    /*!< Variables pour ttf */
     TTF_Font *police = NULL;
     SDL_Color couleurNoire = {0, 255, 255};
 
@@ -80,13 +80,13 @@ int main(int argc, char* argv[])
     ID.w = 130;
     ID.h = 20;
 
-    /*!< Booleen pour pouvoir changer et choisir de \a boucles */
+    /*!< Booléen pour pouvoir changer de \a boucles */
     bool continuer = true;
     bool isLogin = false;
     bool isAdmin = false;
 
 
-    /*!< On initialise un compte et une id. */
+    /*!< On initialise un compte et une ID. */
     Compte c;
     int IDPersonne;
 
@@ -99,14 +99,14 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Initialisation SDL");
     }
 
-    /*!< Initialisation de la \a fentre et vérification de sa bonne initialisation. */
+    /*!< Initialisation de la \a fenêtre et vérification de sa bonne initialisation. */
     window = SDL_CreateWindow("ShareThings", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, LARGEUR_FENETRE, HAUTEUR_FENETRE, 0);
     if (window == NULL)
     {
         SDL_ExitWithError("Impossible de créer la fenetre");
     }
 
-    /*!< Initialisation de la police et verification de sa bonne initialisation. */
+    /*!< Initialisation de la police et vérification de sa bonne initialisation. */
     if (TTF_Init() == -1)
     {
        TTF_ExitWithError("Impossible d'initialiser la police"); 
@@ -120,14 +120,14 @@ int main(int argc, char* argv[])
     }
 
 
-    /*!< Associer la surface \a screen à la fenètre \a window. */
+    /*!< Associer la surface \a screen à la fenêtre \a window. */
     screen = SDL_GetWindowSurface(window);
 
     SDL_Surface* iconSurface;
     iconSurface = SDL_LoadBMP("../Images/Tokimori.bmp");
     SDL_SetWindowIcon(window, iconSurface);
 
-    /*!< chargement de l'image et vérification de son bon chargement. */
+    /*!< Chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/information.bmp");
     if (image == NULL)
     {
@@ -135,22 +135,22 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Impossible de charger l'image ");
     }
 
-    /*!< \b Blit la \a surface sur la \a fenêtre, \b liberation de la \a surface puis mise à jour de la \a fenêtre. */
+    /*!< \b Blit la \a surface sur la \a fenêtre, \b libération de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window);
 
-    /*!< On détecte les \a evenements qui se passent sur la \a fenêtre tant que l'on ne clic pas sur la \b flèche. */                     
+    /*!< On détecte les \a évènements qui se passent sur la \a fenêtre tant que l'on ne clic pas sur la \b flèche. */                     
     while (program_launched)
     {
         while (SDL_PollEvent(&event))
         {                                       
             switch(event.type)
             {
-                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                /*!< Détecte si \a l'utilisateur ferme la \a fenêtre. */
                 case SDL_QUIT :                                                         
                     goto Fin;
                     break;
 
-                /*!< Détecte si \a l'utilisateur appuie sur la \b fleche. */ 
+                /*!< Détecte si \a l'utilisateur appuie sur la \b flèche. */ 
                 case SDL_MOUSEBUTTONUP :                                                     
                     switch(event.button.button)
                     {
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
     
 
     MenuConnection :
-    /*!< chargement de l'image et vérification de son bon chargement. */
+    /*!< Chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/menuConnection.bmp");
     if (image == NULL)
     {
@@ -185,23 +185,23 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Impossible de charger l'image ");
     }
 
-    /*!< \b Blit la \a surface sur la \a fenetre, \b liberation de la \a surface puis mise à jour de la \a fenetre. */
+    /*!< \b Blit la \a surface sur la \a fenêtre, \b libération de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window);
 
     /*!< Boucle pour gérer la \a connection et \a l'inscription de l'utilisateur. */                                                     
     while (program_launched)
     {   
-        /*!< On détecte les \a evenements qui se passent sur la fenètre */                     
+        /*!< On détecte les \a évènements qui se passent sur la fenêtre. */                     
         while (SDL_PollEvent(&event) && continuer)
         {                                        
             switch(event.type)
             {
-                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                /*!< Détecte si \a l'utilisateur ferme la \a fenêtre. */
                 case SDL_QUIT :
                     goto Fin;                                                                             
                     break;
 
-                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrete la boucle. */ 
+                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrête la boucle. */ 
                 case SDL_MOUSEBUTTONUP :                                                     
                     switch(event.button.button)
                     {
@@ -222,7 +222,7 @@ int main(int argc, char* argv[])
                                 }
                                 Blit(image, screen, window);   
                                 
-                                /*!< Gere la \b connection. */
+                                /*!< Gère la \b connection. */
                                 c = init_compte();
 
                                 printf("Nom d'utilisateur : /!\\ Caractères autorisés : {[a-z],[A-Z],[0-9],[_]}\nChaine : ");
@@ -239,7 +239,7 @@ int main(int argc, char* argv[])
                                         isConnexionReussie = true;
                                     }
                                 }
-                                /*!< Si la \a connection ne \b réussit \b pas, on renvoie l'utilisateur au menue \b d'accueil. */
+                                /*!< Si la \a connection ne \b réussit \b pas, on renvoie l'utilisateur au menu \b d'accueil. */
                                 if (isConnexionReussie == false) {
                                     system("clear");
                                     goto Deconnection;
@@ -320,7 +320,7 @@ int main(int argc, char* argv[])
 
     MenuAdmin :
     continuer = true;
-    /*!< chargement de l'image et vérification de son bon chargement. */
+    /*!< Chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/menuAdmin.bmp");
     if (image == NULL)
     {
@@ -328,23 +328,23 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Impossible de charger l'image ");
     }
 
-    /*!< \b Blit la \a surface sur la \a fenetre, \b liberation de la \a surface puis mise à jour de la \a fenetre. */
+    /*!< \b Blit la \a surface sur la \a fenêtre, \b libération de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window);
 
     /*!< Boucle pour gérer la \a connection et \a l'inscription de l'utilisateur. */                                                     
     while (program_launched)
     {   
-        /*!< On détecte les \a evenements qui se passent sur la fenètre */                     
+        /*!< On détecte les \a évènements qui se passent sur la fenêtre. */                     
         while (SDL_PollEvent(&event) && continuer)
         {                                        
             switch(event.type)
             {
-                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                /*!< Détecte si \a l'utilisateur ferme la \a fenêtre. */
                 case SDL_QUIT :
                     goto Fin;                                                                             
                     break;
 
-                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrete la boucle. */ 
+                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrête la boucle. */ 
                 case SDL_MOUSEBUTTONUP :                                                     
                     switch(event.button.button)
                     {
@@ -360,7 +360,7 @@ int main(int argc, char* argv[])
                                 goto MenuConnection;                            
                             }
 
-                            /*!< \a Liste \a des \a demendeurs. */
+                            /*!< \a Liste \a des \a demandeurs. */
                             if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 239) && (positionClic.y < 310))
                             {
                                 afficheUsers(); 
@@ -404,7 +404,7 @@ int main(int argc, char* argv[])
 
     ModifierDonneesAdmin :
     continuer = true;
-    /*!< chargement de l'image et vérification de son bon chargement. */
+    /*!< Chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/modifierDonneesAdmin.bmp");
     if (image == NULL)
     {
@@ -412,23 +412,23 @@ int main(int argc, char* argv[])
         SDL_ExitWithError("Impossible de charger l'image ");
     }
 
-    /*!< \b Blit la \a surface sur la \a fenetre, \b liberation de la \a surface puis mise à jour de la \a fenetre. */
+    /*!< \b Blit la \a surface sur la \a fenêtre, \b libération de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window);
 
     /*!< Boucle pour gérer la \a connection et \a l'inscription de l'utilisateur. */                                                     
     while (program_launched)
     {   
-        /*!< On détecte les \a evenements qui se passent sur la fenètre */                     
+        /*!< On détecte les \a évènements qui se passent sur la fenêtre. */                     
         while (SDL_PollEvent(&event) && continuer)
         {                                        
             switch(event.type)
             {
-                /*!< Détecte si \a l'utilisateur ferme la \a fenètre. */
+                /*!< Détecte si \a l'utilisateur ferme la \a fenêtre. */
                 case SDL_QUIT :
                     goto Fin;                                                                             
                     break;
 
-                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrete la boucle. */ 
+                /*!< Détecte si \a l'utilisateur appuie sur le \b bouton \a Connection ou \a Inscription puis arrête la boucle. */ 
                 case SDL_MOUSEBUTTONUP :                                                     
                     switch(event.button.button)
                     {
@@ -437,7 +437,7 @@ int main(int argc, char* argv[])
                             positionClic.x = event.button.x;
                             positionClic.y = event.button.y;
 
-                            /*!< Détecte si l'utilisateur appuie sur la fleche, et reviens au menu Admin. */
+                            /*!< Détecte si l'utilisateur appuie sur la flèche, et revient au menu Admin. */
                             if ((positionClic.x > 410 && positionClic.x < 477) && (positionClic.y > 590) && (positionClic.y < 644))
                             {
                                 system("clear");
@@ -451,7 +451,7 @@ int main(int argc, char* argv[])
                                 system("clear");                                
                             }                             
 
-                            /*!< Prenom. */
+                            /*!< Prénom. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 378) && (positionClic.y < 434))
                             {
                                 changer_donnees_utilisateur(1);
@@ -465,7 +465,7 @@ int main(int argc, char* argv[])
                                 system("clear"); 
                             }
 
-                            /*!< Age. */
+                            /*!< Âge. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 523) && (positionClic.y < 578))
                             {
                                 changer_donnees_utilisateur(3);
@@ -489,17 +489,17 @@ int main(int argc, char* argv[])
     while (program_launched && (isLogin == true))
     {
 
-    /*!< chargement de l'image et vérification de son bon chargement. */
+    /*!< Chargement de l'image et vérification de son bon chargement. */
     image = SDL_LoadBMP("../Images/menuNonAdmin.bmp");
     if (image == NULL)
     {
         SDL_DestroyWindow(window);
         SDL_ExitWithError("Impossible de charger l'image ");
     }
-    /*!< \b Blit la \a surface sur la \a fenêtre, \b liberation de la \a surface puis mise à jour de la \a fenêtre. */
+    /*!< \b Blit la \a surface sur la \a fenêtre, \b libération de la \a surface puis mise à jour de la \a fenêtre. */
     Blit(image, screen, window); 
 
-    /*!< Affiche ID et Nom sur le menuNonAdmin de l'utilisateur. */
+    /*!< Affiche ID et nom d'utilisateur sur le menuNonAdmin de l'utilisateur. */
     IDPersonne = get_ID_personne(c);
     char IDChar[9];
     sprintf(IDChar, "%d", IDPersonne);
@@ -533,13 +533,13 @@ int main(int argc, char* argv[])
                             positionClic.x = event.button.x;
                             positionClic.y = event.button.y;
 
-                            /*!< Affiche l'onglet \b Rechercher \b des \b objtes. */
+                            /*!< Affiche l'onglet \b Rechercher \b des \b objets. */
                             if ((positionClic.x >83 && positionClic.x < 425) && (positionClic.y > 478) && (positionClic.y < 550))
                             {                                 
                                 goto RechercheObjet;                                            
                             }
 
-                            /*!< Affiche l'onglet \b Liste \b des \b prets. */
+                            /*!< Affiche l'onglet \b Liste \b des \b prêts. */
                             if ((positionClic.x >465 && positionClic.x < 808) && (positionClic.y > 478) && (positionClic.y < 514))
                             {                                                
                                 goto ListePrets;
@@ -636,13 +636,13 @@ int main(int argc, char* argv[])
                         positionClic.x = event.button.x;
                         positionClic.y = event.button.y;
 
-                        /*!< Détecte si l'utilisateur appuie sur la fleche et renvoie au menu */
+                        /*!< Détecte si l'utilisateur appuie sur la flèche et renvoie au menu. */
                         if ((positionClic.x >95 && positionClic.x < 150) && (positionClic.y > 600) && (positionClic.y < 645))
                         { 
                             goto MenuNonAdmin;                          
                         }
 
-                        /*!< Rechercher un objet par ID */
+                        /*!< Rechercher un objet par ID. */
                         if ((positionClic.x >634 && positionClic.x < 1147) && (positionClic.y > 597) && (positionClic.y < 634))
                         { 
                             if (RechercherParID())
@@ -654,7 +654,7 @@ int main(int argc, char* argv[])
                             goto RechercheObjet;                          
                         }
 
-                        /*!< Affiche la listes des objets disponibles dans les 20 catégories differentes. */
+                        /*!< Affiche la liste des objets disponibles dans les 20 catégories différentes. */
 
                         /*!< Aliment */
                         if ((positionClic.x >83 && positionClic.x < 298) && (positionClic.y > 238) && (positionClic.y < 276))
@@ -876,13 +876,13 @@ int main(int argc, char* argv[])
                         positionClic.x = event.button.x;
                         positionClic.y = event.button.y;
 
-                        /*!< Détecte si l'utilisateur appuie sur la fleche et renvoie au menu */
+                        /*!< Détecte si l'utilisateur appuie sur la flèche et renvoie au menu. */
                         if ((positionClic.x >393 && positionClic.x < 460) && (positionClic.y > 586) && (positionClic.y < 640))
                         { 
                             goto MenuNonAdmin;                          
                         }
 
-                        /*!< Ajouter un objet */
+                        /*!< Ajouter un objet. */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 176) && (positionClic.y < 232))
                         {
                             image = SDL_LoadBMP("../Images/ajouterObjet.bmp");
@@ -906,7 +906,7 @@ int main(int argc, char* argv[])
                                                     
                         }
 
-                        /*!< Supprimer un objet */
+                        /*!< Supprimer un objet. */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 515) && (positionClic.y < 571))
                         { 
                             printf("\nVeuillez rentrer l'ID de l'objet à supprimer: Attention vous ne pouvez supprimer un objet que s'il est dans votre liste d'objets et seulement s'il vous appartient !\nID: ");
@@ -967,7 +967,7 @@ int main(int argc, char* argv[])
                             goto Objets;
                         }
 
-                        /*!< Voir ses objets */
+                        /*!< Voir ses objets. */
                         if ((positionClic.x >536 && positionClic.x < 864) && (positionClic.y > 584) && (positionClic.y < 623))
                         {
                             
@@ -1023,13 +1023,13 @@ int main(int argc, char* argv[])
                         positionClic.x = event.button.x;
                         positionClic.y = event.button.y;
 
-                        /*!< Détecte si l'utilisateur appuie sur la fleche et renvoie au menu */
+                        /*!< Détecte si l'utilisateur appuie sur la flèche et renvoie au menu. */
                         if ((positionClic.x >406 && positionClic.x < 473) && (positionClic.y > 586) && (positionClic.y < 631))
                         { 
                             goto MenuNonAdmin;                          
                         }
 
-                        /*!< Modifier Profil */
+                        /*!< Modifier Profil. */
                         if ((positionClic.x >396 && positionClic.x < 868) && (positionClic.y > 204) && (positionClic.y < 258))
                         { 
                             image = SDL_LoadBMP("../Images/modificationProfil.bmp");
@@ -1055,7 +1055,7 @@ int main(int argc, char* argv[])
                             goto Profil;                         
                         }
 
-                        /*!< Supprimer Profil */
+                        /*!< Supprimer Profil. */
                         if ((positionClic.x >394 && positionClic.x < 866) && (positionClic.y > 505) && (positionClic.y < 560))
                         { 
                             if (!supprimer_compte(c))
@@ -1114,7 +1114,7 @@ int main(int argc, char* argv[])
 
 
     Fin:
-    /*!< On libere la mémoire et on quitte SDL. */
+    /*!< On libère la mémoire et on quitte SDL. */
     SDL_DestroyWindow(window);
     TTF_Quit();
     SDL_Quit();
