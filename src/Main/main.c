@@ -579,6 +579,7 @@ int main(int argc, char* argv[])
                                 Personne p = lire_fichier_personne(lienPersonne);
                                             
                                 demander_objet(p);
+                                SDL_Delay(2000);
                                 system("clear");
                             }
 
@@ -590,6 +591,7 @@ int main(int argc, char* argv[])
                                 Personne p = lire_fichier_personne(lienPersonne);            
                                 
                                 rendre_objet(p);
+                                SDL_Delay(2000);
                                 system("clear");
                             }
                             continue;                            
@@ -1063,6 +1065,13 @@ int main(int argc, char* argv[])
                             else
                             {
                                 if (isSur() == 0) {
+
+                                    char lienPers[64] = {0};
+                                    sprintf(lienPers, "../../data/Users/%d.json", IDPersonne);
+
+                                    Personne pers = lire_fichier_personne(lienPers);
+
+                                    supprimerObjetPourCompteSupprime(pers);
 
                                     char commandeCompte[64] = {0};
                                     sprintf(commandeCompte, "rm ../../data/Comptes/%s.json", get_nom_utilisateur(c));

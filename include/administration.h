@@ -192,4 +192,6 @@ void creer_fichier_compte(Compte);
 
 bool supprimer_compte(Compte);
 
+void supprimerObjetPourCompteSupprime(Personne);
+
 #endif

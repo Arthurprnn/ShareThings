@@ -368,3 +368,25 @@ bool supprimer_compte(Compte c) {
     return canRMcompte;
     
 }
+
+
+void supprimerObjetPourCompteSupprime(Personne p) {
+    int *liste = get_liste_objetPersonne(p);
+
+    system("sh ../Administration/liste_objets.sh");
+
+    for (int i=0; i<get_longueur_liste_objetPersonne(p); i++) {
+        char lienObjet1[64] = {0};
+        sprintf(lienObjet1, "../Administration/Fichierjson/%d.json", liste[i]);
+
+        Objet o = lire_fichier_objet(lienObjet1);
+
+        char lienObjet2[64] = {0};
+        sprintf(lienObjet2, "rm ../../data/Objets/%s/%d.json", get_typeObjet(o), liste[i]);
+
+        system(lienObjet2);
+    }
+
+    system("rm ../Administration/Fichierjson/*.json");
+    system("rm ../Administration/Fichierjson");
+}
