@@ -22,13 +22,13 @@ typedef struct s_pret * Pret;
 
 
 /**
- * \fn Pret init_pret()
+ * \fn Pret init_pret(void)
  * \brief \b Initialisateur d'un prêt.
  * \param void Ne prend rien en paramètre.
  * \return \b Pret La fonction a créé un \b Prêt et l'a \b initialisé avant de le retourner.
  */
 
-Pret init_pret();
+Pret init_pret(void);
 
 /**
  * \fn Pret creer_pret(int, int)
@@ -138,19 +138,19 @@ void set_demandeurPret(Pret, int);
 void set_IDPret(Pret, int);
 
 /**
- * \fn int creer_ID_pret()
+ * \fn int creer_ID_pret(void)
  * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 3.
  * \param void Ne prend rien en paramètre.
  * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour un prêt donc qui commence par 3.
  */
 
-int creer_ID_pret();
+int creer_ID_pret(void);
 
 /**
  * \fn bool isPretExist(int)
  * \brief Permet de \b vérifier si l'ID du prêt existe déjà.
  * \param int Prend l'ID à vérifier.
- * \return \b bool La fonction renvoie \b false si l'objet n'existe pas, \b true sinon.
+ * \return \b bool La fonction renvoie \b false si le prêt n'existe pas, \b true sinon.
  */
 
 bool isPretExist(int);
@@ -190,6 +190,13 @@ void demander_objet(Personne);
  */
 
 void rendre_objet(Personne);
+
+/**
+ * \fn bool verifieDatePret(int)
+ * \brief Cette fonction vérifie si \a l'utilisateur possede des \a prêts \b en \b retard et l'avertie si il doit rendre un prêt dans \b moins \b de \b 23 heures.
+ * \param int Prend en paramètre \b l'ID de la personne pour \a vérifier \a ses \a prêts.
+ * \return \b bool La fonction renvoie \b true si \a l'utilisateur ne possède pas de \b prêt \b en \b retard, false sinon.
+ */
 
 bool verifieDatePret(int);
 

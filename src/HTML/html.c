@@ -61,7 +61,7 @@ void AfficherObjetsParType(char* type)
 
                 have = true;
 
-                free(o);  
+                //free(o);  
             }
 
             if (!have)
@@ -141,7 +141,7 @@ void afficheObjetsPersonne(Personne p)
 
                 have = true;
             }
-            free(o);
+            //free(o);
 
         }
         

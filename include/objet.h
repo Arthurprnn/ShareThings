@@ -124,7 +124,7 @@ void set_typeObjet(Objet, char *);
 
 /**
  * \fn void set_ID_objetObjet(Objet, int)
- * \brief \b Setter permettant de fixer le nom de l'objet.
+ * \brief \b Setter permettant de fixer l'ID de l'objet.
  * \param Objet Pour fixer une donnée sur l'objet.
  * \param int Donnée à écrire dans l'objet.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans l'objet.
@@ -134,7 +134,7 @@ void set_ID_objetObjet(Objet, int);
 
 /**
  * \fn void set_ID_proprietaireObjet(Objet, int)
- * \brief \b Setter permettant de fixer le nom de l'objet.
+ * \brief \b Setter permettant de fixer l'ID du proprietaire de l'objet.
  * \param Objet Pour fixer une donnée sur l'objet.
  * \param int Donnée à écrire dans l'objet.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans l'objet.
@@ -144,7 +144,7 @@ void set_ID_proprietaireObjet(Objet, int);
 
 /**
  * \fn void set_delai_pretObjet(Objet, int)
- * \brief \b Setter permettant de fixer le nom de l'objet.
+ * \brief \b Setter permettant de fixer le delai de prêt de l'objet.
  * \param Objet Pour fixer une donnée sur l'objet.
  * \param int Donnée à écrire dans l'objet.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans l'objet.

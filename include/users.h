@@ -22,22 +22,22 @@
 typedef struct s_personne * Personne;
 
 /**
- * \fn Personne init_personne()
+ * \fn Personne init_personne(void)
  * \brief \b Initialisateur d'une personne.
  * \param void Ne prend rien en paramètre.
  * \return \b Personne La fonction a créé une \b Personne et l'a \b initialisé avant de le retourner.
  */
 
-Personne init_personne();
+Personne init_personne(void);
 
 /**
- * \fn Personne creer_personne()
+ * \fn Personne creer_personne(void)
  * \brief \b Constructeur de la personne.
  * \param void La fonction ne prend rien en paramètre.
  * \return \b Personne La fonction a créé une \b personne , l'a \b initialisée puis \b complétée avant de la retourner.
  */
 
-Personne creer_personne();
+Personne creer_personne(void);
 
 /**
  * \fn char* get_nomPersonne(Personne)
@@ -59,9 +59,9 @@ char * get_prenomPersonne(Personne);
 
 /**
  * \fn int get_agePersonne(Personne)
- * \brief \b Getter permettant d'obtenir l'age de la personne.
+ * \brief \b Getter permettant d'obtenir l'âge de la personne.
  * \param Personne Pour extraire une donnée sur l'objet.
- * \return \b int La fonction retourne un \b age de type \b int.
+ * \return \b int La fonction retourne un \b âge de type \b int.
  */
 
 int get_agePersonne(Personne);
@@ -214,13 +214,13 @@ void add_objet_dans_liste_objet(Personne, Objet);
 void delete_objet_dans_liste_objet(Personne, int);
 
 /**
- * \fn int creer_ID_personne()
+ * \fn int creer_ID_personne(void)
  * \brief Permet de \b creer un \b ID de \b 8 chiffres \b commençant par un \b 2.
  * \param void Ne prend rien en paramètre.
  * \return \b int La fonction rend un \b ID qui est un \b int de \b 8 \b caractères pour une personne donc qui commence par 2.
  */
 
-int creer_ID_personne();
+int creer_ID_personne(void);
 
 /**
  * \fn bool isPersonneExist(int)

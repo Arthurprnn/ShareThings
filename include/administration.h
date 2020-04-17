@@ -36,7 +36,7 @@ Compte init_compte();
 
 /**
  * \fn int creer_compte(Compte, Personne)
- * \brief \b Constructeur d'un compte'.
+ * \brief \b Constructeur d'un compte.
  * \param Compte La fonction prend en paramètre un \b compte qui sera le compte créé.
  * \param Personne La fonction prend en paramètre une \b personne qui sera celle attachée au compte.
  * \return \b int La fonction retourne un entier 0 si tous fonctionne.
@@ -187,10 +187,17 @@ void creer_fichier_compte(Compte);
  * \fn bool supprimer_compte(Compte)
  * \brief Cette fonction permet de savoir si un compte vérifie toutes les conditions pour pouvoir être supprimé.
  * \param Compte Prend en paramètre le \a compte voulant être supprimé. 
- * \return \b vool La fonction renvoie \b true si le compte \a peut-être \a supprimé, \b false sinon.
+ * \return \b bool La fonction renvoie \b true si le compte \a peut-être \a supprimé, \b false sinon.
  */
 
 bool supprimer_compte(Compte);
+
+/**
+ * \fn void supprimerObjetPourCompteSupprime(Personne)
+ * \brief Cette fonction permet de supprimer les objets d'une personne, pour pouvoir supprmier le compte de l'utilisateur après.
+ * \param Compte Prend en paramètre le \a compte voulant supprimer ses objets. 
+ * \return \b void la fonction ne renvoie rien.
+ */
 
 void supprimerObjetPourCompteSupprime(Personne);
 

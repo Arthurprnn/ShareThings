@@ -1,0 +1,8 @@
+{
+	"nom": "Commode",
+	"description": "Pour ranger ses habits.",
+	"type": "Mobilier",
+	"ID_obj": 17737141,
+	"ID_prop": 21363555,
+	"delai_de_pret": 200
+}

@@ -1,0 +1,8 @@
+{
+	"nom": "souris",
+	"description": "Pour ne pas utilser de pad",
+	"type": "Electrique",
+	"ID_obj": 16823804,
+	"ID_prop": 23763368,
+	"delai_de_pret": 5
+}

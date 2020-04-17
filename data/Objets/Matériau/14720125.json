@@ -1,0 +1,8 @@
+{
+	"nom": "Briques",
+	"description": "Pour construire des murs",
+	"type": "Matériau",
+	"ID_obj": 14720125,
+	"ID_prop": 21363555,
+	"delai_de_pret": 20
+}

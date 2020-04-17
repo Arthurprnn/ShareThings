@@ -1,0 +1,8 @@
+{
+	"nom": "Livre",
+	"description": "Livre d'aventure.",
+	"type": "Divertissement",
+	"ID_obj": 13678260,
+	"ID_prop": 23763368,
+	"delai_de_pret": 12
+}

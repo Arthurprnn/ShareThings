@@ -8,13 +8,13 @@
 #include <ctype.h>
 
 /**
- * \fn char * creer_chaine_de_caracteres()
+ * \fn char * creer_chaine_de_caracteres(void)
  * \brief La fonction \b réserve \b en \b mémoire un espace pour \b la \b chaine \b de \b caractères \b saisie.
  * \param void Ne prend rien en paramètre.
  * \return \b char* La fonction rend un \b char* qui est une \b chaine \b de \b caractères.  
  */
 
-char * creer_chaine_de_caracteres();
+char * creer_chaine_de_caracteres(void);
 
 /**
  * \fn void afficheMessageErreurSaisieString(char *)
@@ -36,22 +36,22 @@ void afficheMessageErreurSaisieString(char *);
 bool isSpecialCaractere(char *, char *);
 
 /**
- * \fn char * forcerNomUtilisateurCorrect()
+ * \fn char * forcerNomUtilisateurCorrect(void)
  * \brief La fonction \b force l'utilisateur à entrer un nom d'utilisateur \b correct.
  * \param void La fonctione ne prend rien en paramètre.
  * \return \b char* La fonction renvoie une \b chaine \b de \b caractères qui est le nom d'utilisateur correct.
  */
 
-char * forcerNomUtilisateurCorrect();
+char * forcerNomUtilisateurCorrect(void);
 
 /**
- * \fn int lire_fin_ligne()
+ * \fn int lire_fin_ligne(void)
  * \brief La fonction permet de voir si un utilisateur a donné trop d'élément lors d'une saisie d'une chaine de caractères.
  * \param void La fonctione ne prend rien en paramètre.
  * \return \b int La fonction \b renvoie le nombre de caractères jetés lors d'une saisie par l'utilisateur.
  */
 
-int lire_fin_ligne();
+int lire_fin_ligne(void);
 
 /**
  * \fn void lit_format(char *, void *)
@@ -82,22 +82,22 @@ int lire_entier(int *);
 int lire_decimal(float *);
 
 /**
- * \fn int forcerIDCorrect()
+ * \fn int forcerIDCorrect(void)
  * \brief La fonction \b force l'utilisateur à entrer un \b ID d'objet, de personne ou de prêt correct. (i.e. l'ID fait 8 chiffres et commence par 1, 2 ou 3)
  * \param void La fonction ne prend rien en paramètre.
  * \return \b int La fonction renvoie l'ID correct entré par l'utilisateur.
  */
 
-int forcerIDCorrect();
+int forcerIDCorrect(void);
 
 /**
- * \fn int isSur()
+ * \fn int isSur(void)
  * \brief La fonction \b demande à l'utilisateur un oui = 0 ou un non = 1.
  * \param void La fonction ne prend rien en paramètre.
  * \return \b int La fonction renvoie 0 ou 1.
  */
 
-int isSur();
+int isSur(void);
 
 /**
  * \fn bool isMemeChaine(char *, char *)

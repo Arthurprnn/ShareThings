@@ -1,0 +1,8 @@
+{
+	"nom": "Aspirine",
+	"description": "Pour les maux de crane.",
+	"type": "Pharmaceutique",
+	"ID_obj": 14485380,
+	"ID_prop": 21363555,
+	"delai_de_pret": 20
+}

@@ -1,0 +1,8 @@
+{
+	"nom": "Camion de pompier lego",
+	"description": "Les lego c'est cool quand même.",
+	"type": "Jouet",
+	"ID_obj": 18243550,
+	"ID_prop": 21363555,
+	"delai_de_pret": 20
+}

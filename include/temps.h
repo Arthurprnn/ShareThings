@@ -17,13 +17,13 @@
 typedef struct tm * Temps;
 
 /**
- * \fn Temps init_temps()
+ * \fn Temps init_temps(void)
  * \brief \b Initialisateur d'un Temps.
  * \param Void Ne prend rien en paramètre. 
  * \return \b Temps La fonction retourne un \b Temps de type \b Temps.
  */
 
-Temps init_temps();
+Temps init_temps(void);
 
 /**
  * \fn Temps creer_temps(time_t)
@@ -129,6 +129,7 @@ int get_isdstTemps(Temps);
 /**
  * \fn void set_secondesTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en secondes.
+ * \param Temps Le temps à modifier.
  * \param int Nombre de secondes.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -138,6 +139,7 @@ void set_secondesTemps(Temps, int);
 /**
  * \fn void set_minutesTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en minutes.
+ * \param Temps Le temps à modifier.
  * \param int Nombre de minutes.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -147,6 +149,7 @@ void set_minutesTemps(Temps, int);
 /**
  * \fn void set_heuresTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en heures.
+ * \param Temps Le temps à modifier.
  * \param int Nombre d'heures.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -156,6 +159,7 @@ void set_heuresTemps(Temps, int);
 /**
  * \fn void set_joursTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en jours.
+ * \param Temps Le temps à modifier.
  * \param int Nombre de jours.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -165,6 +169,7 @@ void set_joursTemps(Temps, int);
 /**
  * \fn void set_moisTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en mois.
+ * \param Temps Le temps à modifier.
  * \param int Nombre de mois.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -174,6 +179,7 @@ void set_moisTemps(Temps, int);
 /**
  * \fn void set_anneesTemps(Temps, int)
  * \brief \b Setter permettant de fixer le Temps en années.
+ * \param Temps Le temps à modifier.
  * \param int Nombre d'années.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -183,6 +189,7 @@ void set_anneesTemps(Temps, int);
 /**
  * \fn void set_jour_semaineTemps(Temps, int)
  * \brief \b Setter Permet de fixer l'indice du jour de la semaine \b [0;6] de Temps.
+ * \param Temps Le temps à modifier.
  * \param int Indice du jour de la semaine.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -192,6 +199,7 @@ void set_jour_semaineTemps(Temps, int);
 /**
  * \fn void set_jour_anneeTemps(Temps, int)
  * \brief \b Setter Permet de fixer l'indice du jour de l'année \b [0;365] de Temps.
+ * \param Temps Le temps à modifier.
  * \param int Indice du jour de l'année.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */
@@ -201,6 +209,7 @@ void set_jour_anneeTemps(Temps, int);
 /**
  * \fn void set_isdstTemps(Temps, int)
  * \brief \b Setter Permet de fixer le décalage heure d'été / heure d'hiver \b [-1,0,1] de Temps.
+ * \param Temps Le temps à modifier.
  * \param int Indice du décalage.
  * \return \b void La fonction ne retourne rien. Elle écrit simplement dans le Temps.
  */

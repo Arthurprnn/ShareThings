@@ -1,0 +1,8 @@
+{
+	"nom": "Parfum",
+	"description": "Pour sentir bon",
+	"type": "Cosmétique",
+	"ID_obj": 10050817,
+	"ID_prop": 23763368,
+	"delai_de_pret": 3
+}
