@@ -71,8 +71,18 @@ A présent, il nous manque plus qu'à écrire le main de notre projet, et quelqu
 -Jeudi 16 Avril 2020 19:39:50 :
 Nous avons beaucoup avancé depuis la dernière fois.
 Tout d'abord, nous avons créé les fichiers html permettant l'affichage de liste, que ce soit d'utilisateurs, d'objets etc ...
-Nous avions eu beaucoup de problèmes de crash du logiciel et de problèmes de mémoire. Le prof nous a alors aidé, et tousus nos problèmes ont été resolu.
+Nous avions eu beaucoup de problèmes de crash du logiciel et de problèmes de mémoire. Le prof nous a alors aidé, et tous nos problèmes ont été résolu.
 Nous avons pu énormément avancer dans le main permettant de faire tous ce qu'on voulait; chaque touche est attribuée à sa fonction, qui fonctionne et qui traite tous les cas d'erreur.
-Tout est fonctionnel, et fonctionne comme on l'espérait. Il nous a fallu quand même créer les fonctions html qui étaient assez longue, il fallait être rigoureux au vu du nombre de cas à traiter.
-Il nous reste plus qu'à faire les finitions par-ci par-là. Revoir notre documentation, puis faire notre rapport avec le manuel d'utilisation et l'explications des fonctions, bien que ces explications sont apportées par Doxygen.
+Tout est fonctionnel, et fonctionne comme on l'espérait. Il nous a fallu quand même créer les fonctions html qui étaient assez longues, il fallait être rigoureux au vu du nombre de cas à traiter.
+Il nous reste plus qu'à faire les finitions par-ci par-là. Revoir notre documentation, puis faire notre rapport avec le manuel d'utilisation et l'explication des fonctions, bien que ces explications sont apportées par Doxygen.
+
+-Vendredi 17 Avril 2020 18:13:47 :
+Nous en sommes au dernier compte rendu de ce carnet de bord.
+Nous avons donc finis de rédiger le rapport écrit et de finaliser la documentation Doxygen.
+Nous avons aussi mis des objets dans nos personnes pour avoir une base d'utilisation.
+Malgré cela, un problème de dernière minute a été rencontré lorsque nous avons ajouté ces objets.
+Lorsqu'un utilisateur a environ une dizaine d'objets, le programme reçoit bien l'information et crée donc l'objet attendu, mais le programme crash juste après.
+Cela est sûrement dû à un problème de mémoire que nous ne nous sommes pas rendu compte à temps. Il est trop tard maintenant pour corriger ce problème.
+Cela nous apprend donc à être en avance sur notre travail, ce qu'on essayera de faire la prochaine fois, au prochain projet.
+Bien que le programme plante à certains moments, le programme reste fonctionnel en soit, nous en sommes assez fier car il a dépassé nos attentes. Nous espérons retrouver la joie d'un projet de groupe prochainement. Merci.
 
