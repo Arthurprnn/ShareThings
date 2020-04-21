@@ -1,0 +1,8 @@
+{
+	"nom": "Lave-vaisselle",
+	"description": "Lavage optimal, permet une vaisselle éclatante.",
+	"type": "Electrique",
+	"ID_obj": 15525840,
+	"ID_prop": 26067370,
+	"delai_de_pret": 80
+}

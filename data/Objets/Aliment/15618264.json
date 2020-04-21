@@ -1,8 +1,0 @@
-{
-	"nom": "Une tarte aux pommes",
-	"description": "Tarte au pomme avec des pommes bio.",
-	"type": "Aliment",
-	"ID_obj": 15618264,
-	"ID_prop": 23763368,
-	"delai_de_pret": 5
-}

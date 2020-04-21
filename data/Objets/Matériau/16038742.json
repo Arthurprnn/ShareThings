@@ -1,0 +1,8 @@
+{
+	"nom": "Planches",
+	"description": "Lot de 36 planches de sapin, veuillez rendre les chutes de bois et le reste des planches non utilisées.",
+	"type": "Matériau",
+	"ID_obj": 16038742,
+	"ID_prop": 23127801,
+	"delai_de_pret": 31
+}

@@ -1,0 +1,8 @@
+{
+	"nom": "Tractopelle",
+	"description": "De hauteur 1m30, permet aux enfants d'être en immersion dans le monde des travaux publics !",
+	"type": "Jouet",
+	"ID_obj": 15651043,
+	"ID_prop": 23127801,
+	"delai_de_pret": 200
+}

@@ -1,0 +1,8 @@
+{
+	"nom": "Stylo plume",
+	"description": "Assez léger, permet un mouvement fluide sur le papier, il est en métal.",
+	"type": "Fourniture",
+	"ID_obj": 11474636,
+	"ID_prop": 20370122,
+	"delai_de_pret": 225
+}

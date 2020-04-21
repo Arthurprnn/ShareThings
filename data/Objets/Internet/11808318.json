@@ -1,0 +1,8 @@
+{
+	"nom": "Modem",
+	"description": "Permet de se connecter à internet.",
+	"type": "Internet",
+	"ID_obj": 11808318,
+	"ID_prop": 20370122,
+	"delai_de_pret": 30
+}

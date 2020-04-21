@@ -1,0 +1,8 @@
+{
+	"nom": "Trottinette électrique",
+	"description": "Pour pouvoir se déplacer facilement en ville.",
+	"type": "Véhicule",
+	"ID_obj": 15868144,
+	"ID_prop": 26850250,
+	"delai_de_pret": 7
+}

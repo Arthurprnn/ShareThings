@@ -1,8 +1,0 @@
-{
-	"nom": "Briquet",
-	"description": "pour allumer le feu",
-	"type": "Outil",
-	"ID_obj": 17345658,
-	"ID_prop": 27077118,
-	"delai_de_pret": 1
-}

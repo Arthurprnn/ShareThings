@@ -1,0 +1,8 @@
+{
+	"nom": "Lessive",
+	"description": "Au parfum envoûtant de vanille.",
+	"type": "Produit_ménager",
+	"ID_obj": 13644040,
+	"ID_prop": 26850250,
+	"delai_de_pret": 31
+}

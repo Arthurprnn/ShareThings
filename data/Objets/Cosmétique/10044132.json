@@ -1,0 +1,8 @@
+{
+	"nom": "Palette de maquillage",
+	"description": "Pour se maquiller à Halloween.",
+	"type": "Cosmétique",
+	"ID_obj": 10044132,
+	"ID_prop": 28265673,
+	"delai_de_pret": 47
+}

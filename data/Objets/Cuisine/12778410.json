@@ -1,0 +1,8 @@
+{
+	"nom": "Spatule",
+	"description": "Permet de retourner les patés de crabe facilement.",
+	"type": "Cuisine",
+	"ID_obj": 12778410,
+	"ID_prop": 28265673,
+	"delai_de_pret": 14
+}

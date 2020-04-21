@@ -1,8 +1,0 @@
-{
-	"nom": "lessive",
-	"description": "pour nettoyer son linge.",
-	"type": "Produit_ménager",
-	"ID_obj": 18676854,
-	"ID_prop": 24433062,
-	"delai_de_pret": 20
-}

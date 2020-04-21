@@ -1,0 +1,9 @@
+{
+	"nom": "Dark",
+	"prenom": "Sasuke",
+	"age": 20,
+	"ID": 28840421,
+	"mail": "dark.sasuke@gmal.com",
+	"liste_objet": [15250284, 10667128, 17207162],
+	"longueur_liste_objet": 3
+}

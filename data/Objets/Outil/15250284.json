@@ -1,0 +1,8 @@
+{
+	"nom": "Tournevis",
+	"description": "De type cruciforme, de taille très petite.",
+	"type": "Outil",
+	"ID_obj": 15250284,
+	"ID_prop": 28840421,
+	"delai_de_pret": 74
+}

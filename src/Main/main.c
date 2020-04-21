@@ -241,7 +241,7 @@ int main(int argc, char* argv[])
                                 }
                                 /*!< Si la \a connection ne \b réussit \b pas, on renvoie l'utilisateur au menu \b d'accueil. */
                                 if (isConnexionReussie == false) {
-                                    system("clear");
+                                    printf("\n");
                                     goto Deconnection;
                                 }
                                 /*!< On vérifie si le compte connecté \b est un \b compte \a admin ou \a non. */
@@ -266,12 +266,12 @@ int main(int argc, char* argv[])
                                 /*!< Redirige l'utilisateur vers l'onglet \a Admin ou l'onglet \a NonAdmin. */
                                 if ((isAdmin == false) && isLogin == true)
                                 {
-                                    system("clear");
+                                    printf("\n");
                                     goto MenuNonAdmin; 
                                 }
                                 else
                                 {
-                                    system("clear");
+                                    printf("\n");
                                     goto MenuAdmin;
                                 }
                             }
@@ -301,7 +301,7 @@ int main(int argc, char* argv[])
                                 continuer = false;
                                 isLogin = true;
                                 isAdmin = false;  
-                                system("clear");                                                              
+                                printf("\n");                                                             
                                 goto MenuNonAdmin; 
                                                                                         
                             }                   
@@ -356,7 +356,7 @@ int main(int argc, char* argv[])
                             /*!< \a Déconnexion. */
                             if ((positionClic.x > 884 && positionClic.x < 1211) && (positionClic.y > 39) && (positionClic.y < 86))
                             {
-                                system("clear");
+                                printf("\n");
                                 goto MenuConnection;                            
                             }
 
@@ -365,13 +365,13 @@ int main(int argc, char* argv[])
                             {
                                 afficheUsers(); 
                                 system("x-www-browser ../HTML/afficheUtilisateurs.html");
-                                system("clear");
+                                printf("\n");
                             }
 
                             /*!< \a Modifier \a les \a données \a des \a demandeurs. */
                             if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 376) && (positionClic.y < 448))
                             {
-                                system("clear");
+                                printf("\n");
                                 goto ModifierDonneesAdmin;
                             }                             
 
@@ -379,14 +379,14 @@ int main(int argc, char* argv[])
                             if ((positionClic.x > 168 && positionClic.x < 510) && (positionClic.y > 513) && (positionClic.y < 585))
                             {
                                 changer_mot_de_passe();
-                                system("clear");
+                                printf("\n");
                             }
 
                             /*!< \a Doxygen. */
                             if ((positionClic.x > 804 && positionClic.x < 1147) && (positionClic.y > 376) && (positionClic.y < 448))
                             {
                                 system("x-www-browser ../../doc/Doxygen/html/index.html");
-                                system("clear");
+                                printf("\n");
                             } 
 
                             continue;
@@ -440,7 +440,7 @@ int main(int argc, char* argv[])
                             /*!< Détecte si l'utilisateur appuie sur la flèche, et revient au menu Admin. */
                             if ((positionClic.x > 410 && positionClic.x < 477) && (positionClic.y > 590) && (positionClic.y < 644))
                             {
-                                system("clear");
+                                printf("\n");
                                 goto MenuAdmin;                            
                             }
 
@@ -448,28 +448,28 @@ int main(int argc, char* argv[])
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 306) && (positionClic.y < 362))
                             {
                                 changer_donnees_utilisateur(0);
-                                system("clear");                                
+                                printf("\n");                               
                             }                             
 
                             /*!< Prénom. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 378) && (positionClic.y < 434))
                             {
                                 changer_donnees_utilisateur(1);
-                                system("clear"); 
+                                printf("\n"); 
                             }
 
                             /*!< Mail. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 451) && (positionClic.y < 505))
                             {
                                 changer_donnees_utilisateur(2);
-                                system("clear"); 
+                                printf("\n"); 
                             }
 
                             /*!< Âge. */
                             if ((positionClic.x > 394 && positionClic.x < 864) && (positionClic.y > 523) && (positionClic.y < 578))
                             {
                                 changer_donnees_utilisateur(3);
-                                system("clear"); 
+                                printf("\n"); 
                             } 
                             continue;
                         default :
@@ -485,6 +485,7 @@ int main(int argc, char* argv[])
 
 
     MenuNonAdmin :
+    system("clear");
     continuer = true;
     while (program_launched && (isLogin == true))
     {
@@ -579,8 +580,7 @@ int main(int argc, char* argv[])
                                 Personne p = lire_fichier_personne(lienPersonne);
                                             
                                 demander_objet(p);
-                                SDL_Delay(2000);
-                                system("clear");
+                                printf("\n");
                             }
 
                             /*!< Rendre un \a Objet. */
@@ -591,8 +591,7 @@ int main(int argc, char* argv[])
                                 Personne p = lire_fichier_personne(lienPersonne);            
                                 
                                 rendre_objet(p);
-                                SDL_Delay(2000);
-                                system("clear");
+                                printf("\n");
                             }
                             continue;                            
                 
@@ -650,7 +649,7 @@ int main(int argc, char* argv[])
                                 system("x-www-browser ../HTML/afficheRecherID.html");
                             }
                             
-                            system("clear");
+                            printf("\n");
                             goto RechercheObjet;                          
                         }
 
@@ -835,7 +834,7 @@ int main(int argc, char* argv[])
     Personne p = lire_fichier_personne(lienPersonne);
     listePret(p);
     system("x-www-browser ../HTML/affichePret.html");
-    system("clear");
+    printf("\n");
     goto MenuNonAdmin;
 
 
@@ -845,7 +844,7 @@ int main(int argc, char* argv[])
     p = lire_fichier_personne(lienPersonne);
     listeDemande(p);
     system("x-www-browser ../HTML/afficheDemande.html");
-    system("clear");
+    printf("\n");
     goto MenuNonAdmin;
 
 
@@ -901,7 +900,7 @@ int main(int argc, char* argv[])
                             add_objet_dans_liste_objet(p, o);
                             creer_fichier_personne(p);
 
-                            system("clear");
+                            printf("\n");
                             goto Objets;  
                                                     
                         }
@@ -963,7 +962,7 @@ int main(int argc, char* argv[])
                                 printf("\nL'entier entré n'est pas un ID d'objet !\n");
                             }
 
-                            system("clear");
+                            printf("\n");
                             goto Objets;
                         }
 
@@ -978,7 +977,7 @@ int main(int argc, char* argv[])
                             afficheObjetsPersonne(p); 
                             system("x-www-browser ../HTML/afficheObjetsPersonne.html");
                             
-                            system("clear");
+                            printf("\n");
                             goto Objets;                         
                         }
                         
@@ -1051,7 +1050,7 @@ int main(int argc, char* argv[])
                             creer_fichier_compte(c);
                             creer_fichier_personne(p);
 
-                            system("clear");
+                            printf("\n");
                             goto Profil;                         
                         }
 
@@ -1081,13 +1080,13 @@ int main(int argc, char* argv[])
                                     sprintf(commandeUsers, "rm ../../data/Users/%d.json", get_ID_personne(c));
                                     system(commandeUsers);
 
-                                    system("clear");
+                                    printf("\n");
                                     printf("Le compte \"%s\" à été supprimé avec succès, merci d'avoir utilisé ShareThings !\n", get_nom_utilisateur(c));
                                 
                                     goto MenuConnection;
 
                                 } else {
-                                    system("clear");
+                                    printf("\n");
                                     printf("Vous n'avez pas supprimé votre compte.\n");
                                     goto Profil;
                                 }

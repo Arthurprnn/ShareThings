@@ -1,0 +1,8 @@
+{
+	"nom": "Manteau",
+	"description": "Pour rester au chaud l'hiver.",
+	"type": "Vêtement",
+	"ID_obj": 15332734,
+	"ID_prop": 22762581,
+	"delai_de_pret": 15
+}

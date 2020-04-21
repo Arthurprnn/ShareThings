@@ -1,0 +1,9 @@
+{
+	"nom": "Le Bricoleur",
+	"prenom": "Bob",
+	"age": 32,
+	"ID": 23127801,
+	"mail": "bob22@gmail.com",
+	"liste_objet": [16425316, 16038742, 15651043],
+	"longueur_liste_objet": 3
+}
